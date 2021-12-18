@@ -51,8 +51,8 @@ marc administrateur admin 1001 1001 \
 samba admin;
 
 
-# Vérification
-echo "$APPZ_SAMBA_USER | $APPZ_SAMBA_PASS"
-
+# Vérification: clear; echo "$APPZ_SAMBA_USER | $APPZ_SAMBA_PASS"; 
+# Check Export: clear; export | cut -c 12-50 | sort -k 1;
+  
 
 # USER=\'XXXX\' > USER='XXXX'
