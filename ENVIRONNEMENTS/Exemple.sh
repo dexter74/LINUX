@@ -39,7 +39,7 @@ echo export PASS=\'\$14\'        >> \$FILE
 echo export USER_ID=\'\$15\'         >> \$FILE
 echo export GROUP_UID=\'\$16\'        >> \$FILE
 echo export APPZ_SAMBA_USER=\'\$17\'  >> \$FILE
-echo export APPZ_SAMBA_PASS=\'\$18'  >> \$FILE " > conf_env.sh
+echo export APPZ_SAMBA_PASS=\'\$18'  >> \$FILE" > conf_env.sh
 
 # Configuration du Système
 sudo sh conf_env.sh \
