@@ -42,10 +42,6 @@ echo export APPZ_SAMBA_USER=\'\$17\'  >> \$FILE
 echo export APPZ_SAMBA_PASS=\'\$18\'  >> \$FILE " > conf_env.sh
 
 
-# Remise à Zéro du Profile
-cp  -f /etc/profile.old /etc/profile
-
-
 # Configuration du Système
 sudo sh conf_env.sh \
 Debian buster \
