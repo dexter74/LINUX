@@ -13,8 +13,8 @@ rm -r    /home/$USER;
 # Création du Groupe et de l'utilisateur #
 ##########################################
 #########################
-addgroup $GROUP --gid $GUID;
-useradd --home-dir /home/$USER --base-dir /home/$USER --uid $UID --gid $GUID --groups sudo --no-user-group --shell /bin/bash --create-home /home/$USER;
+addgroup $GROUP --gid $GROUP_UID;
+useradd --home-dir /home/$USER --base-dir /home/$USER --uid $UID --gid $GROUP_UID --groups sudo --no-user-group --shell /bin/bash --create-home /home/$USER;
 
 ##############################
 # Définir les mots de passes #
