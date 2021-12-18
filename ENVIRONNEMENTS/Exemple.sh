@@ -43,11 +43,11 @@ echo APPZ_SAMBA_PASS=\'\$18\'  >> \$FILE " > environment.sh
 
 
 # Remise à Blank
-sh environment.sh; clear; cat /etc/environment;
+sudo sh environment.sh; clear; cat /etc/environment;
 
 
 # Configuration du Système
-sh environment.sh \
+sudo sh environment.sh \
 Debian buster \
 SLDEBIAN01 LAN \
 Europe Paris fr_FR.UTF-8 \
