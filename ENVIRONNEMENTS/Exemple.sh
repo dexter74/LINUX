@@ -8,23 +8,24 @@ echo '' > /etc/environment ;
 #############################
 # Information de la Machine #
 #############################
-export HOSTNAME=
-export DOMAINE=
+export HOSTNAME=$(hostname)
+export DOMAINE=lan
 export TIMEZONE=
-export REGION=
-export LANGUE=
-export VILLE=
+export REGION=Europe
+export VILLE=Paris
+export LANGUE=fr_FR.UTF-8
 
 #########################
 # Information le Réseau #
 #########################
-export NET_INTERFACE=
-export NET_BROADCAST=
-export NET_ADDRESS=
-export NET_GATEWAY=
-export NET_MASK=
-export NET_DNS0=
-export NET_DNS1=
+
+export NET_LOOPBACK=$(ip link | grep "^1:" | cut -c 4-20 |cut -d ":" -f 1)
+export NET_INTERFACE1=$(ip link | grep "^2:" | cut -c 4-20 |cut -d ":" -f 1)
+export NET_INTERFACE2=$(ip link | grep "^3:" | cut -c 4-20 |cut -d ":" -f 1)
+export NET_ADDRESS=$(ip add | cut -c 10-30 | grep "192" | cut -d " " -f 1)
+export NET_GATEWAY=$(ip add | cut -c 10-18 | grep "192").1
+export NET_DNS0=$(ip add | cut -c 10-18 | grep "192").1
+export NET_DNS1=$(ip add | cut -c 10-18 | grep "192").40
 
 ###########
 # Clé SSH #
@@ -55,3 +56,14 @@ export GUID=
 ###############
 export APPZ_SAMBA_USER=
 export APPZ_SAMBA_PASS=
+
+
+
+
+echo "####### Interface $NET_INTERFACE1 #######
+ - CIDR     : $NET_ADDRESS 
+ - GateWay  : $NET_GATEWAY
+ - DNS0     : $NET_DNS0
+ - DNS1     : $NET_DNS1
+ - Domaine  : $DOMAINE
+###############################"
