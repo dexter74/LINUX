@@ -9,7 +9,6 @@
 echo '' > /etc/environment;
 
 # Création du script
-
 echo "FILE=/etc/environment
 rm \$FILE
 echo '##############################'  > \$FILE
@@ -23,7 +22,6 @@ echo REGION=\'\$5\'       >> \$FILE
 echo VILLE=\'\$6\'        >> \$FILE
 echo LANGUE=\'\$7\'       >> \$FILE
 echo SSH_KEY=\'MAKEYSSH\' >> \$FILE
-
 
 echo '############################' >> \$FILE
 echo '# Information sur le Rseau #' >> \$FILE
@@ -47,3 +45,6 @@ echo GUID=\'\$16\'        >> \$FILE
 echo APPZ_SAMBA_USER=\'\$17\'  >> \$FILE
 echo APPZ_SAMBA_PASS=\'\$18\'  >> \$FILE " > environment.sh
 sh environment.sh Debian buster SLDEBIAN01 LAN Europe Paris fr_FR.UTF-8 192.168.1.40 192.168.1.1 192.168.1.1 192.168.1.1 marc administrateur admin 1001 1001 samba admin; clear; cat /etc/environment;
+
+
+# TEST: echo $RELEASE
