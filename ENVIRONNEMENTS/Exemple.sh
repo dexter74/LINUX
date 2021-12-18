@@ -2,7 +2,7 @@
 # Script de déclaration de variables d'environnement #
 ######################################################
 #
-# echo "echo \$1" > test.sh; sh test.sh A
+# USER=\'XXXX\' > USER='XXXX'
 #
 #
 # Vider les variables Environnements 
@@ -10,9 +10,8 @@ echo '' > /etc/environment;
 
 # Création du script
 
-echo "FILE=/etc/environnement
+echo "FILE=/etc/environment
 rm \$FILE
-
 echo '##############################'  > \$FILE
 echo '# Information sur le Système #' >> \$FILE
 echo '##############################' >> \$FILE
@@ -46,7 +45,5 @@ echo PASS=\'\$14\'        >> \$FILE
 echo UID=\'\$15\'         >> \$FILE
 echo GUID=\'\$16\'        >> \$FILE
 echo APPZ_SAMBA_USER=\'\$17\'  >> \$FILE
-echo APPZ_SAMBA_PASS=\'\$18\'  >> \$FILE
-" > environment.sh;clear
-
-sh environment.sh Debian buster SLDEBIAN01 LAN Europe Paris fr_FR.UTF-8 192.168.1.40 192.168.1.1 192.168.1.1 192.168.1.1 marc administrateur admin 1001 1001 samba admin; clear; cat /etc/environnement;
+echo APPZ_SAMBA_PASS=\'\$18\'  >> \$FILE " > environment.sh
+sh environment.sh Debian buster SLDEBIAN01 LAN Europe Paris fr_FR.UTF-8 192.168.1.40 192.168.1.1 192.168.1.1 192.168.1.1 marc administrateur admin 1001 1001 samba admin; clear; cat /etc/environment;
