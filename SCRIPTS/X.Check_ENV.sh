@@ -1,6 +1,3 @@
-echo "
-clear;
-
 echo '################################################'
 echo '# - Ditribribution : $DISTRIB'
 echo '# - Code Name      : $RELEASE'
@@ -24,4 +21,3 @@ echo '# - UNIX  - USER   : [$USER_ID] $USER:$PASS'
 echo '# - UNIX  - Groupe : [$GROUP_UID] $GROUP'
 echo '# - SAMBA - COmpte : [XXXX] $APPZ_SAMBA_USER:$APPZ_SAMBA_PASS'
 echo '################################################'
-" >  Check_ENV.sh; sh Check_ENV.sh;
