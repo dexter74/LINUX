@@ -22,7 +22,6 @@ export REGION=Europe
 export VILLE=Paris
 export LANGUE=fr_FR.UTF-8
 
-
 #########################
 # Information le Réseau #
 #########################
@@ -63,7 +62,6 @@ export GUID=
 ###############
 export APPZ_SAMBA_USER=
 export APPZ_SAMBA_PASS=
-
 
 
 
