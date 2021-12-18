@@ -1,6 +1,6 @@
-#### Arborescence
-````
-Linux/ENVIRONNEMENTS  : Défini les variables d'environnement du Système en générale par machine.
-Linux/SCRIPTS         : Script qui exécutera des actions en lisant les Variables définit dans l'Environnements.
-````
+### Guide Utilisation
 
+#### A. Configurer Environnement
+```
+sudo sh SCRIPTS/CONFIG/Env.sh Debian buster SLDEBIAN01 LAN Europe Paris fr_FR.UTF-8 192.168.1.40 192.168.1.1 192.168.1.1 192.168.1.41 marc administrateur admin 1001 1001 samba admin;
+```
