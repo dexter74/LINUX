@@ -42,13 +42,8 @@ echo export APPZ_SAMBA_USER=\'\$17\'  >> \$FILE
 echo export APPZ_SAMBA_PASS=\'\$18\'  >> \$FILE " > conf_env.sh; clear;
 
 # Configuration du Système
-sudo sh conf_env.sh \
-Debian buster \
-SLDEBIAN01 LAN \
-Europe Paris fr_FR.UTF-8 \
-192.168.1.40 192.168.1.1 192.168.1.1 192.168.1.41 \
-marc administrateur admin 1001 1001 \
-samba admin;
+sudo sh conf_env.sh Debian buster SLDEBIAN01 LAN Europe Paris fr_FR.UTF-8 192.168.1.40 192.168.1.1 192.168.1.1 192.168.1.41 \
+marc administrateur admin 1001 1001 samba admin;
 
 
 # Vérification: clear; echo "$APPZ_SAMBA_USER | $APPZ_SAMBA_PASS"; 
