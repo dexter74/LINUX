@@ -44,6 +44,3 @@ echo UID=\'\$15\'         >> \$FILE
 echo GUID=\'\$16\'        >> \$FILE
 echo APPZ_SAMBA_USER=\'\$17\'  >> \$FILE
 echo APPZ_SAMBA_PASS=\'\$18\'  >> \$FILE " > environment.sh
-sh environment.sh Debian buster SLDEBIAN01 LAN Europe Paris fr_FR.UTF-8 192.168.1.40 192.168.1.1 192.168.1.1 192.168.1.1 marc administrateur admin 1001 1001 samba admin;
-clear; cat /etc/environment;
-
