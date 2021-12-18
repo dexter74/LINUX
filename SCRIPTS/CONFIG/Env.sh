@@ -4,6 +4,8 @@
 #
 # /etc/profile charge les scripts /etc/profile.d/*.sh
 
+# Env.sh <DISTRIB> <release> <hostname> <domaine> <region> <ville> <langue> <IPV4> <Passerelle> <DNS 0> <DNS 1> <USERNAME> <GROUP> <PASSWOD> <USER ID> <GROUP ID> <SAMBA USER> <SAMBA PASS>
+
 # Création du script "conf_env.sh"
 echo "#Fichier Profil:
 FILE=/etc/profile.d/ENVIRONNEMENT.sh
