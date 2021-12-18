@@ -1,0 +1,58 @@
+################################################################################################
+# Installation du serveur DNS AdGuard qui sert a filtrer le reseau (ANTI-PUB, Anti-Telemetrie) #
+################################################################################################
+
+###########################
+# Nettoyage de la console #
+###########################
+clear ;
+
+##############################
+# Declaration de la variable #
+##############################
+DOSSIER=/opt
+
+##################################
+# Désinstallation de ADGuardHOme #
+##################################
+$DOSSIER/AdGuardHome/AdGuardHome -s uninstall ;
+
+########################
+# Purge de AdGuardHome #
+########################
+rm -r $DOSSIER/AdGuardHome ;
+
+########################################
+# Telechargement du paquet ADGuardHome #
+#####################################################################################################
+cd $DOSSIER ;                                                                                       #
+wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_amd64.tar.gz -O - | tar -xz ; #
+#                                                                                                   #
+# Installation du service                                                                           #
+$DOSSIER/AdGuardHome/AdGuardHome -s install ;                                                       #
+#                                                                                                   #
+# Vérifier l'état du service                                                                        #
+$DOSSIER/AdGuardHome/AdGuardHome -s status ;                                                        #
+#####################################################################################################
+
+
+###################################################
+# $DOSSIER/AdGuardHome/AdGuardHome -s uninstall ; #
+# $DOSSIER/AdGuardHome/AdGuardHome -s start ;     #
+# $DOSSIER/AdGuardHome/AdGuardHome -s stop ;      #
+# $DOSSIER/AdGuardHome/AdGuardHome -s restart ;   #
+# $DOSSIER/AdGuardHome/AdGuardHome -s status ;    #
+###################################################
+
+
+##########################################################################################################################
+# Guide d'installation                                                                          
+#	- https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#installation
+# - Port d'installation: 3000
+# - Port Webui: 80 (Par défaut)
+#
+# Filtre activé par défaut:
+#	- Defaut: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+#	- Defaut: https://www.malwaredomainlist.com/hostslist/hosts.txt
+#	- https://kb.adguard.com/en/general/adguard-ad-filters
+##########################################################################################################################
