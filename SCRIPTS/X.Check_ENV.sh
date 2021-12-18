@@ -6,30 +6,22 @@ echo '# - Ditribribution : $DISTRIB'
 echo '# - Code Name      : $RELEASE'
 echo '# - Histname       : $HOSTNAME'
 echo '# - Domaine        : $DOMAINE'
-echo ''
+echo '#'
 echo '# ----------------------------------------'
 echo '# - Region         : $REGION'
 echo '# - VILLE          : $VILLE'
 echo '# - LANGUE         : $LANGUE'
-echo ''
+echo '#'
 echo '# ----------------------------------------'
-echo '# - Interfaces     : $NET_INTERFACE1'
-echo '# - Adresse IP     : $NET_ADDRESS'
+echo '# - Interfaces     : $(ifconfig ens18 | grep "ens18" | cut -c 1-5)'
+echo '# - Adresse IP     : $(ifconfig ens18 | grep "inet " | cut -c 14-25)'
 echo '# - Passerelle     : $NET_GATEWAY'
 echo '# - Serveur DNS    : $NET_DNS0'
 echo '#                  : $NET_DNS1'
-echo ''
+echo '#'
 echo '# ----------------------------------------'
-echo '# - UNIX  - Groupe : $GROUP ($GROUP_UID)'
-echo '# - SAMBA - COmpte : $APPZ_SAMBA_USER:$APPZ_SAMBA_PASS'
+echo '# - UNIX  - USER   : [$USER_ID] $USER:$PASS'
+echo '# - UNIX  - Groupe : [$GROUP_UID] $GROUP'
+echo '# - SAMBA - COmpte : [XXXX] $APPZ_SAMBA_USER:$APPZ_SAMBA_PASS'
 echo '################################################'
 " >  Check_ENV.sh; sh Check_ENV.sh;
-
-
-
-
-
-
-
-
-
