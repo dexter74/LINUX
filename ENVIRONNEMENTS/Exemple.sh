@@ -5,15 +5,23 @@
 # Vider les variables Environnements
 echo '' > /etc/environment ;
 
+
+##############################
+# Information sur le Système #
+##############################
+export DISTRIB=$(lsb_release -a | grep "^Codename" | cut -c 11-20)
+export RELEASE=$(lsb_release -a | grep "^Distributor" | cut -d ":" -f 2 | cut -c 2-10)
+
+
 #############################
 # Information de la Machine #
 #############################
-export HOSTNAME=
-export DOMAINE=
-export TIMEZONE=
+export HOSTNAME=Debian
+export DOMAINE=Lan
 export REGION=Europe
 export VILLE=Paris
 export LANGUE=fr_FR.UTF-8
+
 
 #########################
 # Information le Réseau #
