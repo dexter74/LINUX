@@ -10,65 +10,45 @@ echo '' > ./environment.sh ;
 
 
 
-echo "##############################
+echo "
+##############################
 # Information sur le Système #
 ##############################
-echo DISTRIB=\$1
-echo RELEASE=\$2
-#############################
-# Information de la Machine #
-#############################
-echo HOSTNAME=\$3
-echo DOMAINE=\$4
-echo REGION=\$5
-echo VILLE=\$6
-echo LANGUE=\$7
+FILE=/etc/environnement_test
+rm \$FILE
+echo DISTRIB=\$1             > \$FILE
+echo RELEASE=\$2            >> \$FILE
+echo HOSTNAME=\$3           >> \$FILE
+echo DOMAINE=\$4            >> \$FILE
+echo REGION=\$5             >> \$FILE
+echo VILLE=\$6              >> \$FILE
+echo LANGUE=\$7             >> \$FILE
+echo NET_ADDRESS=\$8        >> \$FILE
+echo NET_GATEWAY=\$9        >> \$FILE
+echo NET_DNS0=\$10          >> \$FILE
+echo NET_DNS1=\$11          >> \$FILE
+echo SSH_KEY=\$12           >> \$FILE
+echo USER=\$13              >> \$FILE
+echo GROUP=\$14             >> \$FILE
+echo PASS=\$15              >> \$FILE
+echo UID=\$16               >> \$FILE
+echo GUID=\$17              >> \$FILE
+echo APPZ_SAMBA_USER=\$18   >> \$FILE
+echo APPZ_SAMBA_PASS=\$19   >> \$FILE
 
-#########################
-# Information le Réseau #
-#########################
-
-# Récupérer Nom Interface:
-echo NET_LOOPBACK=$(ip link | grep '^1:' | cut -c 4-20 |cut -d ':' -f 1)
-echo NET_INTERFACE1=$(ip link | grep '^2:' | cut -c 4-20 |cut -d ':' -f 1)
-echo NET_INTERFACE2=$(ip link | grep '^3:' | cut -c 4-20 |cut -d ':' -f 1)
-echo NET_ADDRESS=\$8
-echo NET_GATEWAY=\$9
-echo NET_DNS0=\$10
-echo NET_DNS1=\$11
-
-
-###########
-# Clé SSH #
-###########
-echo SSH_KEY=\$12
-
-##################
-# User & Groupes #
-##################
-echo USER=\$13
-echo GROUP=\$14
-
-################
-# Mot de passe #
-################
-echo PASS=\$15
-
-##################
-# ID USER, Group #
-##################
-echo UID=\$16
-echo GUID=\$17
-
-###############
-# APPZ: SAMBA #
-###############
-echo APPZ_SAMBA_USER=\$18
-echo APPZ_SAMBA_PASS=\$19
+echo NET_LOOPBACK=$(ip link | grep '^1:' | cut -c 4-20 |cut -d ':' -f 1)   >> \$FILE
+echo NET_INTERFACE1=$(ip link | grep '^2:' | cut -c 4-20 |cut -d ':' -f 1) >> \$FILE
+echo NET_INTERFACE2=$(ip link | grep '^3:' | cut -c 4-20 |cut -d ':' -f 1) >> \$FILE
 " > environment.sh ; clear; cat environment.sh ;
 
-sh environment.sh <DISTRIB> <RELEASE> <HOSTNAME> <DOMAINE> <REGION> <VILLE> <LANGUE>    <NET_IP>    <NET_GW>    <NET_DNS0> <NET_DNS1>   <KEY>    <USER> <GROUP>        <PASS> <UID> <GID> <SAMBA_USER> <SAMBA_PASS>
-sh environment.sh Debian    buster    SLDEBIAN01 LAN       Europe   Paris   fr_FR.UTF-8 192.168.1.X 192.168.1.1 192.168.1.1 192.168.1.1 MAKEYSSH marc   administrateur admin  1001  10001 samba        admin
+
+# sh environment.sh <DISTRIB> <RELEASE> <HOSTNAME> <DOMAINE> <REGION> <VILLE> <LANGUE>    <NET_IP>    <NET_GW>    <NET_DNS0> <NET_DNS1>   <KEY>    <USER> <GROUP>        <PASS> <UID> <GID> <SAMBA_USER> <SAMBA_PASS>
+
+
+# Création du fichier /etc/environnement_test
+sh environment.sh Debian buster SLDEBIAN01 LAN Europe Paris fr_FR.UTF-8 192.168.1.40 192.168.1.1 192.168.1.1 192.168.1.1 MAKEYSSH marc administrateur admin 1001 10001 samba admin ; clear ; cat /etc/environnement_test
+
+
 
 
 
