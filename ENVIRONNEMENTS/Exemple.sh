@@ -2,9 +2,7 @@
 # Script de déclaration de variables d'environnement #
 ######################################################
 #
-# USER=\'XXXX\' > USER='XXXX'
-#
-# Utilisation : 
+# Le fichier /etc/environment n'affecte que les USERS. Pas le root
 
 # Création du script
 echo "FILE=/etc/environment
@@ -55,8 +53,10 @@ SLDEBIAN01 LAN \
 Europe Paris fr_FR.UTF-8 \
 192.168.1.40 192.168.1.1 192.168.1.1 192.168.1.1 \
 marc administrateur admin 1001 1001 \
-samba admin\
-; clear; cat /etc/environment;
+samba admin; clear; cat /etc/environment;
+
+# Vérification
+echo "$APPZ_SAMBA_USER | $APPZ_SAMBA_PASS"
 
 
-
+# USER=\'XXXX\' > USER='XXXX'
