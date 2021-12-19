@@ -54,7 +54,6 @@ sh ./config/2.reseau.sh CHECK;
 
 ## IV. Gestion des Groupes et Utilisateur
 
-
 #### A. des Groupes et Utilisateur
 
 Ajout:
@@ -71,22 +70,30 @@ sh ./config/3.users_groups.sh DEL_USER_HOME $USER;
 sh ./config/3.users_groups.sh DEL_GROUP $GROUP;
 ````
 
-#### B. Permission Sudo
+-----------------------------------------------------------------------------------------------------
 
-`Méthode 2: Crée un fichier dans /etc/sudoers.d/marc (Configurable)
+## V. Permission Sudo(Méthode 1 et 2)
 
-Méthode 1: Ajouter l'utilisateur au groupe sudo     (Non-configuranle)
-`
+#### A. Méthode 1
 
-Ajouter (2 Méthodes)
+Ajouter
 ````console
 sh ./config/3.users_groups.sh ADD_SUDOER $USER;
-#sh ./config/3.users_groups.sh ADD_USER_GROUP $USER sudo;
 ````
-Supprimer (2 Méthodes)
+Supprimer
 ````console
 sh ./config/3.users_groups.sh DEL_USER_GROUP $USER sudo;
-#sh ./config/3.users_groups.sh DEL_SUDOER $USER;
+````
+
+#### B. Méthode 2
+
+Ajouter
+````console
+sh ./config/3.users_groups.sh ADD_USER_GROUP $USER sudo;
+````
+Supprimer
+````console
+sh ./config/3.users_groups.sh DEL_SUDOER $USER;
 ````
 
 #### C. Vérification
