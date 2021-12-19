@@ -3,7 +3,7 @@
 ########################################################
 #
 # ./CubeCoders.sh <parametre>
-# 1>NULL 2>NULL
+# 1>/dev/null 2>/dev/null
 #
 # ---------------------------------------------------------------------------------------------------
 clear;
@@ -14,11 +14,11 @@ if [ -z $1 ]
 # ---------------------------------------------------------------------------------------------------
  elif [ "$1" = "PAQUETS" ]
   then
-   apt update 1>NULL 2>NULL;
+   apt update 1>/dev/null 2>/dev/null;
    apt install -y apt-transport-https dirmngr software-properties-common sudo;
    apt-key adv --fetch-keys http://repo.cubecoders.com/archive.key;
    apt-add-repository "deb http://repo.cubecoders.com/ debian/"
-   apt update 1>NULL 2>NULL;
+   apt update 1>/dev/null 2>/dev/null;
 # ---------------------------------------------------------------------------------------------------
  elif [ "$1" = "AMP" ]
   then
