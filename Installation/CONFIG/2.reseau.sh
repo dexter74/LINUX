@@ -2,14 +2,13 @@
 # Script de Configuration des Interfaces Réseaux #
 ##################################################
 
-################################
-# Desactiver le protocole IPV6 #
-################################
+# ./2.reseau.sh <Argument>
+
 
 if [ -z $1 ]
 # ----------------------------
  then
- echo "Argument valide: DHCP, STATIC"
+ echo "Argument valide: DHCP, STATIC, IPV6"
 # ----------------------------
  elif [ $1 = "DHCP" ]
   then
@@ -50,16 +49,13 @@ iface $NET_INTERFACE1 inet static
   gateway $NET_GATEWAY
   dns-nameservers $DOMAINE" > /etc/network/interfaces;
 cat  /etc/network/interfaces ;
-
-
 # ----------------------------
- elif [ $1 = "IV6_OFF" ]
+ elif [ $1 = "IPV6" ]
   then
    echo "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.d/70-disable-ipv6.conf ;
+   cat /etc/sysctl.d/70-disable-ipv6.conf | grep "^net.ipv6.conf.all.disable_ipv6";
 # ----------------------------
  else
  echo "Script en Erreur"
 # ----------------------------
 fi
-
-
