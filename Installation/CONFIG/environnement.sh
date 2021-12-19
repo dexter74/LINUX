@@ -24,9 +24,9 @@ echo export REGION=\'$5\' >> $SYSOUT
 echo export VILLE=\'$6\' >> $SYSOUT
 echo export LANGUE=\'$7\' >> $SYSOUT
 echo export SSH_KEY=\'MAKEY\' >> $SYSOUT
-echo '############################' >> $SYSOUT
-echo '# Information sur le Rseau #' >> $SYSOUT
-echo '############################' >> $SYSOUT
+echo '#############################' >> $SYSOUT
+echo '# Information sur le Reseau #' >> $SYSOUT
+echo '#############################' >> $SYSOUT
 echo export NET_LOOPBACK=\'$(ip link   | grep '^1:' | cut -c 4-20 |cut -d ':' -f 1)\' >> $SYSOUT
 echo export NET_INTERFACE1=\'$(ip link | grep '^2:' | cut -c 4-20 |cut -d ':' -f 1)\' >> $SYSOUT
 echo export NET_INTERFACE2=\'$(ip link | grep '^3:' | cut -c 4-20 |cut -d ':' -f 1)\' >> $SYSOUT
