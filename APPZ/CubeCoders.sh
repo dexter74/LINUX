@@ -42,19 +42,22 @@ if [ -z $1 ]
 else
  echo "Script KO"
 fi
-    
-ampinstmgr --ShowModuleList; # McMyAdmin, Minecraft, Rust, srcds, StarBound, JC2MP, ADS, Arma3, ARK, Factorio SevenDays, Generic, FiveM
+
+
 ampinstmgr stop marc;
 echo marc | ampinstmgr --DeleteInstance marc;
 ampinstmgr --ShowInstancesList;
-
-
-ampinstmgr --CreateInstance McMyAdmin marc 192.168.1.40 5000 f8e10a81-1d3d-44d2-b178-57c3aeb0a47e Drthrax74 Azerty74 1> /dev/null 2> /dev/null;
+ampinstmgr --CreateInstance ADS marc 192.168.1.40 5000 f8e10a81-1d3d-44d2-b178-57c3aeb0a47e Drthrax74 Azerty74 1> /dev/null 2> /dev/null;
 ampinstmgr start marc;
-ampinstmgr --ShowInstancesList;
-ampinstmgr View marc;
+
+
+
 
 http://192.168.1.40:5000/
 Drthrax74
 Azerty74
 
+
+#ampinstmgr --ShowModuleList; # McMyAdmin, Minecraft, Rust, srcds, StarBound, JC2MP, ADS, Arma3, ARK, Factorio SevenDays, Generic, FiveM
+#ampinstmgr --ShowInstancesList;
+#ampinstmgr View marc;
