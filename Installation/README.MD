@@ -1,16 +1,9 @@
 -----------------------------------------------------------------------------------------------------
 
-## I. Création de l'arborescence des dossiers
+## I. Téléchargement des scripts
 ````console
 rm -r {config,check} 1>/dev/null 2>/dev/null;
 mkdir {config,check} 1>/dev/null 2>/dev/null;
-clear;
-````
-
------------------------------------------------------------------------------------------------------
-
-## II. Téléchargements des Scripts
-````console
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/0.environnement.sh -O ./config/0.environnement.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/1.host.sh          -O ./config/1.host.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/2.reseau.sh        -O ./config/2.reseau.sh;
@@ -22,7 +15,7 @@ clear;
 
 -----------------------------------------------------------------------------------------------------
 
-## III. Configuration de la machine
+## II. Configuration de la machine
 
 #### A. Configuration de l'environnement
 ````console
@@ -31,21 +24,19 @@ sh ./config/0.environnement.sh Debian buster SLDEBIAN04 LAN Europe Paris fr_FR.U
 marc administrateur admin 1001 1001 marc Azerty74;
 ````
 
-#### B. Configuration du Host / Hostname
+**Host**
 ````console
 sh ./config/1.host.sh;
 ````
 
-#### C. Configuration du Réseau
-
-##### DHCP + IPV6 OFF:
+**DHCP + IPV6 OFF**
 ````console
 sh ./config/2.reseau.sh DHCP;
 sh ./config/2.reseau.sh IPV6_OFF;
 sh ./config/2.reseau.sh CHECK;
 ````
 
-##### STATIC + IPV6 OFF:
+** STATIC + IPV6 OFF:
 ````console
 sh ./config/2.reseau.sh STATIC;
 sh ./config/2.reseau.sh IPV6_OFF;
@@ -54,19 +45,13 @@ sh ./config/2.reseau.sh CHECK;
 
 -----------------------------------------------------------------------------------------------------
 
-## IV. Gestion des Groupes et Utilisateur
+## III. Gestion des Groupes et Utilisateur
 
-#### A. des Groupes et Utilisateur
-
-Supprimer:
 ````console
 sh ./config/4.users_groups.sh DEL_USER $USER;
 sh ./config/4.users_groups.sh DEL_USER_HOME $USER;
 sh ./config/4.users_groups.sh DEL_GROUP $GROUP;
-````
 
-Ajouter:
-````console
 sh ./config/4.users_groups.sh ADD_GROUP $GROUP $GROUP_UID;
 sh ./config/4.users_groups.sh ADD_USER $USER $USER_ID $GROUP users;
 sh ./config/4.users_groups.sh PASSWORD $USER $PASS;
@@ -74,11 +59,19 @@ sh ./config/4.users_groups.sh PASSWORD $USER $PASS;
 
 -----------------------------------------------------------------------------------------------------
 
-## VI. Installation des Paquets 
+## IV. Installation des Paquets 
 ````console
-sh ./config/3.Paquets.sh
+sh ./config/3.Paquets.sh CDROM;
+sh ./config/3.Paquets.sh BACKPORT;
+sh ./config/3.Paquets.sh MAJ;
+sh ./config/3.Paquets.sh BASE;
+sh ./config/3.Paquets.sh OUTIL;
+sh ./config/3.Paquets.sh QEMU;
+sh ./config/3.Paquets.sh SAMBA;
+sh ./config/3.Paquets.sh KERNEL;
+sh ./config/3.Paquets.sh SERVICE_ON;
+sh ./config/3.Paquets.sh SERVICE_OFF;
 ````
-
 
 
 -----------------------------------------------------------------------------------------------------
