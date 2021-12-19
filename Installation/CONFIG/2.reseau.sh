@@ -8,7 +8,12 @@
 if [ -z $1 ]
  then
   clear;
-  echo "Argument valide: DHCP, STATIC, IPV6, CHECK"
+  echo "Argument valide: 
+   - DHCP
+   - STATIC
+   - IPV6_OFF
+   - IPV6_ON
+   - CHECK"
 # ------------------------------------------------------------------------------------
  elif [ $1 = "DHCP" ]
   then
@@ -52,9 +57,14 @@ iface $NET_INTERFACE1 inet static
 
 
 # ------------------------------------------------------------------------------------
- elif [ $1 = "IPV6" ]
+ elif [ $1 = "IPV6_OFF" ]
   then
    echo "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.d/70-disable-ipv6.conf ;
+
+# ------------------------------------------------------------------------------------
+ elif [ $1 = "IPV6_ON" ]
+  then
+   echo "net.ipv6.conf.all.disable_ipv6 = 0" > /etc/sysctl.d/70-disable-ipv6.conf ;
   
 
 # ------------------------------------------------------------------------------------
