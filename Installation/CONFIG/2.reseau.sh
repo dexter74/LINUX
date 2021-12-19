@@ -8,7 +8,7 @@
 if [ -z $1 ]
  then
   clear;
-  echo "Argument valide: DHCP, STATIC, IPV6"
+  echo "Argument valide: DHCP, STATIC, IPV6, CHECK"
 # ------------------------------------------------------------------------------------
  elif [ $1 = "DHCP" ]
   then
