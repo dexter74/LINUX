@@ -15,6 +15,9 @@ echo '# Information sur le Système #  '
 echo '##############################  '
 echo 'export DISTRIB='$1'             '
 echo 'export RELEASE='$2'             '
+
+
+
 echo 'export HOSTNAME='$3'            '
 echo 'export DOMAINE='$4'             '
 echo 'export REGION='$5'              '
