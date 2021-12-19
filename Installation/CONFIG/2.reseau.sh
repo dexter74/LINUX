@@ -26,3 +26,24 @@ cat  /etc/network/interfaces ;
  else
   echo "Merci d'indiquer un parametre: DHCP, STATIC"
 fi
+
+
+
+if [ -z $1 ]
+ then
+  echo "Aucun Parametre"
+# ----------------------------
+ elif [ $1 = "DHCP" ]
+  then
+  echo "Réseau en DHCP"
+# ----------------------------
+
+ elif [ $1 = "STATIC" ]
+  then
+  echo "Réseau en Static"
+# ----------------------------
+ else
+  echo "Mauvais Paramètre"
+# ----------------------------
+fi
+
