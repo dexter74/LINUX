@@ -14,8 +14,8 @@ clear;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/0.environnement.sh -O ./config/0.environnement.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/1.host.sh          -O ./config/1.host.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/2.reseau.sh        -O ./config/2.reseau.sh;
-wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/3.users_groups.sh  -O ./config/3.users_groups.sh;
-wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/SSH.sh             -O ./config/4.SSH.sh;
+wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/4.users_groups.sh  -O ./config/4.users_groups.sh;
+wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/SSH.sh             -O ./config/5.SSH.sh;
 clear;
 ````
 
@@ -59,16 +59,16 @@ sh ./config/2.reseau.sh CHECK;
 
 Supprimer:
 ````console
-sh ./config/3.users_groups.sh DEL_USER $USER;
-sh ./config/3.users_groups.sh DEL_USER_HOME $USER;
-sh ./config/3.users_groups.sh DEL_GROUP $GROUP;
+sh ./config/4.users_groups.sh DEL_USER $USER;
+sh ./config/4.users_groups.sh DEL_USER_HOME $USER;
+sh ./config/4.users_groups.sh DEL_GROUP $GROUP;
 ````
 
 Ajouter:
 ````console
-sh ./config/3.users_groups.sh ADD_GROUP $GROUP $GROUP_UID;
-sh ./config/3.users_groups.sh ADD_USER $USER $USER_ID $GROUP users;
-sh ./config/3.users_groups.sh PASSWORD $USER $PASS;
+sh ./config/4.users_groups.sh ADD_GROUP $GROUP $GROUP_UID;
+sh ./config/4.users_groups.sh ADD_USER $USER $USER_ID $GROUP users;
+sh ./config/4.users_groups.sh PASSWORD $USER $PASS;
 ````
 
 
@@ -80,12 +80,12 @@ sh ./config/3.users_groups.sh PASSWORD $USER $PASS;
 
 Supprimer
 ````console
-sh ./config/3.users_groups.sh DEL_USER_GROUP $USER sudo;
+sh ./config/4.users_groups.sh DEL_USER_GROUP $USER sudo;
 ````
 
 Ajouter
 ````console
-sh ./config/3.users_groups.sh ADD_SUDOER $USER;
+sh ./config/4.users_groups.sh ADD_SUDOER $USER;
 ````
 
 
@@ -93,20 +93,19 @@ sh ./config/3.users_groups.sh ADD_SUDOER $USER;
 
 Supprimer
 ````console
-sh ./config/3.users_groups.sh DEL_SUDOER $USER;
+sh ./config/4.users_groups.sh DEL_SUDOER $USER;
 ````
 
 Ajouter
 ````console
-sh ./config/3.users_groups.sh ADD_USER_GROUP $USER sudo;
+sh ./config/4.users_groups.sh ADD_USER_GROUP $USER sudo;
 ````
 
 
 #### C. Vérification
 ````console
-sh ./config/3.users_groups.sh CHECK $USER;
+sh ./config/4.users_groups.sh CHECK $USER;
 ````
-
 
 -----------------------------------------------------------------------------------------------------
 
