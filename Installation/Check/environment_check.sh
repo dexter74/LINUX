@@ -27,4 +27,6 @@ echo "# ----------------------------------------"
 echo "# - UNIX  - USER   : [$USER_ID] $USER:$PASS"
 echo "# - UNIX  - Groupe : [$GROUP_UID] $GROUP"
 echo "# - SAMBA - COmpte : [XXXX] $SAMBA_USER:$SAMBA_PASS"
+echo "#"
 echo "################################################"
+
