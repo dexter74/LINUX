@@ -10,6 +10,7 @@ if [ -z $1 ]
   - ADD_GROUP <USER> <GID>
   - ADD_USER  <USER> <UID> <GID>
   - PASS      <USER> <NEw_PASS>
+  - ROOT      <USER> (Expérimental)
   "
 
 # ------------------------------------------------------------
@@ -57,7 +58,7 @@ if [ -z $1 ]
  elif [ $1 = "ROOT" ]
   then
    clear
-    echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$2;
+    echo "$2 ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$2;
 
 # ------------------------------------------------------------
  else
