@@ -17,7 +17,8 @@ if [ -z $1 ]
    wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_amd64.tar.gz -O /tmp/AdGuardHome_linux_amd64.tar.gz
    tar -xf /tmp/AdGuardHome_linux_amd64.tar.gz -C /opt
 # --------------------------------------------
- elif [ "$1" = "ENABLE" ]
+# || Signifie OR
+ elif [ "$1" = "ENABLE" ] || [ "$1" = "INSTALL" ]
   then
    /opt/AdGuardHome/AdGuardHome -s install
 # --------------------------------------------
