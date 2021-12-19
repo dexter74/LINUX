@@ -11,12 +11,11 @@ if [ -z $1 ]
   - STEP_1: Création des dossiers SSH
   - STEP_2: Insertion de la Clé SSH sur le serveur
   - STEP_3: Modification des permissions
-  - STEP_4: Backup
-  - STEP_5: Recovery
-  - STEP_6: Sécurisation du SSH
-  - STEP_7: Relance du service
+  - STEP_4: Sécurisation du SSH
+  - STEP_5: Relance du service
+  - STEP_6: Backup
+  - STEP_7: Recovery
   "
-
 # -------------------------------------------------------------------------------------------
 # Création des dossiers SSH
  elif [ $1 = "STEP_1" ]
@@ -43,22 +42,10 @@ if [ -z $1 ]
    #User:
    chmod 700 /home/$USER/.ssh ;
    chmod 600 /home/$USER/.ssh/authorized_keys ;
-# -------------------------------------------------------------------------------------------
-# Backup
- elif [ $1 = "STEP_4" ]
-  then
-   clear;
-   cp /etc/ssh/sshd_config /etc/ssh/sshd_config.old;
 
 # -------------------------------------------------------------------------------------------
-# Recovery
- elif [ $1 = "STEP_5" ]
-  then
-   clear;
-   cp /etc/ssh/sshd_config.old /etc/ssh/sshd_config;
-# -------------------------------------------------------------------------------------------
 # Sécurisation du SSH
- elif [ $1 = "STEP_6" ]
+ elif [ $1 = "STEP_4" ]
   then
    clear;
    # Limiter l'accès SSH au Groupe / USER suivant:
@@ -104,10 +91,24 @@ if [ -z $1 ]
    echo "Sécurisation Terminé";
 # -------------------------------------------------------------------------------------------
 # Relance du service
- elif [ $1 = "STEP_7" ]
+ elif [ $1 = "STEP_5" ]
   then
    clear;
    systemctl restart ssh;
+# -------------------------------------------------------------------------------------------
+# Backup
+ elif [ $1 = "STEP_6" ]
+  then
+   clear;
+   cp /etc/ssh/sshd_config /etc/ssh/sshd_config.old;
+
+# -------------------------------------------------------------------------------------------
+# Recovery
+ elif [ $1 = "STEP_7" ]
+  then
+   clear;
+   cp /etc/ssh/sshd_config.old /etc/ssh/sshd_config;
+
 # -------------------------------------------------------------------------------------------
  else
   echo "Script KO"
