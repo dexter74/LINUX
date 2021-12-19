@@ -11,8 +11,6 @@ wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/0
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/1.host.sh -O ./config/1.host.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/2.reseau.sh -O ./config/2.reseau.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/3.users_groups.sh -O ./config/3.users_groups.sh;
-wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/Check/environment.sh -O ./check/environnement.sh;
-clear;
 ````
 
 ## III. Configuration de la machine
