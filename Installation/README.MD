@@ -18,9 +18,18 @@ wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/u
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/Check/environment_check.sh -O ./check/environment.sh 1>/dev/null 2>/dev/null;
 ````
 
-**Exécution des Scripts**
+**Configuration Environnement**
 ````console
-./config/0.environnement.sh <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> <arg> 
+sh ./config/0.environnement.sh Debian buster SLDEBIAN04 LAN Europe Paris fr_FR.UTF-8 192.168.1.43 192.168.1.1 192.168.1.1 192.168.1.41 marc administrateur admin 1001 1001
+sh ./check/environment.sh
+````
+
+
+
+
+
+
+````console
 ./config/1.host.sh
 ./config/2.reseau.sh
 ./config/3.users_groups.sh
