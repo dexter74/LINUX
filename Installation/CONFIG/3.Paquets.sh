@@ -6,7 +6,19 @@ if [ -z $1 ]
 # -----------------------------------------------------------------------------------------------
  then
   clear;
-  echo "Merci d'indiquer un argument"
+  echo "Merci d'indiquer un argument:
+  - CDROM
+  - BACKPORT
+  - MAJ
+  - FIX
+  - BASE
+  - OUTIL
+  - QEMU
+  - SAMBA
+  - KERNEL
+  - SERVICE_OFF
+  - SERVICE_ON
+  "
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "CDROM" ]
   then
