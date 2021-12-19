@@ -25,13 +25,13 @@ wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/3
 ````console
 sh ./config/0.environnement.sh Debian buster SLDEBIAN04 LAN Europe Paris fr_FR.UTF-8 \
 192.168.1.43 192.168.1.1 192.168.1.1 192.168.1.41 \
-marc administrateur admin 1001 1001 marc Azert74
+marc administrateur admin 1001 1001 marc Azert74;
 ````
 
 #### B. Configuration du Host / Hostname
 
 ````console
-sh ./config/1.host.sh
+sh ./config/1.host.sh;
 ````
 
 #### C. Configuration du Réseau
@@ -105,17 +105,17 @@ sh ./config/3.users_groups.sh CHECK $USER;
 
 Syntaxe:
 ````console
-sh ./config/3.users_groups.sh DEL_USER <USER>
-sh ./config/3.users_groups.sh DEL_USER_HOME <USER>
-sh ./config/3.users_groups.sh DEL_GROUP <GROUP>
-sh ./config/3.users_groups.sh ADD_GROUP <GROUP> <GID>
-sh ./config/3.users_groups.sh ADD_USER <USER> <UID> <GROUP PRIMAIRE> <GROUP SECONDAIRE> 
-sh ./config/3.users_groups.sh CHECK <USER>
-sh ./config/3.users_groups.sh DEL_USER_GROUP <USER> <GROUPE SECONDAIRE>
-sh ./config/3.users_groups.sh ADD_USER_GROUP <USER> <GROUPE SECONDAIRE>
-sh ./config/3.users_groups.sh PASSWORD <USER> <PASS>
-sh ./config/3.users_groups.sh DEL_SUDOER <USER>
-sh ./config/3.users_groups.sh ADD_SUDOER <USER>
+sh ./config/3.users_groups.sh DEL_USER <USER>;
+sh ./config/3.users_groups.sh DEL_USER_HOME <USER>;
+sh ./config/3.users_groups.sh DEL_GROUP <GROUP>;
+sh ./config/3.users_groups.sh ADD_GROUP <GROUP> <GID>;
+sh ./config/3.users_groups.sh ADD_USER <USER> <UID> <GROUP PRIMAIRE> <GROUP SECONDAIRE>;
+sh ./config/3.users_groups.sh CHECK <USER>;
+sh ./config/3.users_groups.sh DEL_USER_GROUP <USER> <GROUPE SECONDAIRE>;
+sh ./config/3.users_groups.sh ADD_USER_GROUP <USER> <GROUPE SECONDAIRE>;
+sh ./config/3.users_groups.sh PASSWORD <USER> <PASS>;;=
+sh ./config/3.users_groups.sh DEL_SUDOER <USER>;
+sh ./config/3.users_groups.sh ADD_SUDOER <USER>;
 ````
 
 
