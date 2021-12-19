@@ -19,7 +19,7 @@ SYSOUT=/etc/profile.d/ENVIRONNEMENT.sh
 echo '##############################  '
 echo '# Information sur le Système #  '
 echo '##############################  '
-echo 'export DISTRIB='$1'             '
+echo 'export DISTRIB\''$1'\'          '
 echo 'export RELEASE='$2'             '
 
 
