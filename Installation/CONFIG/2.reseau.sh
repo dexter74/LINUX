@@ -4,12 +4,11 @@
 
 # ./2.reseau.sh <Argument>
 
-
+# ------------------------------------------------------------------------------------
 if [ -z $1 ]
-# ----------------------------
  then
  echo "Argument valide: DHCP, STATIC, IPV6"
-# ----------------------------
+# ------------------------------------------------------------------------------------
  elif [ $1 = "DHCP" ]
   then
 clear;
@@ -25,8 +24,7 @@ iface $NET_LOOPBACK inet loopback
 auto $NET_INTERFACE1
 allow-hotplug $NET_INTERFACE1
 iface $NET_INTERFACE1 inet dhcp" > /etc/network/interfaces;
-cat  /etc/network/interfaces ;
-# ----------------------------
+# ------------------------------------------------------------------------------------
  elif [ $1 = "STATIC" ]
   then
 clear;
@@ -49,12 +47,17 @@ iface $NET_INTERFACE1 inet static
   gateway $NET_GATEWAY
   dns-nameservers $DOMAINE" > /etc/network/interfaces;
 cat  /etc/network/interfaces ;
-# ----------------------------
+# ------------------------------------------------------------------------------------
  elif [ $1 = "IPV6" ]
   then
    echo "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.d/70-disable-ipv6.conf ;
-   cat /etc/sysctl.d/70-disable-ipv6.conf | grep "^net.ipv6.conf.all.disable_ipv6";
-# ----------------------------
+  
+# ------------------------------------------------------------------------------------
+ elif [ $1 = "CHECK" ]
+  then
+   clear;
+   cat /etc/network/interfaces ; cat /etc/sysctl.d/70-disable-ipv6.conf | grep "^net.ipv6.conf.all.disable_ipv6";
+# ------------------------------------------------------------------------------------
  else
  echo "Script en Erreur"
 # ----------------------------
