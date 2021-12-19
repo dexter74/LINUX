@@ -6,17 +6,17 @@ if [ -z $1 ]
  then
   clear;
 	echo "Argument Disponible:
-	- DEL_USER       <USER>
-	- DEL_USER_HOME  <USER>
-	- DEL_GROUP      <GROUP>
-	- ADD_GROUP      <GROUP> <GID>
-	- ADD_USER       <USER>  <UID> <GROUP Primaire> <Group secondaire>
-	- DEL_USER_GROUP <USER>  <GROUP>
-	- ADD_USER_GROUP <USER>  <GROUP>
-	- PASSWORD       <USER>  <PASS>
-	- CHECK          <USER>
-	- ADD_SUDOER	 <USER>
-	- DEL_SUDOER	 <USER>
+	- DEL_USER       \$USER
+	- DEL_USER_HOME  \$USER
+	- DEL_GROUP      \$GROUP
+	- ADD_GROUP      \$GROUP \$GROUP_UID
+	- ADD_USER       \$USER  \$GROUP_UID user sudo
+	- DEL_USER_GROUP \$USER  \$GROUP
+	- ADD_USER_GROUP \$USER  \$GROUP
+	- PASSWORD       \$USER  \$PASS
+	- CHECK          \$USER
+	- ADD_SUDOER	 \$USER
+	- DEL_SUDOER	 \$USER
 	"
 
 
