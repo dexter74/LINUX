@@ -32,13 +32,16 @@ echo export NET_GATEWAY=\'$9\' >> $SYSOUT
 echo export NET_DNS0=\'$10\' >> $SYSOUT
 echo export NET_DNS1=\'$11\' >> $SYSOUT
 echo '############################' >> $SYSOUT
-echo '# Information sur le Rseau #' >> $SYSOUT
+echo '# Information sur les USER #' >> $SYSOUT
 echo '############################' >> $SYSOUT
 echo export USER=\'$12\' >> $SYSOUT
 echo export GROUP=\'$13\' >> $SYSOUT
 echo export PASS=\'$14\' >> $SYSOUT
 echo export USER_ID=\'$15\' >> $SYSOUT
 echo export GROUP_UID=\'$16\' >> $SYSOUT
-echo export APPZ_SAMBA_USER=\'$17\' >> $SYSOUT
-echo export APPZ_SAMBA_PASS=\'$18\' >> $SYSOUT
+echo '##########################' >> $SYSOUT
+echo '# COnfiguration des APPZ #' >> $SYSOUT
+echo '##########################' >> $SYSOUT
+echo export SAMBA_USER=\'$17\' >> $SYSOUT
+echo export SAMBA_PASS=\'$18\' >> $SYSOUT
 clear ; cat $SYSOUT;
