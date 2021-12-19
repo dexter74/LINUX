@@ -52,6 +52,7 @@ sh ./config/3.users_groups.sh <USER> <PASS>
 
 ## IV. Gestion des Utilisateurs et Groupes
 
+Syntaxe:
 ````console
 sh ./config/3.users_groups.sh DEL_USER <USER>
 sh ./config/3.users_groups.sh DEL_USER_HOME <USER>
@@ -64,5 +65,21 @@ sh ./config/3.users_groups.sh ADD_USER_GROUP <USER> <GROUPE SECONDAIRE>
 sh ./config/3.users_groups.sh PASSWORD <USER> <PASS>
 sh ./config/3.users_groups.sh DEL_SUDOER <USER>
 sh ./config/3.users_groups.sh ADD_SUDOER <USER>
+````
+
+Exemple:
+````
+sh ./config/3.users_groups.sh DEL_USER marc
+sh ./config/3.users_groups.sh DEL_USER_HOME marc
+sh ./config/3.users_groups.sh DEL_GROUP admin
+sh ./config/3.users_groups.sh ADD_GROUP admin 1001
+sh ./config/3.users_groups.sh ADD_USER marc 1001 admin sudo
+ 
+sh ./config/3.users_groups.sh CHECK marc
+sh ./config/3.users_groups.sh DEL_USER_GROUP marc sudo
+sh ./config/3.users_groups.sh ADD_USER_GROUP marc sudo
+sh ./config/3.users_groups.sh PASSWORD marc admin
+sh ./config/3.users_groups.sh DEL_SUDOER marc
+sh ./config/3.users_groups.sh ADD_SUDOER marc
 ````
 
