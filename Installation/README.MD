@@ -32,14 +32,14 @@ sh ./config/1.host.sh
 
 #### C. Configuration du Réseau
 
-DHCP + IPV6 OFF:
+##### DHCP + IPV6 OFF:
 ````console
 sh ./config/2.reseau.sh DHCP;
 sh ./config/2.reseau.sh IPV6_OFF;
 sh ./config/2.reseau.sh CHECK;
 ````
 
-STATIC + IPV6 OFF:
+##### STATIC + IPV6 OFF:
 ````console
 sh ./config/2.reseau.sh STATIC;
 sh ./config/2.reseau.sh IPV6_OFF;
