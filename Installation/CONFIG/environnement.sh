@@ -10,7 +10,7 @@
 #Fichier Profil:
 SYSOUT=/etc/profile.d/ENVIRONNEMENT.sh
 
-echo '##############################' >> $SYSOUT
+echo '##############################'  > $SYSOUT
 echo '# Information sur le Système #' >> $SYSOUT
 echo '##############################' >> $SYSOUT
 echo export DISTRIB=\'$1\' >> $SYSOUT
@@ -44,4 +44,9 @@ echo '# Configuration des APPZ #' >> $SYSOUT
 echo '##########################' >> $SYSOUT
 echo export SAMBA_USER=\'$17\' >> $SYSOUT
 echo export SAMBA_PASS=\'$18\' >> $SYSOUT
+
+
+########################
+# Afficher le Résultat #
+########################
 clear ; cat $SYSOUT;
