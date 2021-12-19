@@ -64,6 +64,8 @@ elif [ "$1" = "DL" ]
  elif [ "$1" = "STOP" ]
   then
    echo "Lancement: STOP"
+ else
+  echo "Le paramètre $1 est inconnu"
 fi
 
 
