@@ -39,7 +39,7 @@ SERVICE()
 
 if [ -z $1 ]
  then
-  echo 'Paramètre: PURGE, DL, ENABLE, DISABLE, START, STOP'
+  echo 'Merci de préciser un paramètre (PURGE, DL, ENABLE, DISABLE, START, STOP)'
 # ----------------------------
  elif [ "$1" = "PURGE" ]
   then
