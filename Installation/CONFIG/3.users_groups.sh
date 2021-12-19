@@ -64,18 +64,18 @@ if [ -z $1 ]
 # $2: USER | $3 Group
  elif [ $1 = "CHECK" ]
   then
-   clear
+   clear;
     echo "-------------------"
-    cat /etc/passwd | grep $2
+    cat /etc/passwd | grep $2;
     echo "-------------------"
-    cat /etc/group  | grep $3
+    cat /etc/group  | grep $3;
     echo "-------------------"
-    cat /etc/sudoers.d/$2
+    cat /etc/sudoers.d/$2;
     echo "-------------------"
-    id $2
+    id $2;
 
 # ------------------------------------------------------------
  else
-  echo "Argument non reconnu"
+  echo "Argument non reconnu";
 # ------------------------------------------------------------
 fi
