@@ -57,9 +57,9 @@ if [ -z $1 ]
  elif [ $1 = "KERNEL" ]
   then
    clear;
-   apt install -t -y buster-backports 1>/dev/NULL 2>/dev/NULL;;
-   apt install -t -y linux-image-amd64 1>/dev/NULL 2>/dev/NULL;;
-   apt install -t -y firmware-linux 1>/dev/NULL 2>/dev/NULL;;
+   apt install -t -y buster-backports 1>/dev/NULL 2>/dev/NULL;
+   apt install -t -y linux-image-amd64 1>/dev/NULL 2>/dev/NULL;
+   apt install -t -y firmware-linux 1>/dev/NULL 2>/dev/NULL;
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "SERVICE_OFF" ]
   then
