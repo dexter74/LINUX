@@ -47,5 +47,5 @@ sh ./config/2.reseau.sh CHECK;
 ````
 
 ````console
-sh ./config/3.users_groups.sh
+sh ./config/3.users_groups.sh <USER> <PASS>
 ````
