@@ -40,7 +40,7 @@ echo export PASS=\'$14\' >> $SYSOUT
 echo export USER_ID=\'$15\' >> $SYSOUT
 echo export GROUP_UID=\'$16\' >> $SYSOUT
 echo '##########################' >> $SYSOUT
-echo '# COnfiguration des APPZ #' >> $SYSOUT
+echo '# Configuration des APPZ #' >> $SYSOUT
 echo '##########################' >> $SYSOUT
 echo export SAMBA_USER=\'$17\' >> $SYSOUT
 echo export SAMBA_PASS=\'$18\' >> $SYSOUT
