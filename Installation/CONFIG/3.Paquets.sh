@@ -64,13 +64,18 @@ if [ -z $1 ]
  elif [ $1 = "SERVICE_OFF" ]
   then
    clear;
-   systemctl disable smbd;
-   systemctl disable iscsid.service;
-   systemctl disable open-iscsi.service;
-   systemctl stop smbd;
-   systemctl stop iscsid.service;
-   systemctl stop open-iscsi.service;
+   systemctl disable --now smbd;
+   systemctl disable --now iscsid.service;
+   systemctl disable --now open-iscsi.service;
 # -----------------------------------------------------------------------------------------------
+ elif [ $1 = "SERVICE_ON" ]
+  then
+   clear;
+   systemctl enable --now smbd;
+   systemctl enable --now iscsid.service;
+   systemctl enable --now open-iscsi.service;
+# -----------------------------------------------------------------------------------------------
+
  else
   echo "Script KO"
 fi
