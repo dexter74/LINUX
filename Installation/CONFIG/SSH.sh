@@ -1,5 +1,5 @@
 ####################################################
-# Script pour la configuration de la connexion SSH # 
+# Script pour la configuration de la connexion SSH #
 ####################################################
 
 
