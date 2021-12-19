@@ -112,13 +112,13 @@ sh ./config/4.users_groups.sh CHECK $USER;
 
 ## VI. Sécurisation du Serveur par authentification SSH
 ```
-sh ./config/5.SSH.sh STEP_1;# Creation dossier ssh
-sh ./config/5.SSH.sh STEP_2;# Insertion CLe
-sh ./config/5.SSH.sh STEP_3;# Permission
-sh ./config/5.SSH.sh STEP_4;# Backup
-sh ./config/5.SSH.sh STEP_6;# Secursation
-sh ./config/5.SSH.sh STEP_7;# Relance Service
-sh ./config/5.SSH.sh STEP_5;# Recovery
+sh ./config/5.SSH.sh STEP_1;# Creation dossier SSH
+sh ./config/5.SSH.sh STEP_2;# Insertion CLE
+sh ./config/5.SSH.sh STEP_3;# Modification Permission
+sh ./config/5.SSH.sh STEP_4;# Sécurisation SSH
+sh ./config/5.SSH.sh STEP_6;# Relance Service
+sh ./config/5.SSH.sh STEP_7;# Sauvegarde
+sh ./config/5.SSH.sh STEP_5;# Restauration
 ```
 
 -----------------------------------------------------------------------------------------------------
