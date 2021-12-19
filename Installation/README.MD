@@ -62,7 +62,7 @@ sh ./config/3.users_groups.sh CHECK <USER>
 sh ./config/3.users_groups.sh DEL_USER_GROUP <USER> <GROUPE SECONDAIRE>
 sh ./config/3.users_groups.sh ADD_USER_GROUP <USER> <GROUPE SECONDAIRE>
 sh ./config/3.users_groups.sh PASSWORD <USER> <PASS>
-sh ./config/3.users_groups.sh ADD_SUDOER <USER>
 sh ./config/3.users_groups.sh DEL_SUDOER <USER>
+sh ./config/3.users_groups.sh ADD_SUDOER <USER>
 ````
 
