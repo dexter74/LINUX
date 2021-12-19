@@ -102,9 +102,6 @@ sh ./config/3.users_groups.sh ADD_USER_GROUP $USER sudo;
 ````
 
 
-
-
-
 #### C. Vérification
 ````console
 sh ./config/3.users_groups.sh CHECK $USER;
