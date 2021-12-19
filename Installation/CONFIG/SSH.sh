@@ -74,13 +74,25 @@ if [ -z $1 ]
 fi
 
 
-#Défaut
-#AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2
-#PasswordAuthentication yes
-PermitRootLogin prohibit-password
-#PidFile /var/run/sshd.pid
-#PrintLastLog yes
-#PubkeyAuthentication yes
+# Recovery
+clear; cp /etc/ssh/sshd_config.old /etc/ssh/sshd_config;
+
+
+# Limiter l'accès SSH au Groupe / USER suivant:
+echo "AllowUsers $USER root" >> /etc/ssh/sshd_config;
+echo "AllowGroups $GROUP"       >> /etc/ssh/sshd_config;
+
+# Fichier contenant les Clés SSH
+sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile/g'                 /etc/ssh/sshd_config;
+
+# Fermer les connexions Zombie
+echo "KeepAlive no" >> /etc/ssh/sshd_config;
+
+# Ecouter une interface réseau
+sed -i 's/#ListenAddress ::/ListenAddress '$NET_ADDRESS'/g'       /etc/ssh/sshd_config;
+
+# Le serveur se déconnect si la connexion après X secondes
+sed -i 's/#LoginGraceTime 2m/LoginGraceTime 2m/g'                   /etc/ssh/sshd_config;
 
 # Authentification par Mot de passe (Yes à NO)
 sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g'  /etc/ssh/sshd_config;
@@ -91,27 +103,11 @@ sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords no/g'       /etc/ssh/ssh
 # Authentification du Root
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config;
 
-# Ecouter une interface réseau
-sed -i 's/#ListenAddress/ListenAddress $NET_ADDRESS/g'              /etc/ssh/sshd_config;
+# Définir emplacement PID
+sed -i 's/#PidFile/PidFile/g'                                       /etc/ssh/sshd_config;
 
 # Changer le port d'écouter SSH
 sed -i 's/#Port 22/Port 22/g'                                       /etc/ssh/sshd_config;
-
-# Limiter l'accès SSH au Groupe / USER suivant:
-sed -i 's/#AllowUsers/AllowUsers '$USER root'/g'                    /etc/ssh/sshd_config;
-sed -i 's/#AllowGroups/AllowGroups '$GROUP'/g'                      /etc/ssh/sshd_config;
-
-# Fichier contenant les Clés SSH
-sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile/g'                 /etc/ssh/sshd_config;
-
-# Fermer les connexions Zombie
-echo "KeepAlive no" >> /etc/ssh/sshd_config;
-
-# Le serveur se déconnect si la connexion après X secondes
-sed -i 's/#LoginGraceTime 2m/LoginGraceTime 2m/g'                   /etc/ssh/sshd_config;
-
-# Définir emplacement PID
-sed -i 's/#PidFile/PidFile/g'                                       /etc/ssh/sshd_config;
 
 # Afficher la Dernière Connexion
 sed -i 's/#PrintLastLog yes/PrintLastLog yes/g'                     /etc/ssh/sshd_config;
@@ -124,7 +120,8 @@ sed -i 's/#StrictModes yes/StrictModes yes/g'                       /etc/ssh/ssh
 
 systemctl restart ssh;
 
-grep "PasswordAuthentication yes\|^PermitRootLogin\|ListenAddress\|Port \|AllowUsers\|AllowGroups\|AuthorizedKeysFile\|KeepAlive\|LoginGraceTime\|PidFile\|PrintLastLog\|PubkeyAuthentication\|StrictModes" /etc/ssh/sshd_config;
+
+
 # ChallengeResponseAuthentication
 # Ciphers
 # ClientAliveInterval
