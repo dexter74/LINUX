@@ -44,19 +44,17 @@ else
 fi
     
 ampinstmgr --ShowModuleList; # McMyAdmin, Minecraft, Rust, srcds, StarBound, JC2MP, ADS, Arma3, ARK, Factorio SevenDays, Generic, FiveM
-ampinstmgr --CreateInstance McMyAdmin marc 0.0.0.0 5000 f8e10a81-1d3d-44d2-b178-57c3aeb0a47e Drthrax74 Azerty74;
-ampinstmgr reconfiguremultiple marc +Core.Login.AuthServerURL http://0.0.0.0:8080
-ampinstmgr start marc;
-ampinstmgr View marc;
+ampinstmgr stop marc;
+echo marc | ampinstmgr --DeleteInstance marc;
 ampinstmgr --ShowInstancesList;
 
 
+ampinstmgr --CreateInstance Factorio marc 192.168.1.40 5000 f8e10a81-1d3d-44d2-b178-57c3aeb0a47e Drthrax74 Azerty74 1> /dev/null 2> /dev/null;
+ampinstmgr start marc;
+ampinstmgr --ShowInstancesList;
+ampinstmgr View marc;
 
 http://192.168.1.40:5000/
 Drthrax74
 Azerty74
 
-
-ampinstmgr stop marc;
-echo srcds01 | ampinstmgr --DeleteInstance srcds01;
-echo marc | ampinstmgr --DeleteInstance marc;
