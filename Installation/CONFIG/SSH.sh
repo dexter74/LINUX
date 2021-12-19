@@ -38,7 +38,7 @@ if [ -z $1 ]
    chmod 700 /root/.ssh ;
    chmod 600 /root/.ssh/authorized_keys ;
    #User:
-   chmod 700 $USER/.ssh ;
+   chmod 700 /home/$USER/.ssh ;
    chmod 600 /home/$USER/.ssh/authorized_keys ;
 # ----------------------------------------------------------
  elif [ $1 = "STEP_4" ]
