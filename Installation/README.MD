@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------------------------------------
 
 ## I. Création de l'arborescence des dossiers
-````
+````console
 rm -r {config,check} 1>/dev/null 2>/dev/null;
 mkdir {config,check} 1>/dev/null 2>/dev/null;
 clear;
@@ -10,7 +10,7 @@ clear;
 -----------------------------------------------------------------------------------------------------
 
 ## II. Téléchargements des Scripts
-````
+````console
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/0.environnement.sh -O ./config/0.environnement.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/1.host.sh -O ./config/1.host.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/2.reseau.sh -O ./config/2.reseau.sh;
@@ -30,7 +30,6 @@ marc administrateur admin 1001 1001 marc Azert74;
 ````
 
 #### B. Configuration du Host / Hostname
-
 ````console
 sh ./config/1.host.sh;
 ````
@@ -57,19 +56,20 @@ sh ./config/2.reseau.sh CHECK;
 
 #### A. des Groupes et Utilisateur
 
-Ajout:
-````
-sh ./config/3.users_groups.sh ADD_GROUP $GROUP $GROUP_UID;
-sh ./config/3.users_groups.sh ADD_USER $USER $USER_ID $GROUP users;
-sh ./config/3.users_groups.sh PASSWORD $USER $PASS;
-````
-
-Suppression:
+Supprimer:
 ````console
 sh ./config/3.users_groups.sh DEL_USER $USER;
 sh ./config/3.users_groups.sh DEL_USER_HOME $USER;
 sh ./config/3.users_groups.sh DEL_GROUP $GROUP;
 ````
+
+Ajouter:
+````console
+sh ./config/3.users_groups.sh ADD_GROUP $GROUP $GROUP_UID;
+sh ./config/3.users_groups.sh ADD_USER $USER $USER_ID $GROUP users;
+sh ./config/3.users_groups.sh PASSWORD $USER $PASS;
+````
+
 
 -----------------------------------------------------------------------------------------------------
 
@@ -77,25 +77,29 @@ sh ./config/3.users_groups.sh DEL_GROUP $GROUP;
 
 #### A. Méthode 1
 
-Ajouter
-````console
-sh ./config/3.users_groups.sh ADD_SUDOER $USER;
-````
 Supprimer
 ````console
 sh ./config/3.users_groups.sh DEL_USER_GROUP $USER sudo;
 ````
 
+Ajouter
+````console
+sh ./config/3.users_groups.sh ADD_SUDOER $USER;
+````
+
+
 #### B. Méthode 2
+
+Supprimer
+````console
+sh ./config/3.users_groups.sh DEL_SUDOER $USER;
+````
 
 Ajouter
 ````console
 sh ./config/3.users_groups.sh ADD_USER_GROUP $USER sudo;
 ````
-Supprimer
-````console
-sh ./config/3.users_groups.sh DEL_SUDOER $USER;
-````
+
 
 #### C. Vérification
 ````console
