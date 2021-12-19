@@ -21,28 +21,28 @@ if [ -z $1 ]
  elif [ $1 = "MAJ" ]
   then
    clear;
-   apt update -qq;
-   apt upgrade -y -q;
+   apt update  -qq     1>/dev/NULL 2>/dev/NULL;
+   apt upgrade -qq -y  1>/dev/NULL 2>/dev/NULL;
 # ------------------------------------------------------------
  elif [ $1 = "FIX" ]
   then
-   apt update --fix-missing -y;
-   dpkg --configure -a;
+   apt update --fix-missing -y 1>/dev/NULL 2>/dev/NULL;
+   dpkg --configure -a 1>/dev/NULL 2>/dev/NULL;
 # ------------------------------------------------------------
  elif [ $1 = "BASE" ]
   then
    clear;
-   apt install -y -qq bash-completion curl debconf-utils dnsutils git gnupg net-tools sudo unzip wget;
+   apt install -y -qq bash-completion curl debconf-utils dnsutils git gnupg net-tools sudo unzip wget 1>/dev/NULL 2>/dev/NULL;
 # ------------------------------------------------------------
  elif [ $1 = "OUTIL" ]
   then
    clear;
-   apt install -y -qq cifs-utils ntfs-3g open-iscsi;
+   apt install -y -qq cifs-utils ntfs-3g open-iscsi 1>/dev/NULL 2>/dev/NULL;
 # ------------------------------------------------------------
  elif [ $1 = "QEMU" ]
   then
    clear;
-   apt install -y -qq qemu-guest-agent;
+   apt install -y -qq qemu-guest-agent 1>/dev/NULL 2>/dev/NULL;
 
 # ------------------------------------------------------------
  elif [ $1 = "SAMBA" ]
@@ -51,14 +51,14 @@ if [ -z $1 ]
    echo "samba-common samba-common/workgroup string WORKGROUP" | debconf-set-selections;
    echo "samba-common samba-common/dhcp boolean false" | debconf-set-selections;
    echo "samba-common samba-common/do_debconf boolean true" | debconf-set-selections;
-   apt install -y -qq samba smbclient;
+   apt install -y -qq samba smbclient 1>/dev/NULL 2>/dev/NULL;
 # ------------------------------------------------------------
  elif [ $1 = "KERNEL" ]
   then
    clear;
-   apt install -t -y buster-backports;
-   apt install -t -y linux-image-amd64;
-   apt install -t -y firmware-linux;
+   apt install -t -y buster-backports 1>/dev/NULL 2>/dev/NULL;;
+   apt install -t -y linux-image-amd64 1>/dev/NULL 2>/dev/NULL;;
+   apt install -t -y firmware-linux 1>/dev/NULL 2>/dev/NULL;;
 # ------------------------------------------------------------
  elif [ $1 = "SERVICE_OFF" ]
   then
