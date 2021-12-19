@@ -24,6 +24,19 @@ if [ -z $1 ]
   then
    apt install -qq -y ampinstmgr 1>/dev/null 2>/dev/null;
 # ---------------------------------------------------------------------------------------------------
+ elif [ "$1" = "USER" ]
+  then
+   clear;
+   rm -r /home/amp;
+   delgroup supervision;
+   deluser amp;
+   clear;
+   addgroup supervision --gid 74240;
+   useradd amp --uid 1074 --home /home/amp/ --create-home --groups supervision --shell /bin/bash; 
+   echo "amp:admin" | chpasswd
+# ---------------------------------------------------------------------------------------------------
+ elif [ "$1" = "INSTANCE" ]
+  then
 # ---------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------
 else
