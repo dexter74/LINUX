@@ -24,21 +24,10 @@ SERVICE()
 
 
 
-###########################
-# Déclaration de Variable #
-###########################
-# Etat du service:
-# - install
-# - status
-# - start
-# - stop
-# - uninstall
-
-
 # ------------------------------------------------------------------------------------------------------------------------------------
 if [ -z $1 ]
  then
-  echo 'Merci de préciser un paramètre (PURGE, DL, ENABLE, DISABLE, START, STOP)'
+  echo 'Merci de préciser un paramètre (PURGE, DL, ENABLE, DISABLE, START, STOP, STATUS)'
 # --------------------------------------------
 
  elif [ "$1" = "PURGE" ]
@@ -68,6 +57,11 @@ elif [ "$1" = "DL" ]
  elif [ "$1" = "STOP" ]
   then
    /opt/AdGuardHome/AdGuardHome -s stop
+ else
+# --------------------------------------------
+ elif [ "$1" = "STATUS" ]
+  then
+   /opt/AdGuardHome/AdGuardHome -s status
  else
   echo 'Le paramètre $1 est inconnu'
 fi
