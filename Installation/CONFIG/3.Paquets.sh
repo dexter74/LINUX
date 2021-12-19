@@ -28,7 +28,7 @@ if [ -z $1 ]
  elif [ $1 = "BACKPORT" ]
   then
    clear;
-   echo "deb http://ftp.de.debian.org/debian buster main" > /etc/apt/sources.list\backport.list;
+   echo "deb http://ftp.de.debian.org/debian buster main" > /etc/apt/sources.list/backport.list;
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "MAJ" ]
   then
