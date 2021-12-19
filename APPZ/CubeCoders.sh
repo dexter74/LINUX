@@ -35,10 +35,21 @@ if [ -z $1 ]
    useradd amp --uid 1074 --home /home/amp/ --create-home --groups supervision --shell /bin/bash; 
    echo "amp:admin" | chpasswd
 # ---------------------------------------------------------------------------------------------------
- elif [ "$1" = "INSTANCE" ]
+ elif [ "$1" = "DELETE" ]
   then
 # ---------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------
 else
  echo "Script KO"
 fi
+
+
+
+    #ampinstmgr --ShowModuleList; # McMyAdmin, Minecraft, Rust, srcds, StarBound, JC2MP, ADS, Arma3, ARK, Factorio SevenDays, Generic, FiveM
+
+    #ampinstmgr --CreateInstance ADS marc 0.0.0.0 5000 f8e10a81-1d3d-44d2-b178-57c3aeb0a47e Drthrax74 Azerty74
+    #ampinstmgr start marc
+    #ampinstmgr View marc
+    #ampinstmgr --ShowInstancesList;
+    #ampinstmgr stop marc
+    #echo marc | ampinstmgr --DeleteInstance marc
