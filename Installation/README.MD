@@ -59,44 +59,40 @@ sh ./config/2.reseau.sh CHECK;
 
 Ajout:
 ````
-##########################################################
 sh ./config/3.users_groups.sh ADD_GROUP admin 1001;
 sh ./config/3.users_groups.sh ADD_USER marc 1001 admin users;
 sh ./config/3.users_groups.sh PASSWORD marc admin;
-##########################################################
 ````
 
 Suppression:
 ````console
-##########################################################
 sh ./config/3.users_groups.sh DEL_USER marc;
 sh ./config/3.users_groups.sh DEL_USER_HOME marc;
 sh ./config/3.users_groups.sh DEL_GROUP admin;
-##########################################################
 ````
 
 #### B. Permission Sudo
 
 Ajouter User dans Sudo (2 Méthodes)
 ````console
-sh ./config/3.users_groups.sh ADD_SUDOER marc;#
+sh ./config/3.users_groups.sh ADD_SUDOER marc;
 ````
 ````console
-sh ./config/3.users_groups.sh ADD_USER_GROUP marc sudo
+sh ./config/3.users_groups.sh ADD_USER_GROUP marc sudo;
 ````
 
 Supprimer User dans Sudo (2 Méthodes)
 ````console
-sh ./config/3.users_groups.sh DEL_SUDOER marc
+sh ./config/3.users_groups.sh DEL_SUDOER marc;
 ````
 ````console
-sh ./config/3.users_groups.sh DEL_USER_GROUP marc sudo
+sh ./config/3.users_groups.sh DEL_USER_GROUP marc sudo;
 ````
 
 
 #### C. Vérification
 ````console
-sh ./config/3.users_groups.sh CHECK marc
+sh ./config/3.users_groups.sh CHECK marc;
 ````
 
 
