@@ -108,26 +108,18 @@ sh ./config/3.users_groups.sh CHECK $USER;
 ````
 
 
-
-Syntaxe:
-````console
-sh ./config/3.users_groups.sh DEL_USER <USER>;
-sh ./config/3.users_groups.sh DEL_USER_HOME <USER>;
-sh ./config/3.users_groups.sh DEL_GROUP <GROUP>;
-sh ./config/3.users_groups.sh ADD_GROUP <GROUP> <GID>;
-sh ./config/3.users_groups.sh ADD_USER <USER> <UID> <GROUP PRIMAIRE> <GROUP SECONDAIRE>;
-sh ./config/3.users_groups.sh CHECK <USER>;
-sh ./config/3.users_groups.sh DEL_USER_GROUP <USER> <GROUPE SECONDAIRE>;
-sh ./config/3.users_groups.sh ADD_USER_GROUP <USER> <GROUPE SECONDAIRE>;
-sh ./config/3.users_groups.sh PASSWORD <USER> <PASS>;;=
-sh ./config/3.users_groups.sh DEL_SUDOER <USER>;
-sh ./config/3.users_groups.sh ADD_SUDOER <USER>;
-````
-
-
-
-
 -----------------------------------------------------------------------------------------------------
+
+## VI. Sécurisation du Serveur par authentification SSH
+```
+sh ./config/4.SSH.sh STEP_1;# Creation dossier ssh
+sh ./config/4.SSH.sh STEP_2;# Insertion CLe
+sh ./config/4.SSH.sh STEP_3;# Permission
+sh ./config/4.SSH.sh STEP_4;# Backup
+sh ./config/4.SSH.sh STEP_6;# Secursation
+sh ./config/4.SSH.sh STEP_7;# Relance Service
+sh ./config/4.SSH.sh STEP_5;# Recovery
+```
 
 -----------------------------------------------------------------------------------------------------
 
