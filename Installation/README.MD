@@ -1,9 +1,13 @@
+-----------------------------------------------------------------------------------------------------
+
 ## I. Création de l'arborescence des dossiers**
 ````
 rm -r {config,check} 1>/dev/null 2>/dev/null;
 mkdir {config,check} 1>/dev/null 2>/dev/null;
 clear;
 ````
+
+-----------------------------------------------------------------------------------------------------
 
 ## II. Téléchargements des Scripts
 ````
@@ -12,6 +16,8 @@ wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/1
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/2.reseau.sh -O ./config/2.reseau.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/3.users_groups.sh -O ./config/3.users_groups.sh;
 ````
+
+-----------------------------------------------------------------------------------------------------
 
 ## III. Configuration de la machine
 
@@ -44,9 +50,7 @@ sh ./config/2.reseau.sh IPV6_OFF;
 sh ./config/2.reseau.sh CHECK;
 ````
 
-````console
-sh ./config/3.users_groups.sh <USER> <PASS>
-````
+-----------------------------------------------------------------------------------------------------
 
 ## IV. Gestion des Utilisateurs et Groupes
 
@@ -80,4 +84,12 @@ sh ./config/3.users_groups.sh PASSWORD marc admin
 sh ./config/3.users_groups.sh DEL_SUDOER marc
 sh ./config/3.users_groups.sh ADD_SUDOER marc
 ````
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
 
