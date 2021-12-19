@@ -81,18 +81,16 @@ if [ -z $1 ]
     echo "$2:$3" | chpasswd ;
 
 # ------------------------------------------------------------
- elif [ $1 = "ADD_SUDOER" ]
-  then
-   clear;
-    echo "$2 ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$2;
-
-
-# ------------------------------------------------------------
  elif [ $1 = "DEL_SUDOER" ]
   then
    clear;
 	rm /etc/sudoers.d/$2;
 
+# ------------------------------------------------------------
+ elif [ $1 = "ADD_SUDOER" ]
+  then
+   clear;
+    echo "$2 ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$2;
 
 # ------------------------------------------------------------
  elif [ $1 = "CHECK" ]
