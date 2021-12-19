@@ -7,12 +7,13 @@ if [ -z $1 ]
   clear;
   echo "Argument Manquant:
   - DELETE    <USER> <GROUP>
-  - ADD_GROUP <USER> <GID>
+  - ADD_GROUP <GID>  <GROUP>
   - ADD_USER  <USER> <UID> <GID>
   - PASS      <USER> <NEw_PASS>
   - ROOT      <USER> (Expérimental)
   - CHECK     <USER> <GROUP>
   "
+
 
 # ------------------------------------------------------------
  elif [ $1 = "DELETE" ]
@@ -24,11 +25,11 @@ if [ -z $1 ]
 
 
 # ------------------------------------------------------------
-# $2: Group | $3: Group_ID
+# $2: Group_ID | $3: Group
  elif [ $1 = "ADD_GROUP" ]
   then
    clear;
-   addgroup $2 --gid $3;
+   groupadd -g $2 $3;
 
 
 # ------------------------------------------------------------
@@ -59,6 +60,7 @@ if [ -z $1 ]
   then
    clear
     echo "$2 ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$2;
+
 
 # ------------------------------------------------------------
 # $2: USER | $3 Group
