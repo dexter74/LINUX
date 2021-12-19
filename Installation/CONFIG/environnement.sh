@@ -4,11 +4,13 @@
 #
 # /etc/profile charge les scripts /etc/profile.d/*.sh
 
-# Env.sh <DISTRIB> <release> <hostname> <domaine> <region> <ville> <langue> <IPV4> <Passerelle> <DNS 0> <DNS 1> <USERNAME> <GROUP> <PASSWOD> <USER ID> <GROUP ID> <SAMBA USER> <SAMBA PASS>
+# XXXXX.sh <DISTRIB> <release> <hostname> <domaine> <region> <ville> <langue> <IPV4> <Passerelle> <DNS 0> <DNS 1> <USERNAME> <GROUP> <PASSWOD> <USER ID> <GROUP ID> <SAMBA USER> <SAMBA PASS>
 
-# Création du script "conf_env.sh"
-echo "#Fichier Profil:
+
+#Fichier Profil:
 FILE=/etc/profile.d/ENVIRONNEMENT.sh
+
+
 echo '##############################' > \$FILE
 echo '# Information sur le Système #' >> \$FILE
 echo '##############################' >> \$FILE
@@ -41,11 +43,4 @@ echo export PASS=\'\$14\'        >> \$FILE
 echo export USER_ID=\'\$15\'         >> \$FILE
 echo export GROUP_UID=\'\$16\'        >> \$FILE
 echo export APPZ_SAMBA_USER=\'\$17\'  >> \$FILE
-echo export APPZ_SAMBA_PASS=\'\$18\'  >> \$FILE " > conf_env.sh; clear;
-
-
-# Vérification: clear; echo "$APPZ_SAMBA_USER | $APPZ_SAMBA_PASS"; 
-# Check Export: clear; export | cut -c 12-50 | sort -k 1;
-  
-
-# USER=\'XXXX\' > USER='XXXX'
+echo export APPZ_SAMBA_PASS=\'\$18\'  >> \$FILE
