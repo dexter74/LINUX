@@ -39,31 +39,31 @@ SERVICE()
 
 if [ -z $1 ]
  then
-  echo 'Paramètre: DL, INSTALL, UNINSTALL, START, STOP'
-
- elif [ "$1" = "DL" ]
+  echo 'Paramètre: PURGE, DL, ENABLE, DISABLE, START, STOP'
+# ----------------------------
+ elif [ "$1" = "PURGE" ]
   then
-   echo "Lancement: Téléchargement"
-
- elif [ "$1" = "INSTALL" ]
+   echo "Lancement: PURGE"
+# ----------------------------
+elif [ "$1" = "DL" ]
   then
-   echo "Lancement: INSTALL"
-
- elif [ "$1" = "UNINSTALL" ]
+   echo "Lancement: DL"
+# ----------------------------
+ elif [ "$1" = "ENABLE" ]
   then
-   echo "Lancement: UNINSTALL"
-
+   echo "Lancement: ENABLE"
+# ----------------------------
+ elif [ "$1" = "DISABLE" ]
+  then
+   echo "Lancement: DISABLE"
+# ----------------------------
  elif [ "$1" = "START" ]
   then
    echo "Lancement: START"
-
-
+# ----------------------------
  elif [ "$1" = "STOP" ]
   then
    echo "Lancement: STOP"
-
- else
-  echo 'KO'
 fi
 
 
