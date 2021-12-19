@@ -25,10 +25,6 @@ sh ./check/environment.sh
 ````
 
 
-
-
-
-
 ````console
 ./config/1.host.sh
 ./config/2.reseau.sh
