@@ -11,6 +11,7 @@ if [ -z $1 ]
   - ADD_USER  <USER> <UID> <GID>
   - PASS      <USER> <NEw_PASS>
   - ROOT      <USER> (Expérimental)
+  - CHECK     <USER> <GROUP>
   "
 
 # ------------------------------------------------------------
@@ -49,9 +50,8 @@ if [ -z $1 ]
 # $2: USER | $3: PASS
  elif [ $1 = "PASS" ]
   then
-   clear
+   clear;
    echo "$2:$3" | chpasswd $2;
-
 
 # ------------------------------------------------------------
 # $2: USER
@@ -59,6 +59,20 @@ if [ -z $1 ]
   then
    clear
     echo "$2 ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$2;
+
+# ------------------------------------------------------------
+# $2: USER | $3 Group
+ elif [ $1 = "CHECK" ]
+  then
+   clear
+    echo "-------------------"
+    cat /etc/passwd | grep $2
+    echo "-------------------"
+    cat /etc/group  | grep $3
+    echo "-------------------"
+    cat /etc/sudoers.d/$2
+    echo "-------------------"
+    id $2
 
 # ------------------------------------------------------------
  else
