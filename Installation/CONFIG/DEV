@@ -1,8 +1,1 @@
-FILE=result
 
-echo '##############################' >  $FILE
-echo '# Information sur le Système #' >> $FILE
-echo '##############################' >> $FILE
-
-clear;
-cat $FILE
