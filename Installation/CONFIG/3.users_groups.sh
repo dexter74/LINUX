@@ -12,16 +12,44 @@ if [ -z $1 ]
  elif [ $1 = "DELETE" ]
   then
    clear; 
-   echo "Compte supprimé: $2"
-   echo "Groupe supprimé: $3"
+   deluser  $2;
+   delgroup $3;
+   rm -r    /home/$2;
+
 # ------------------------------------------------------------
+# $2: Group | $3: Group_ID
+ elif [ $1 = "ADD_GROUP" ]
+  then
+   clear;
+   addgroup $2 --gid $3;
+
+# ------------------------------------------------------------
+# $2 = USER | $3 USER_ID | $4 GROUP_ID
  elif [ $1 = "ADD_USER" ]
   then
    clear;
-   echo "User: $2 ($4)"
-   echo "Pass: $3"
-   echo "Groupe: $5 ($6)"
+   useradd --home-dir /home/$2 \
+   --base-dir /home/$2 \
+   --uid $3 \
+   --gid $4 \
+   --groups sudo \
+   --no-user-group \
+   --shell /bin/bash \
+   --create-home /home/$2;
 
+# ------------------------------------------------------------
+# $2: USER | $3: PASS
+ elif [ $1 = "PASS" ]
+  then
+   clear
+   echo "$2:$3" | chpasswd $2;
+   
+# ------------------------------------------------------------
+# $2: USER
+ elif [ $1 = "Sudoers" ]
+  then
+   clear
+    echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$2;
 # ------------------------------------------------------------
  else
   echo "Argument non reconnu"
@@ -34,29 +62,6 @@ fi
 
 
 
-
-
-
-#############################################
-# Suppression: Users & Groups (Home inclus) #
-#############################################
-deluser  $USER;
-delgroup $GROUP;
-rm -r    /home/$USER;
-
-##########################################
-# Création du Groupe et de l'utilisateur #
-##########################################
-#########################
-addgroup $GROUP --gid $GROUP_UID;
-useradd --home-dir /home/$USER --base-dir /home/$USER --uid $UID --gid $GROUP_UID --groups sudo --no-user-group --shell /bin/bash --create-home /home/$USER;
-
-##############################
-# Définir les mots de passes #
-##############################
-echo "$USER:$PASS" | chpasswd $USER;
-
 ##############################################
 # Ajout du compte utilisateur au groupe Sudo #
 ##############################################
-echo "$USER ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers;
