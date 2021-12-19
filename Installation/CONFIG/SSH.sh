@@ -72,6 +72,22 @@ if [ -z $1 ]
    clear;
     cp /etc/ssh/sshd_config.old /etc/ssh/sshd_config;
 
+
+# ----------------------------------------------------------
+ elif [ $1 = "RESET" ]
+  then
+   clear;
+   sed -i 's/PubkeyAuthentication yes/#PubkeyAuthentication yes/g'    /etc/ssh/sshd_config ;
+   sed -i 's/AuthorizedKeysFile/#AuthorizedKeysFile/g'                /etc/ssh/sshd_config ;
+   sed -i 's/PidFile/#PidFile/g'                                      /etc/ssh/sshd_config ;
+   sed -i 's/PrintLastLog/#PrintLastLog/g'                            /etc/ssh/sshd_config ;
+   sed -i 's/PasswordAuthentication yes/PasswordAuthentication yes/g' /etc/ssh/sshd_config ;
+   sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config ;
+   sed -i 's/PermitRootLogin yes/PermitRootLogin yes/g'               /etc/ssh/sshd_config ;
+   #sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config ;
+   
+   
+
 # ----------------------------------------------------------
  else
   echo "Script KO"
