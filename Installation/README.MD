@@ -14,6 +14,7 @@ clear;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/0.environnement.sh -O ./config/0.environnement.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/1.host.sh          -O ./config/1.host.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/2.reseau.sh        -O ./config/2.reseau.sh;
+wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/3.Paquets.sh       -O ./config/3.Paquets.sh
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/4.users_groups.sh  -O ./config/4.users_groups.sh;
 wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/CONFIG/SSH.sh             -O ./config/5.SSH.sh;
 clear;
