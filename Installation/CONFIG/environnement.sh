@@ -35,8 +35,8 @@ echo '############################' >> $SYSOUT
 echo '# Information sur les USER #' >> $SYSOUT
 echo '############################' >> $SYSOUT
 echo export USER=\'$12\' >> $SYSOUT
-echo export GROUP=\'$13\' >> $SYSOUT
 echo export PASS=\'$14\' >> $SYSOUT
+echo export GROUP=\'$13\' >> $SYSOUT
 echo export USER_ID=\'$15\' >> $SYSOUT
 echo export GROUP_UID=\'$16\' >> $SYSOUT
 echo '##########################' >> $SYSOUT
