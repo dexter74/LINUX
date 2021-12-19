@@ -10,7 +10,7 @@
 
 
 
-# rm test.sh; nano test.sh; sh test.sh 
+# rm test.sh; nano test.sh; sh test.sh;
 
 
 #Fichier Profil:
