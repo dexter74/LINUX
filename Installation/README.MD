@@ -31,14 +31,21 @@ sh ./config/1.host.sh
 ````
 
 #### C. Configuration du Réseau
+
+DHCP + IPV6 OFF:
 ````console
-sh ./config/2.reseau.sh IPV6;   # Désactive le protocole IPV6
-sh ./config/2.reseau.sh STATIC; # Interface en Static 
-sh ./config/2.reseau.sh DHCP;   # Interface en DHCP
-sh ./config/2.reseau.sh CHECK;  # Affiche le contenu /etc/network/interface
+sh ./config/2.reseau.sh DHCP;
+sh ./config/2.reseau.sh IPV6_OFF;
+sh ./config/2.reseau.sh CHECK;
 ````
 
+STATIC + IPV6 OFF:
+````console
+sh ./config/2.reseau.sh STATIC;
+sh ./config/2.reseau.sh IPV6_OFF;
+sh ./config/2.reseau.sh CHECK;
+````
 
-
+````console
 sh ./config/3.users_groups.sh
-
+````
