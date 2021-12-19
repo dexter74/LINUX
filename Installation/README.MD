@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------------------------
 
-## I. Création de l'arborescence des dossiers**
+## I. Création de l'arborescence des dossiers
 ````
 rm -r {config,check} 1>/dev/null 2>/dev/null;
 mkdir {config,check} 1>/dev/null 2>/dev/null;
