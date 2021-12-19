@@ -7,12 +7,11 @@
 # test.sh <DISTRIB> <release> <hostname> <domaine> <region> <ville> <langue> <IPV4> <Passerelle> <DNS 0> <DNS 1> <USERNAME> <GROUP> <PASSWOD> <USER ID> <GROUP ID> <SAMBA USER> <SAMBA PASS>
 ######################################################################################################################################################################################################
 
-
-
-
 # rm test.sh; nano test.sh; sh test.sh;
 
 
+
+clear;
 #Fichier Profil:
 SYSOUT=/etc/profile.d/ENVIRONNEMENT.sh
 
@@ -21,9 +20,6 @@ echo '# Information sur le Système #  '
 echo '##############################  '
 echo 'export DISTRIB\''$1'\'          '
 echo 'export RELEASE='$2'             '
-
-
-
 echo 'export HOSTNAME='$3'            '
 echo 'export DOMAINE='$4'             '
 echo 'export REGION='$5'              '
