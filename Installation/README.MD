@@ -2,8 +2,8 @@
 
 **Dossiers des scripts**
 ````
-rm -r {config,check} 1>/dev/null 2>/dev/null;;
-mkdir {config,check} 1>/dev/null 2>/dev/null;;
+rm -r {config,check} 1>/dev/null 2>/dev/null;
+mkdir {config,check} 1>/dev/null 2>/dev/null;
 ````
 
 **Téléchargement des scripts**
