@@ -19,7 +19,8 @@ sh ./config/0.environnement.sh Debian buster SLDEBIAN04 LAN Europe Paris fr_FR.U
 ````
 
 ````console
-sh ./config/1.host.sh;
+sh ./config/0.environnement.sh
+sh ./config/1.host.sh
 sh ./config/2.reseau.sh
 sh ./config/3.Paquets.sh
 sh ./config/4.users_groups.sh
