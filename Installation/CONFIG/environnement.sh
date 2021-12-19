@@ -10,9 +10,6 @@
 #Fichier Profil:
 SYSOUT=/etc/profile.d/ENVIRONNEMENT.sh
 
-
-#Mise à Blank du Fichier SYSOUT
-echo '' > $SYSOUT
 echo '##############################' >> $SYSOUT
 echo '# Information sur le Système #' >> $SYSOUT
 echo '##############################' >> $SYSOUT
@@ -44,5 +41,4 @@ echo export USER_ID=\'$15\' >> $SYSOUT
 echo export GROUP_UID=\'$16\' >> $SYSOUT
 echo export APPZ_SAMBA_USER=\'$17\' >> $SYSOUT
 echo export APPZ_SAMBA_PASS=\'$18\' >> $SYSOUT
-clear ;
-cat $SYSOUT
+clear ; cat $SYSOUT;
