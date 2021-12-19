@@ -73,9 +73,9 @@ sh ./config/3.users_groups.sh PASSWORD $USER $PASS;
 
 -----------------------------------------------------------------------------------------------------
 
-## V. Permission Sudo(Méthode 1 et 2)
+## V. Permission Sudo (2 Méthodes)
 
-#### A. Méthode 1
+#### A. Méthode 1 (Groupe Sudo)
 
 Supprimer
 ````console
@@ -88,7 +88,7 @@ sh ./config/3.users_groups.sh ADD_SUDOER $USER;
 ````
 
 
-#### B. Méthode 2
+#### B. Méthode 2 (Sudoers)
 
 Supprimer
 ````console
@@ -99,6 +99,9 @@ Ajouter
 ````console
 sh ./config/3.users_groups.sh ADD_USER_GROUP $USER sudo;
 ````
+
+
+
 
 
 #### C. Vérification
