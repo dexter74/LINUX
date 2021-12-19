@@ -11,7 +11,6 @@
 SYSOUT=/etc/profile.d/ENVIRONNEMENT.sh
 
 
-echo "sh ./config/0.environnement.sh Debian buster SLDEBIAN04 LAN Europe Paris fr_FR.UTF-8 192.168.1.43 192.168.1.1 192.168.1.1 192.168.1.41 marc administrateur admin 1001 1001 marc Azerty74"
 
 echo '##############################'  > $SYSOUT
 echo '# Information sur le Système #' >> $SYSOUT
@@ -52,9 +51,13 @@ echo '##########################' >> $SYSOUT
 echo export SAMBA_USER=\'$17\' >> $SYSOUT
 echo export SAMBA_PASS=\'$18\' >> $SYSOUT
 
-
-
 ########################
 # Afficher le Résultat #
 ########################
-clear ; cat $SYSOUT;
+clear ;
+cat $SYSOUT;
+echo "":
+
+echo "Exemple:
+sh ./config/0.environnement.sh Debian buster SLDEBIAN04 LAN Europe Paris fr_FR.UTF-8 192.168.1.43 192.168.1.1 192.168.1.1 192.168.1.41 marc administrateur admin 1001 1001 marc Azerty74"
+
