@@ -44,14 +44,13 @@ if [ -z $1 ]
  elif [ $1 = "STEP_4" ]
   then
    clear;
-   sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g' /etc/ssh/sshd_config ;
-   sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile /g' /etc/ssh/sshd_config ;
-   sed -i 's/#PidFile/PidFile /g' /etc/ssh/sshd_config ;
-   sed -i 's/#PrintLastLog/PrintLastLog /g' /etc/ssh/sshd_config ;
+   sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile/g'                /etc/ssh/sshd_config ;
    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config ;
    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/g' /etc/ssh/sshd_config ;
-   sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config ;
-   #sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config ;
+   sed -i 's/PermitRootLogin yes/PermitRootLogin no/g'                /etc/ssh/sshd_config ;
+   sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g'    /etc/ssh/sshd_config ;
+   sed -i 's/#PidFile/PidFile/g'                                      /etc/ssh/sshd_config ;
+   sed -i 's/#PrintLastLog/PrintLastLog /g'                           /etc/ssh/sshd_config ;
 
 # ----------------------------------------------------------
  elif [ $1 = "STEP_5" ]
@@ -77,17 +76,13 @@ if [ -z $1 ]
  elif [ $1 = "RESET" ]
   then
    clear;
-   sed -i 's/PubkeyAuthentication yes/#PubkeyAuthentication yes/g'    /etc/ssh/sshd_config ;
    sed -i 's/AuthorizedKeysFile/#AuthorizedKeysFile/g'                /etc/ssh/sshd_config ;
-   sed -i 's/PidFile/#PidFile/g'                                      /etc/ssh/sshd_config ;
-   sed -i 's/PrintLastLog/#PrintLastLog/g'                            /etc/ssh/sshd_config ;
-   sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config ;
+   sed -i 's/PasswordAuthentication yes/#PasswordAuthentication no/g' /etc/ssh/sshd_config ;
    sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config ;
-   sed -i 's/PermitRootLogin no/PermitRootLogin yes/g'               /etc/ssh/sshd_config ;
-   #sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config ;
-   
-   
-
+   sed -i 's/PermitRootLogin no/PermitRootLogin yes/g'                /etc/ssh/sshd_config ;
+   sed -i 's/PubkeyAuthentication yes/#PubkeyAuthentication no/g'     /etc/ssh/sshd_config ;
+   sed -i 's/PidFile/#PidFile/g'                                      /etc/ssh/sshd_config ;
+   sed -i 's/PrintLastLog/#PrintLastLog /g'                           /etc/ssh/sshd_config ;
 # ----------------------------------------------------------
  else
   echo "Script KO"
