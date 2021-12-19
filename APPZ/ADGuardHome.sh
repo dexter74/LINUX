@@ -3,45 +3,21 @@
 ################################################
 clear;
 
-################################################################################################################################
-CLEAN()
- {
- clear;
- rm -r $DOSSIER/AdGuardHome;
- }
-################################################################################################################################
-DOWNLOAD()
- {
- wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_amd64.tar.gz -O /tmp/AdGuardHome_linux_amd64.tar.gz ;
- tar -xf '/tmp/AdGuardHome_linux_amd64.tar.gz' -C /opt;
- }
-################################################################################################################################
-SERVICE()
- {
- /opt/AdGuardHome/AdGuardHome -s ??;
- }
-################################################################################################################################
-
-
-
 # ------------------------------------------------------------------------------------------------------------------------------------
 if [ -z $1 ]
  then
   echo 'Merci de préciser un paramètre (PURGE, DL, ENABLE, DISABLE, START, STOP, STATUS)'
 # --------------------------------------------
-
  elif [ "$1" = "PURGE" ]
   then
    /opt/AdGuardHome/AdGuardHome -s uninstall;
    rm -r /opt/AdGuardHome;
 # --------------------------------------------
-
 elif [ "$1" = "DL" ]
   then
    wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_amd64.tar.gz -O /tmp/AdGuardHome_linux_amd64.tar.gz ;
    tar -xf /tmp/AdGuardHome_linux_amd64.tar.gz -C /opt;
 # --------------------------------------------
-
  elif [ "$1" = "ENABLE" ]
   then
    /opt/AdGuardHome/AdGuardHome -s install
