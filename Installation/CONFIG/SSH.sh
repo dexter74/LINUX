@@ -82,9 +82,6 @@ PermitRootLogin prohibit-password
 #PrintLastLog yes
 #PubkeyAuthentication yes
 
-sed -i 's///g' /etc/ssh/sshd_config;
-
-
 # Authentification par Mot de passe (Yes à NO)
 sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g'  /etc/ssh/sshd_config;
 
@@ -123,29 +120,11 @@ sed -i 's/#PrintLastLog yes/PrintLastLog yes/g'                     /etc/ssh/ssh
 sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g'     /etc/ssh/sshd_config;
 
 # Vérifier Permissions Home à la connexion
-sed -i 's/#StrictModes yes/StrictModes yes/g'
-
-
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-sed -i 's///g' /etc/ssh/sshd_config;
-
+sed -i 's/#StrictModes yes/StrictModes yes/g'                       /etc/ssh/sshd_config;
 
 systemctl restart ssh;
 
-
+grep "PasswordAuthentication yes\|^PermitRootLogin\|ListenAddress\|Port \|AllowUsers\|AllowGroups\|AuthorizedKeysFile\|KeepAlive\|LoginGraceTime\|PidFile\|PrintLastLog\|PubkeyAuthentication\|StrictModes" /etc/ssh/sshd_config;
 # ChallengeResponseAuthentication
 # Ciphers
 # ClientAliveInterval
