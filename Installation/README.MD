@@ -72,10 +72,18 @@ sh ./config/4.users_groups.sh ADD_USER $USER $USER_ID $GROUP users;
 sh ./config/4.users_groups.sh PASSWORD $USER $PASS;
 ````
 
+-----------------------------------------------------------------------------------------------------
+
+## VI. Installation des Paquets 
+````console
+sh ./config/3.Paquets.sh
+````
+
+
 
 -----------------------------------------------------------------------------------------------------
 
-## V. Permission Sudo (2 Méthodes)
+## VI. Permission Sudo (2 Méthodes)
 
 #### A. Méthode 1 (Groupe Sudo)
 
