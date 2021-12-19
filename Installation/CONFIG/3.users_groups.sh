@@ -46,7 +46,7 @@ if [ -z $1 ]
    
 # ------------------------------------------------------------
 # $2: USER
- elif [ $1 = "Sudoers" ]
+ elif [ $1 = "ROOT" ]
   then
    clear
     echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$2;
