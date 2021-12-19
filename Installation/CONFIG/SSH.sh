@@ -61,6 +61,47 @@ if [ -z $1 ]
  elif [ $1 = "STEP_6" ]
   then
    clear;
+   # Limiter l'accès SSH au Groupe / USER suivant:
+   echo "AllowUsers $USER root" >>                                     /etc/ssh/sshd_config;
+   echo "AllowGroups $GROUP"    >>                                     /etc/ssh/sshd_config;
+   
+   # Fichier contenant les Clés SSH
+   sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile/g'                 /etc/ssh/sshd_config;
+   
+   # Fermer les connexions Zombie
+   echo "KeepAlive no"          >>                                     /etc/ssh/sshd_config;
+
+   # Ecouter une interface réseau
+   sed -i 's/#ListenAddress ::/ListenAddress '$NET_ADDRESS'/g'         /etc/ssh/sshd_config;
+
+   # Le serveur se déconnect si la connexion après X secondes
+   sed -i 's/#LoginGraceTime 2m/LoginGraceTime 2m/g'                   /etc/ssh/sshd_config;
+
+   # Authentification par Mot de passe (Yes à NO)
+   sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g'  /etc/ssh/sshd_config;
+   
+   # Autoriser Connexion sans Mot de passe
+   sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords no/g'       /etc/ssh/sshd_config;
+   
+   # Authentification du Root
+   sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config;
+   
+   # Définir emplacement PID
+   sed -i 's/#PidFile/PidFile/g'                                       /etc/ssh/sshd_config;
+   
+   # Changer le port d'écouter SSH
+   sed -i 's/#Port 22/Port 22/g'                                       /etc/ssh/sshd_config;
+   
+   # Afficher la Dernière Connexion
+   sed -i 's/#PrintLastLog yes/PrintLastLog yes/g'                     /etc/ssh/sshd_config;
+
+   # Authentication par clé SSH
+   sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g'     /etc/ssh/sshd_config;
+   
+   # Vérifier Permissions Home à la connexion
+   sed -i 's/#StrictModes yes/StrictModes yes/g'                       /etc/ssh/sshd_config;
+   
+   echo "Sécurisation Terminé";
 
 # ----------------------------------------------------------
 # Relance du service
@@ -78,45 +119,6 @@ fi
 #clear; cp /etc/ssh/sshd_config.old /etc/ssh/sshd_config;
 
 
-# Limiter l'accès SSH au Groupe / USER suivant:
-#echo "AllowUsers $USER root" >> /etc/ssh/sshd_config;
-#echo "AllowGroups $GROUP"       >> /etc/ssh/sshd_config;
-
-# Fichier contenant les Clés SSH
-#sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile/g'                 /etc/ssh/sshd_config;
-
-# Fermer les connexions Zombie
-#echo "KeepAlive no" >> /etc/ssh/sshd_config;
-
-# Ecouter une interface réseau
-#sed -i 's/#ListenAddress ::/ListenAddress '$NET_ADDRESS'/g'       /etc/ssh/sshd_config;
-
-# Le serveur se déconnect si la connexion après X secondes
-#sed -i 's/#LoginGraceTime 2m/LoginGraceTime 2m/g'                   /etc/ssh/sshd_config;
-
-# Authentification par Mot de passe (Yes à NO)
-#sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g'  /etc/ssh/sshd_config;
-
-# Autoriser Connexion sans Mot de passe
-#sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords no/g'       /etc/ssh/sshd_config;
-
-# Authentification du Root
-#sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config;
-
-# Définir emplacement PID
-#sed -i 's/#PidFile/PidFile/g'                                       /etc/ssh/sshd_config;
-
-# Changer le port d'écouter SSH
-#sed -i 's/#Port 22/Port 22/g'                                       /etc/ssh/sshd_config;
-
-# Afficher la Dernière Connexion
-#sed -i 's/#PrintLastLog yes/PrintLastLog yes/g'                     /etc/ssh/sshd_config;
-
-# Authentication par clé SSH
-#sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g'     /etc/ssh/sshd_config;
-
-# Vérifier Permissions Home à la connexion
-#sed -i 's/#StrictModes yes/StrictModes yes/g'                       /etc/ssh/sshd_config;
 
 # Relancer le service
 #systemctl restart ssh;
