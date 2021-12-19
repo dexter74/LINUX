@@ -105,3 +105,21 @@ if [ -z $1 ]
   echo "Argument non reconnu";
 # ------------------------------------------------------------
 fi
+
+
+
+
+# Syntaxe:
+# console
+# sh ./config/3.users_groups.sh DEL_USER <USER>;
+# sh ./config/3.users_groups.sh DEL_USER_HOME <USER>;
+# sh ./config/3.users_groups.sh DEL_GROUP <GROUP>;
+# sh ./config/3.users_groups.sh ADD_GROUP <GROUP> <GID>;
+# sh ./config/3.users_groups.sh ADD_USER <USER> <UID> <GROUP PRIMAIRE> <GROUP SECONDAIRE>;
+# sh ./config/3.users_groups.sh CHECK <USER>;
+# sh ./config/3.users_groups.sh DEL_USER_GROUP <USER> <GROUPE SECONDAIRE>;
+# sh ./config/3.users_groups.sh ADD_USER_GROUP <USER> <GROUPE SECONDAIRE>;
+# sh ./config/3.users_groups.sh PASSWORD <USER> <PASS>;;=
+# sh ./config/3.users_groups.sh DEL_SUDOER <USER>;
+# sh ./config/3.users_groups.sh ADD_SUDOER <USER>;
+
