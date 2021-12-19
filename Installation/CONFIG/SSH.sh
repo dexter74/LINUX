@@ -63,13 +63,13 @@ if [ -z $1 ]
    clear;
    # Limiter l'accès SSH au Groupe / USER suivant:
    echo "AllowUsers $USER root" >>                                     /etc/ssh/sshd_config;
-   echo "AllowGroups $GROUP"    >>                                     /etc/ssh/sshd_config;
+   echo "AllowGroups $GROUP root" >>                                   /etc/ssh/sshd_config;
 
    # Fichier contenant les Clés SSH
    sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile/g'                 /etc/ssh/sshd_config;
 
    # Fermer les connexions Zombie
-   echo "KeepAlive no"          >>                                     /etc/ssh/sshd_config;
+   echo "KeepAlive no"            >>                                   /etc/ssh/sshd_config;
 
    # Ecouter une interface réseau
    sed -i 's/#ListenAddress ::/ListenAddress '$NET_ADDRESS'/g'         /etc/ssh/sshd_config;
