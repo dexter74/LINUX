@@ -37,21 +37,21 @@ sh ./config/0.environnement.sh \
 sh ./config/1.host.sh;
 
 
-sh ./config/2.reseau.sh STATIC
-sh ./config/2.reseau.sh IPV6_OFF
-sh ./config/2.reseau.sh CHECK
+sh ./config/2.reseau.sh STATIC;
+sh ./config/2.reseau.sh IPV6_OFF;
+sh ./config/2.reseau.sh CHECK;
 
-sh ./config/3.Paquets.sh CDROM
-sh ./config/3.Paquets.sh BACKPORT
-sh ./config/3.Paquets.sh MAJ
-sh ./config/3.Paquets.sh FIX
-sh ./config/3.Paquets.sh BASE
-sh ./config/3.Paquets.sh OUTIL
-sh ./config/3.Paquets.sh QEMU
-sh ./config/3.Paquets.sh SAMBA
-sh ./config/3.Paquets.sh KERNEL
-sh ./config/3.Paquets.sh SERVICE_OFF
-sh ./config/3.Paquets.sh SERVICE_ON
+sh ./config/3.Paquets.sh CDROM;
+sh ./config/3.Paquets.sh BACKPORT;
+sh ./config/3.Paquets.sh MAJ;
+sh ./config/3.Paquets.sh FIX;
+sh ./config/3.Paquets.sh BASE;
+sh ./config/3.Paquets.sh OUTIL;
+sh ./config/3.Paquets.sh QEMU;
+sh ./config/3.Paquets.sh SAMBA;
+sh ./config/3.Paquets.sh KERNEL;
+sh ./config/3.Paquets.sh SERVICE_OFF;
+sh ./config/3.Paquets.sh SERVICE_ON;
 
 sh ./config/4.users_groups.sh DEL_USER       $USER
 sh ./config/4.users_groups.sh DEL_USER_HOME  $USER
@@ -65,7 +65,7 @@ sh ./config/4.users_groups.sh DEL_USER_GROUP $USER  sudo
 sh ./config/4.users_groups.sh CHECK          $USER
 
 sh ./config/4.users_groups.sh ADD_SUDOER     $USER
-sh ./config/4.users_groups.sh DEL_SUDOER     $
+sh ./config/4.users_groups.sh DEL_SUDOER     $USER
 
 ````
 
