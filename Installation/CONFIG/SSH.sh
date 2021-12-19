@@ -64,13 +64,13 @@ if [ -z $1 ]
  elif [ $1 = "STEP_6" ]
   then
    clear;
-   cp /etc/ssh/sshd_config /etc/ssh/sshd_config.old;   
-   
+   cp /etc/ssh/sshd_config /etc/ssh/sshd_config.old;
+
 # ----------------------------------------------------------
  elif [ $1 = "STEP_7" ]
   then
    clear;
-    cp /etc/ssh/sshd_config.old /etc/ssh/sshd_config;   
+    cp /etc/ssh/sshd_config.old /etc/ssh/sshd_config;
 
 # ----------------------------------------------------------
  else
