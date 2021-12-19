@@ -56,8 +56,3 @@ echo export SAMBA_PASS=\'$18\' >> $SYSOUT
 ########################
 clear ;
 cat $SYSOUT;
-echo "":
-
-echo "Exemple:
-sh ./config/0.environnement.sh Debian buster SLDEBIAN04 LAN Europe Paris fr_FR.UTF-8 192.168.1.43 192.168.1.1 192.168.1.1 192.168.1.41 marc administrateur admin 1001 1001 marc Azerty74"
-
