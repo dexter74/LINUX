@@ -13,6 +13,7 @@ SYSOUT=/etc/profile.d/ENVIRONNEMENT.sh
 echo '##############################'  > $SYSOUT
 echo '# Information sur le Système #' >> $SYSOUT
 echo '##############################' >> $SYSOUT
+echo export SYSOUT=\'/etc/profile.d/ENVIRONNEMENT.sh\' >> $SYSOUT
 echo export DISTRIB=\'$1\' >> $SYSOUT
 echo export RELEASE=\'$2\' >> $SYSOUT
 echo export HOSTNAME=\'$3\' >> $SYSOUT
