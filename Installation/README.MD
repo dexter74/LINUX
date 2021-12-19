@@ -15,7 +15,7 @@ wget https://raw.githubusercontent.com/dexter74/LINUX/main/Installation/Check/en
 clear;
 ````
 
-## Configuration de la machine
+## III. Configuration de la machine
 
 #### A. Configuration de l'environnement
 ````console
@@ -49,3 +49,20 @@ sh ./config/2.reseau.sh CHECK;
 ````console
 sh ./config/3.users_groups.sh <USER> <PASS>
 ````
+
+## IV. Gestion des Utilisateurs et Groupes
+
+````console
+sh ./config/3.users_groups.sh DEL_USER <USER>
+sh ./config/3.users_groups.sh DEL_USER_HOME <USER>
+sh ./config/3.users_groups.sh DEL_GROUP <GROUP>
+sh ./config/3.users_groups.sh ADD_GROUP <GROUP> <GID>
+sh ./config/3.users_groups.sh ADD_USER <USER> <UID> <GROUP PRIMAIRE> <GROUP SECONDAIRE> 
+sh ./config/3.users_groups.sh CHECK <USER>
+sh ./config/3.users_groups.sh DEL_USER_GROUP <USER> <GROUPE SECONDAIRE>
+sh ./config/3.users_groups.sh ADD_USER_GROUP <USER> <GROUPE SECONDAIRE>
+sh ./config/3.users_groups.sh PASSWORD <USER> <PASS>
+sh ./config/3.users_groups.sh ADD_SUDOER <USER>
+sh ./config/3.users_groups.sh DEL_SUDOER <USER>
+````
+
