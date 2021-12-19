@@ -61,7 +61,7 @@ Ajout:
 ````
 sh ./config/3.users_groups.sh ADD_GROUP $GROUP $GROUP_UID;
 sh ./config/3.users_groups.sh ADD_USER $USER $USER_ID $GROUP users;
-sh ./config/3.users_groups.sh PASSWORD $USER $GROUP;
+sh ./config/3.users_groups.sh PASSWORD $USER $PASS;
 ````
 
 Suppression:
