@@ -52,7 +52,7 @@ if [ -z $1 ]
  elif [ "$1" = "UNINSTALL" ]
   then
    echo "Lancement: UNINSTALL"
-   
+
  elif [ "$1" = "START" ]
   then
    echo "Lancement: START"
