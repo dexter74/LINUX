@@ -7,7 +7,6 @@ clear;
 CLEAN()
  {
  clear;
- /opt/AdGuardHome/AdGuardHome -s uninstall;
  rm -r $DOSSIER/AdGuardHome;
  }
 ################################################################################################################################
@@ -40,32 +39,31 @@ SERVICE()
 if [ -z $1 ]
  then
   echo 'Merci de préciser un paramètre (PURGE, DL, ENABLE, DISABLE, START, STOP)'
-# ----------------------------
+# --------------------------------------------
  elif [ "$1" = "PURGE" ]
   then
-   echo "Lancement: PURGE"
-# ----------------------------
+   /opt/AdGuardHome/AdGuardHome -s uninstall;
+   rm -r /opt/AdGuardHome;
+# --------------------------------------------
 elif [ "$1" = "DL" ]
   then
    echo "Lancement: DL"
-# ----------------------------
+# --------------------------------------------
  elif [ "$1" = "ENABLE" ]
   then
-   echo "Lancement: ENABLE"
-# ----------------------------
+   /opt/AdGuardHome/AdGuardHome -s install
+# --------------------------------------------
  elif [ "$1" = "DISABLE" ]
   then
-   echo "Lancement: DISABLE"
+   /opt/AdGuardHome/AdGuardHome -s uninstall
 # ----------------------------
  elif [ "$1" = "START" ]
   then
-   echo "Lancement: START"
-# ----------------------------
+   /opt/AdGuardHome/AdGuardHome -s start
+# --------------------------------------------
  elif [ "$1" = "STOP" ]
   then
-   echo "Lancement: STOP"
+   /opt/AdGuardHome/AdGuardHome -s stop
  else
-  echo "Le paramètre $1 est inconnu"
+  echo 'Le paramètre $1 est inconnu'
 fi
-
-
