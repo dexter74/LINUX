@@ -13,7 +13,7 @@ if [ -z $1 ]
    /opt/AdGuardHome/AdGuardHome -s uninstall;
    rm -r /opt/AdGuardHome;
 # --------------------------------------------
-elif [ "$1" = "DL" ]
+ elif [ "$1" = "DL" ]
   then
    wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_amd64.tar.gz -O /tmp/AdGuardHome_linux_amd64.tar.gz ;
    tar -xf /tmp/AdGuardHome_linux_amd64.tar.gz -C /opt;
