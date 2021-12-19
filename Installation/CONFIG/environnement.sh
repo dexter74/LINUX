@@ -2,9 +2,15 @@
 # Script de déclaration de variables d'environnement #
 ######################################################
 #
+######################################################################################################################################################################################################
 # /etc/profile charge les scripts /etc/profile.d/*.sh
+# test.sh <DISTRIB> <release> <hostname> <domaine> <region> <ville> <langue> <IPV4> <Passerelle> <DNS 0> <DNS 1> <USERNAME> <GROUP> <PASSWOD> <USER ID> <GROUP ID> <SAMBA USER> <SAMBA PASS>
+######################################################################################################################################################################################################
 
-# XXXXX.sh <DISTRIB> <release> <hostname> <domaine> <region> <ville> <langue> <IPV4> <Passerelle> <DNS 0> <DNS 1> <USERNAME> <GROUP> <PASSWOD> <USER ID> <GROUP ID> <SAMBA USER> <SAMBA PASS>
+
+
+
+# rm test.sh; nano test.sh; sh test.sh 
 
 
 #Fichier Profil:
