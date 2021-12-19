@@ -73,9 +73,9 @@ sh ./config/3.users_groups.sh DEL_GROUP $GROUP;
 
 #### B. Permission Sudo
 
-Méthode 2: Crée un fichier dans /etc/sudoers.d/marc (Configurable)
+`Méthode 2: Crée un fichier dans /etc/sudoers.d/marc (Configurable)
 Méthode 1: Ajouter l'utilisateur au groupe sudo     (Non-configuranle)
-
+`
 
 Ajouter (2 Méthodes)
 ````console
