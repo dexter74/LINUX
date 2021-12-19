@@ -9,6 +9,7 @@
 
 # rm test.sh; nano test.sh; sh test.sh;
 
+echo VALEUR=\'$1\' > RESULT
 
 
 clear;
@@ -18,7 +19,7 @@ SYSOUT=/etc/profile.d/ENVIRONNEMENT.sh
 echo '##############################  '
 echo '# Information sur le Système #  '
 echo '##############################  '
-echo 'export DISTRIB\''$1'\'          '
+echo 'export DISTRIB='$1'             '
 echo 'export RELEASE='$2'             '
 echo 'export HOSTNAME='$3'            '
 echo 'export DOMAINE='$4'             '
