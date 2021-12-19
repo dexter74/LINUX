@@ -56,7 +56,9 @@ cat  /etc/network/interfaces ;
  elif [ $1 = "CHECK" ]
   then
    clear;
-   cat /etc/network/interfaces ; cat /etc/sysctl.d/70-disable-ipv6.conf | grep "^net.ipv6.conf.all.disable_ipv6";
+   cat /etc/network/interfaces ;
+   echo "---------------------";
+   cat /etc/sysctl.d/70-disable-ipv6.conf | grep "^net.ipv6.conf.all.disable_ipv6";
 # ------------------------------------------------------------------------------------
  else
  echo "Script en Erreur"
