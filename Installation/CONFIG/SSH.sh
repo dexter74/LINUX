@@ -11,10 +11,10 @@ if [ -z $1 ]
   - STEP_1: Création des dossiers SSH
   - STEP_2: Insertion de la Clé SSH sur le serveur
   - STEP_3: Modification des permissions
-  - STEP_4: Configuration de SSHD_config
-  - STEP_5: Relance du service
-  - STEP_6: Backup
-  - STEP_7: Recovery
+  - STEP_4: Backup
+  - STEP_5: Recovery
+  - STEP_6: Sécurisation du SSH
+  - STEP_7: Relance du service
   "
 
 # ----------------------------------------------------------
@@ -44,14 +44,6 @@ if [ -z $1 ]
  elif [ $1 = "STEP_4" ]
   then
    clear;
-   sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile/g'                /etc/ssh/sshd_config ;
-   sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config ;
-   sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/g' /etc/ssh/sshd_config ;
-   sed -i 's/PermitRootLogin yes/PermitRootLogin no/g'                /etc/ssh/sshd_config ;
-   sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g'    /etc/ssh/sshd_config ;
-   sed -i 's/#PidFile/PidFile/g'                                      /etc/ssh/sshd_config ;
-   sed -i 's/#PrintLastLog/PrintLastLog /g'                           /etc/ssh/sshd_config ;
-
 # ----------------------------------------------------------
  elif [ $1 = "STEP_5" ]
   then
