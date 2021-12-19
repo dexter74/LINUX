@@ -6,8 +6,8 @@
 sed -i -- 's/deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
 
 # Mise à jour:
-apt update -qq;
-apt upgrade -y -qq;
+apt update -qq 1>/dev/null 2>/dev/null;
+apt upgrade -y -qq 1>/dev/null 2>/dev/null;
 
 
 # Packages:
