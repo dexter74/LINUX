@@ -8,11 +8,11 @@
 
 
 #Fichier Profil: /etc/profile.d/ENVIRONNEMENT.sh
-FILE=test
+FILE=result
 
-echo '##############################' >  \$FILE
-echo '# Information sur le Système #' >> \$FILE
-echo '##############################' >> \$FILE
+echo '##############################' >  $FILE
+echo '# Information sur le Système #' >> $FILE
+echo '##############################' >> $FILE
 
 
 #echo export DISTRIB=\'\$1\'      >> \$FILE
