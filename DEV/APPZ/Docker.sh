@@ -47,17 +47,16 @@ if [ -z $1 ]
   then
   clear;
   apt install -qq -y docker-ce docker-ce-cli containerd.io;
-  curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose ;
-  chmod +x /usr/local/bin/docker-compose ;
-  ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose ;
+  curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose;
+  chmod +x /usr/local/bin/docker-compose;
+  ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose;
 
 # -------------------------------------------------------------------------------------------------------------------------------------
 #  COnnexion au Docker-Hub ($2: login | $3: Password)
  elif [ "$1" = "HUB" ]
   then
   clear;
-  docker login -u $2 -p $3;
-  docker login -u dexter74 -p 382000 ;
+  docker login -u $2 -p $3 ;
 
 # -------------------------------------------------------------------------------------------------------------------------------------
 # Install Docker avec Docker Compose
