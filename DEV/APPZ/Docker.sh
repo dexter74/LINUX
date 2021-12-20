@@ -11,7 +11,7 @@ if [ -z $1 ]
   clear;
   echo 'Merci de preciser un parametre
   - PURGE
-  - PREP 
+  - PREP
   - INSTALL
   - HUB <Login> <PASS>
   - TEST (Lance le conteneur Hello-World)
