@@ -15,7 +15,8 @@ if [ -z $1 ]
   - INSTALL
   - HUB <Login> <PASS>
   - TEST (Lance le conteneur Hello-World)
-  - DOCKER_CLEAN (Kill + Clean conteneurs / images)
+  - CLEAN (Kill + Clean conteneurs / images)
+  - STATS
   - VERSION (Docker, Docker-Compose)
   '
 
@@ -66,12 +67,18 @@ if [ -z $1 ]
 
 # -------------------------------------------------------------------------------------------------------------------------------------
 # Tue les conteneurs, purge les conteneurs leurs images. (Volumes intact)
- elif [ "$1" = "DOCKER_CLEAN" ]
+ elif [ "$1" = "CLEAN" ]
   then
   clear;
   docker kill $(docker ps -q) ;
   docker rm $(docker ps -a -q) ;
   docker rmi $(docker images -q) ;
+
+# -------------------------------------------------------------------------------------------------------------------------------------
+# Tue les conteneurs, purge les conteneurs leurs images. (Volumes intact)
+ elif [ "$1" = "STATS" ]
+  then
+  docker stats --format "table  {{.Name}}\t {{.CPUPerc}}\t  {{.MemPerc}}\t  {{.MemUsage}}\t {{.NetIO}}\t {{.BlockIO}}\t"
 
 # -------------------------------------------------------------------------------------------------------------------------------------
 # Install Docker avec Docker Compose
