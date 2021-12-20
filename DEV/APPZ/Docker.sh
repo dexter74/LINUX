@@ -25,7 +25,7 @@ if [ -z $1 ]
 # -------------------------------------------------------------------------------------------------------------------------------------
  elif [ "$1" = "INSTALL" ]
   then
-  apt install -y docker-ce docker-ce-cli containerd.io 1>/dev/null 2>/dev/null;;
+  apt install -y docker-ce docker-ce-cli containerd.io 1>/dev/null 2>/dev/null;
 # -------------------------------------------------------------------------------------------------------------------------------------
  else
   echo "Le parametre '$1' est inconnu"
