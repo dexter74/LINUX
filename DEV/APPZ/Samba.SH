@@ -38,7 +38,6 @@ if [ -z $1 ]
   then
    clear;
    (echo $3; echo $3) | smbpasswd -a $2;
-   smbpasswd -e $2;
    systemctl restart smbd;
 
 # --------------------------------------------------------------------------------
@@ -60,7 +59,7 @@ if [ -z $1 ]
  elif [ $1 = "ENABLE" ]
   then
    clear;
-   smbpasswd -E $2;
+   smbpasswd -e $2;
 
 # --------------------------------------------------------------------------------
 # Liste les User de Samba
