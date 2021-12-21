@@ -46,9 +46,46 @@ sh LINUX/Installation/CONFIG/5.SSH.sh STEP_5;# Relance du Service
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_7;# Recovery
 
 
-sh LINUX/APPZ/ADGuardHome.sh
-sh LINUX/APPZ/Docker.sh
+sh LINUX/APPZ/ADGuardHome.sh PURGE
+sh LINUX/APPZ/ADGuardHome.sh DL
+sh LINUX/APPZ/ADGuardHome.sh INSTALL
+sh LINUX/APPZ/ADGuardHome.sh ENABLE
+sh LINUX/APPZ/ADGuardHome.sh DISABLE
+sh LINUX/APPZ/ADGuardHome.sh START
+sh LINUX/APPZ/ADGuardHome.sh STOP
+sh LINUX/APPZ/ADGuardHome.sh STATUS
+
+
+# Ordre de la liste des Arguments à modifier
+sh LINUX/APPZ/Docker.sh CLEAN => ? (Supprimer Conteneurs, Images)
+sh LINUX/APPZ/Docker.sh PURGE => ? (Désinstallation Docker)
+
+sh LINUX/APPZ/Docker.sh FIX
+sh LINUX/APPZ/Docker.sh HUB <USER> <PASS>
+sh LINUX/APPZ/Docker.sh PREP
+sh LINUX/APPZ/Docker.sh INSTALL
+sh LINUX/APPZ/Docker.sh PORTAINER
+
+sh LINUX/APPZ/Docker.sh STATS
+sh LINUX/APPZ/Docker.sh TEST
+sh LINUX/APPZ/Docker.sh VERSION
+
 sh LINUX/APPZ/Samba.sh
+sh LINUX/APPZ/Samba.sh INSTALL
+sh LINUX/APPZ/Samba.sh PURGE
+sh LINUX/APPZ/Samba.sh BACKUP
+sh LINUX/APPZ/Samba.sh AUTOCFG
+sh LINUX/APPZ/Samba.sh ADD  marc Azerty74
+sh LINUX/APPZ/Samba.sh DEL  marc
+sh LINUX/APPZ/Samba.sh ENABLE
+sh LINUX/APPZ/Samba.sh DISABLE
+sh LINUX/APPZ/Samba.sh LIST
+sh LINUX/APPZ/Samba.sh EDIT
+sh LINUX/APPZ/Samba.sh SERVICE <start|stop|restart|status|reload|disable|enable)
+sh LINUX/APPZ/Samba.sh RECOVERY
+sh LINUX/APPZ/Samba.sh WSDD_INSTALL
+sh LINUX/APPZ/Samba.sh WSDD_PURGE
+
 ```
 
-
+ git clone https://github.com/dexter74/LINUX.git
