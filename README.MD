@@ -77,7 +77,7 @@ sh LINUX/Installation/CONFIG/5.SSH.sh STEP_6;# Backup
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_1;# Dossier SSH
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_2;# Clé SSH
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_3;# Permissions
-sh LINUX/Installation/CONFIG/5.SSH.sh STEP_4;# Securisation SH
+sh LINUX/Installation/CONFIG/5.SSH.sh STEP_4;# Securisation SSH
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_5;# Relance du Service
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_7;# Recovery
 ```
