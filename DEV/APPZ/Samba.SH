@@ -83,6 +83,60 @@ if [ -z $1 ]
    systemctl $2 smbd;
 
 # --------------------------------------------------------------------------------
+# Relance le service Samba
+ elif [ $1 = "AUTOCFG" ]
+  then
+   clear;
+   echo "#====================== Global Settings ===============================
+[global]
+   workgroup = WORKGROUP
+   log file = /var/log/samba/log.%m
+   max log size = 1000
+   logging = file
+   panic action = /usr/share/samba/panic-action %d
+   server role = standalone server
+   obey pam restrictions = yes
+   unix password sync = yes
+   passwd program = /usr/bin/passwd %u
+   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+   pam password change = yes
+   map to guest = bad user
+   usershare allow guests = yes
+   netbios aliases = sldebian02 sldebian02b
+#====================== Partage home ==================================
+[homes]
+   comment = Dossier Utilisateurs
+   browseable = no
+   read only = no
+   writable = yes
+   create mask = 0700
+   directory mask = 0700
+   guest ok = no
+#====================== Partage Volumes ===============================
+#[Volumes]
+#   comment = Utilisateur docker qui prend les droits root
+#   path = /
+#   browseable = yes
+#   writable = yes
+#   read only = no
+#   valid users = docker
+#   force user = root
+#====================== Partage System ================================
+[SYSTEM]
+   comment = Utilisateur docker qui prend les droits root
+   path = /
+   browseable = yes
+   writable = yes
+   read only = no
+   valid users = docker
+   force user = root
+#======================= No Delete Line Next ==========================
+;   write list = root, @lpadmin
+#======================================================================" > /etc/samba/smb.conf
+
+   
+   
+   # --------------------------------------------------------------------------------
 #
  else
   echo "Script KO"
