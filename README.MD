@@ -5,6 +5,7 @@
 ``` 
 rm -r LINUX;
 git clone https://github.com/dexter74/LINUX.git;
+clear;
 ```
 
 
