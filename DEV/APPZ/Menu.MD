@@ -57,6 +57,22 @@ else
 fi
 ```
 
+
+
+**TEST**
+```
+#!/bin/bash
+if (whiptail --title "CLUF" --yesno  "Accepter vous la licence ?" --yes-button "Accepter" --no-button "Refuser" 7 35) then
+	echo "Merci d'avoir accepter le CLUF"
+ else
+	echo "Merci de relancer le programme"
+fi
+
+```
+
+
+
+
 **3.Input**
 ```console
 #!/bin/bash
@@ -71,11 +87,6 @@ fi
 ```
 
 
-**TEST**
-```
-whiptail --title "CLUF" --yesno  "Accepter vous la licence ?" --yes-button "Accepter" --no-button "Refuser" 7 35
-
-```
 
 
 **4.PasswordBox**
