@@ -102,7 +102,7 @@ if [ -z $1 ]
    pam password change = yes
    map to guest = bad user
    usershare allow guests = yes
-   netbios aliases = sldebian02 sldebian02b
+   netbios aliases = $HOSTNAME $HOSTNAME.$DOMAINE
 #====================== Partage home ==================================
 [homes]
    comment = Dossier Utilisateurs
@@ -122,14 +122,14 @@ if [ -z $1 ]
 #   valid users = docker
 #   force user = root
 #====================== Partage System ================================
-[SYSTEM]
-   comment = Utilisateur docker qui prend les droits root
-   path = /
-   browseable = yes
-   writable = yes
-   read only = no
-   valid users = docker
-   force user = root
+#[SYSTEM]
+#   comment = Utilisateur root qui prend les droits roots
+#   path = /
+#   browseable = yes
+#   writable = yes
+#   read only = no
+#   valid users = root
+#   force user = root
 #======================= No Delete Line Next ==========================
 ;   write list = root, @lpadmin
 #======================================================================" > /etc/samba/smb.conf
