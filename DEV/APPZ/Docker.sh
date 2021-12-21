@@ -18,7 +18,7 @@ if [ -z $1 ]
   - PREP
   - PURGE
   - STATS
-  - TEST  
+  - TEST
   - VERSION (Docker, Docker-Compose)
   '
 
