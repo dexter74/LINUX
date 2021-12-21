@@ -43,7 +43,7 @@ if [ -z $1 ]
  elif [ $1 = "FIX" ]
   then
    apt update --fix-missing -y;
-   dpkg --configure -a;;
+   dpkg --configure -a;
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "BASE" ]
   then
