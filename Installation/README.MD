@@ -23,9 +23,6 @@ sh ./config/5.SSH.sh
 ````
 
 
-
-
-
 ````console
 sh ./config/0.environnement.sh \
 	Debian buster \
@@ -41,17 +38,17 @@ sh ./config/2.reseau.sh STATIC;
 sh ./config/2.reseau.sh IPV6_OFF;
 sh ./config/2.reseau.sh CHECK;
 
-sh ./config/3.Paquets.sh CDROM;
-sh ./config/3.Paquets.sh BACKPORT;
-sh ./config/3.Paquets.sh MAJ;
-sh ./config/3.Paquets.sh FIX;
-sh ./config/3.Paquets.sh BASE;
-sh ./config/3.Paquets.sh OUTIL;
-sh ./config/3.Paquets.sh QEMU;
-sh ./config/3.Paquets.sh SAMBA;
-sh ./config/3.Paquets.sh KERNEL;
-sh ./config/3.Paquets.sh SERVICE_OFF;
-sh ./config/3.Paquets.sh SERVICE_ON;
+sh ./config/3.paquets.sh CDROM;
+sh ./config/3.paquets.sh BACKPORT;
+sh ./config/3.paquets.sh MAJ;
+sh ./config/3.paquets.sh FIX;
+sh ./config/3.paquets.sh BASE;
+sh ./config/3.paquets.sh OUTIL;
+sh ./config/3.paquets.sh QEMU;
+sh ./config/3.paquets.sh SAMBA;
+sh ./config/3.paquets.sh KERNEL;
+sh ./config/3.paquets.sh SERVICE_OFF;
+sh ./config/3.paquets.sh SERVICE_ON;
 
 sh ./config/4.users_groups.sh DEL_USER       $USER
 sh ./config/4.users_groups.sh DEL_USER_HOME  $USER
@@ -66,7 +63,6 @@ sh ./config/4.users_groups.sh CHECK          $USER
 
 sh ./config/4.users_groups.sh ADD_SUDOER     $USER
 sh ./config/4.users_groups.sh DEL_SUDOER     $USER
-
 ````
 
 
