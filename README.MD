@@ -114,8 +114,8 @@ sh LINUX/APPZ/Docker.sh STATS;             #Docker Stats
 **Samba** (A testé)
 ```console
 sh LINUX/APPZ/Samba.sh
-sh LINUX/APPZ/Samba.sh INSTALL
 sh LINUX/APPZ/Samba.sh PURGE
+sh LINUX/APPZ/Samba.sh INSTALL
 sh LINUX/APPZ/Samba.sh BACKUP
 sh LINUX/APPZ/Samba.sh AUTOCFG
 sh LINUX/APPZ/Samba.sh ADD $USER $PASS
