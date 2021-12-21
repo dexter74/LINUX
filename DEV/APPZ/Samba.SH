@@ -19,6 +19,8 @@ if [ -z $1 ]
   - EDIT
   - SERVICE <start|stop|restart|status|reload|disable|enable)
   - RECOVERY
+  - WSDD_INSTALL
+  - WSDD_PURGE
   "
 # --------------------------------------------------------------------------------
 # Déblocage de la limit
@@ -186,6 +188,27 @@ echo "; ========================================================================
    guest ok        = no 
 ;===================================================================================================================" > /etc/samba/smb.conf; systemctl restart smbd; systemctl status smbd
 
+# --------------------------------------------------------------------------------
+# Suppresion de WSDD
+ elif [ $1 = "WSDD_PURGE" ]
+  then
+   clear;
+   systemctl disable --now wsdd;
+   rm /etc/systemd/system/wsdd.service ;
+   rm /usr/bin/wsdd;
+   systemctl daemon-reload;
+
+# --------------------------------------------------------------------------------
+# Installation de WSDD
+ elif [ $1 = "WSDD_INSTALL" ]
+  then
+   wget https://github.com/christgau/wsdd/archive/master.zip -O /tmp/master.zip;
+   unzip /tmp/master.zip -d /tmp;
+   mv /tmp/wsdd-master/src/wsdd.py /tmp/wsdd-master/src/wsdd;
+   cp /tmp/wsdd-master/src/wsdd /usr/bin;
+   cp /tmp/wsdd-master/etc/systemd/wsdd.service /etc/systemd/system;
+   systemctl daemon-reload;
+   systemctl enable --now wsdd;
 # --------------------------------------------------------------------------------
 #
  else
