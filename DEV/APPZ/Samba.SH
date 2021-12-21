@@ -47,7 +47,6 @@ if [ -z $1 ]
    apt purge          -y samba samba-common;
    apt remove --purge -y samba samba-common cifs-utils smbclient;
    rm -rf /var/cache/samba /etc/samba /run/samba /var/lib/samba /var/log/samba;
-   
 
 # --------------------------------------------------------------------------------
 # Ajout du compte Samba (Login: $2 | PASS: $3)
@@ -193,9 +192,9 @@ echo "; ========================================================================
  elif [ $1 = "WSDD_PURGE" ]
   then
    clear;
-   rm -r /tmp/* ;
+   rm -r /tmp/*;
    systemctl disable --now wsdd;
-   rm /etc/systemd/system/wsdd.service ;
+   rm /etc/systemd/system/wsdd.service;
    rm /usr/bin/wsdd;
    systemctl daemon-reload;
 
@@ -203,7 +202,7 @@ echo "; ========================================================================
 # Installation de WSDD
  elif [ $1 = "WSDD_INSTALL" ]
   then
-   rm -r /tmp/* ;
+   rm -r /tmp/*;
    wget https://github.com/christgau/wsdd/archive/master.zip -O /tmp/master.zip;
    unzip /tmp/master.zip -d /tmp;
    mv /tmp/wsdd-master/src/wsdd.py /tmp/wsdd-master/src/wsdd;
