@@ -40,19 +40,19 @@ sh LINUX/Installation/CONFIG/2.reseau.sh CHECK;
 
 **Paquets** (A Testé)
 ```console
-sh LINUX/Installation/CONFIG/3.Paquets.sh CDROM;
-sh LINUX/Installation/CONFIG/3.Paquets.sh BACKPORT;
-sh LINUX/Installation/CONFIG/3.Paquets.sh MAJ;
-sh LINUX/Installation/CONFIG/3.Paquets.sh FIX;
-sh LINUX/Installation/CONFIG/3.Paquets.sh BASE;
-sh LINUX/Installation/CONFIG/3.Paquets.sh OUTIL;
-sh LINUX/Installation/CONFIG/3.Paquets.sh QEMU;
+sh LINUX/Installation/CONFIG/3.paquets.sh CDROM;
+sh LINUX/Installation/CONFIG/3.paquets.sh BACKPORT;
+sh LINUX/Installation/CONFIG/3.paquets.sh MAJ;
+sh LINUX/Installation/CONFIG/3.paquets.sh FIX;
+sh LINUX/Installation/CONFIG/3.paquets.sh BASE;
+sh LINUX/Installation/CONFIG/3.paquets.sh OUTIL;
+sh LINUX/Installation/CONFIG/3.paquets.sh QEMU;
 
-sh LINUX/Installation/CONFIG/3.Paquets.sh SAMBA;# <= A supprimer (Script Samba.sh)
+sh LINUX/Installation/CONFIG/3.paquets.sh SAMBA;# <= A supprimer (Script Samba.sh)
 
-sh LINUX/Installation/CONFIG/3.Paquets.sh KERNEL;
-sh LINUX/Installation/CONFIG/3.Paquets.sh SERVICE_ON;
-sh LINUX/Installation/CONFIG/3.Paquets.sh SERVICE_OFF;
+sh LINUX/Installation/CONFIG/3.paquets.sh KERNEL;
+sh LINUX/Installation/CONFIG/3.paquets.sh SERVICE_ON;
+sh LINUX/Installation/CONFIG/3.paquets.sh SERVICE_OFF;
 ```
 
 **User & Groups** (A Testé)
