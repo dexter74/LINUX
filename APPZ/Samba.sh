@@ -7,20 +7,20 @@
 if [ -z $1 ]
  then
   echo "Manque Argument:
-  - Samba.SH INSTALL
-  - Samba.SH PURGE
-  - Samba.SH BACKUP
-  - Samba.SH AUTOCFG
-  - Samba.SH ADD  $SAMBA_USER $SAMBA_PASS 
-  - Samba.SH DEL  $SAMBA_USER
-  - Samba.SH ENABLE
-  - Samba.SH DISABLE
-  - Samba.SH LIST
-  - Samba.SH EDIT
-  - Samba.SH SERVICE <start|stop|restart|status|reload|disable|enable)
-  - Samba.SH RECOVERY
-  - Samba.SH WSDD_INSTALL
-  - Samba.SH WSDD_PURGE
+  - Samba.sh INSTALL
+  - Samba.sh PURGE
+  - Samba.sh BACKUP
+  - Samba.sh AUTOCFG
+  - Samba.sh ADD  \SAMBA_USER \$SAMBA_PASS 
+  - Samba.sh DEL  \$SAMBA_USER
+  - Samba.sh ENABLE
+  - Samba.sh DISABLE
+  - Samba.sh LIST
+  - Samba.sh EDIT
+  - Samba.sh SERVICE <start|stop|restart|status|reload|disable|enable)
+  - Samba.sh RECOVERY
+  - Samba.sh WSDD_INSTALL
+  - Samba.sh WSDD_PURGE
   "
 # --------------------------------------------------------------------------------
 # Déblocage de la limit
