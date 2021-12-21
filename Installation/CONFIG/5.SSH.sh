@@ -8,13 +8,13 @@ if [ -z $1 ]
  then
   clear;
   echo "Argument de commande manquant.
-  - STEP_1: Création des dossiers SSH
-  - STEP_2: Insertion de la Clé SSH sur le serveur
-  - STEP_3: Modification des permissions
-  - STEP_4: Sécurisation du SSH
-  - STEP_5: Relance du service
-  - STEP_6: Backup
-  - STEP_7: Recovery
+  - 5.SSH.sh STEP_1: Création des dossiers SSH
+  - 5.SSH.sh STEP_2: Insertion de la Clé SSH sur le serveur
+  - 5.SSH.sh STEP_3: Modification des permissions
+  - 5.SSH.sh STEP_4: Sécurisation du SSH
+  - 5.SSH.sh STEP_5: Relance du service
+  - 5.SSH.sh STEP_6: Backup
+  - 5.SSH.sh STEP_7: Recovery
   "
 # -------------------------------------------------------------------------------------------
 # Création des dossiers SSH
