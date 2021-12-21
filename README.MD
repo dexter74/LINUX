@@ -9,6 +9,12 @@ git clone https://github.com/dexter74/LINUX.git;
 
 
 **Environnement** (Exemple)
+
+```console
+sh LINUX/Installation/CONFIG/0.environnement.sh <DISTRIB> <CODENAME> <HOSTNAME> <DOMAIN> <REGION> <VILLE> <LANGUE> <IP> <PASSERELLE> <DNS 1> <DNS 2> <USER> <GROUP> <PASS USER> <UID> <GID> <SAMBA USER> <SAMBA PASS>
+```
+
+
 ```console
 sh LINUX/Installation/CONFIG/0.environnement.sh Debian buster \
 SLDEBIAN04 LAN \
