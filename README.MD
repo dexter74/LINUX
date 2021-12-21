@@ -108,9 +108,6 @@ sh LINUX/APPZ/Docker.sh STATS
 sh LINUX/APPZ/Docker.sh TEST
 sh LINUX/APPZ/Docker.sh VERSION
 ```
-
-
-
 **Samba** (A testé)
 ```console
 sh LINUX/APPZ/Samba.sh
@@ -118,8 +115,8 @@ sh LINUX/APPZ/Samba.sh INSTALL
 sh LINUX/APPZ/Samba.sh PURGE
 sh LINUX/APPZ/Samba.sh BACKUP
 sh LINUX/APPZ/Samba.sh AUTOCFG
-sh LINUX/APPZ/Samba.sh ADD  marc Azerty74
-sh LINUX/APPZ/Samba.sh DEL  marc
+sh LINUX/APPZ/Samba.sh ADD  $USER $PASS
+sh LINUX/APPZ/Samba.sh DEL  $USER
 sh LINUX/APPZ/Samba.sh ENABLE
 sh LINUX/APPZ/Samba.sh DISABLE
 sh LINUX/APPZ/Samba.sh LIST
@@ -129,6 +126,3 @@ sh LINUX/APPZ/Samba.sh RECOVERY
 sh LINUX/APPZ/Samba.sh WSDD_INSTALL
 sh LINUX/APPZ/Samba.sh WSDD_PURGE
 ```
-
-
- git clone https://github.com/dexter74/LINUX.git
