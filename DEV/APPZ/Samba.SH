@@ -115,36 +115,79 @@ if [ -z $1 ]
  elif [ $1 = "AUTOCFG" ]
   then
    clear;
-   echo ""
+echo "; ===================================================================================================================
+[global]
+   workgroup = WORKGROUP
+   log file = /var/log/samba/log.%m
+   max log size = 1000
+   logging = file
+   panic action = /usr/share/samba/panic-action %d
+   server role = standalone server
+   obey pam restrictions = yes
+   unix password sync = yes
+   passwd program = /usr/bin/passwd %u
+   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+   pam password change = yes
+   map to guest = bad user
+   usershare allow guests = yes
+
+;==============================================================================================
+; Explication sur les paramètres de partages                                                  ;
+;==============================================================================================
+;[NomdemonPartage]
+   ;comment         = Mon commentaire
+   ;path            = /chemin
+   ;browseable      = yes | no (Partage Cacher ou Visible)
+   ;writable        = yes | no (Ecriture)
+   ;read only       = yes | no (Lire uniquement)
+   ;valid users     = USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
+   ;force user      = USER     (Valid Users prend les droits de Force user)
+   ;create mask     = 0700     (Conseiller) | 0755 (déconseiller)
+   ;directory mask  = 0700     (Conseiller) | 0755 (déconseiller)
+   ;guest ok        = no | yes (Mode invité)
+;==============================================================================================
+
+
+;=================== Dossier Racine  ==========================================================
+[sda1]
+   comment         = Racine du serveur
+   path            = /
+   browseable      = yes
+   writable        = yes
+   read only       = no
+   valid users     = @users,@root
+   force user      = root
+   create mask     = 0700
+   directory mask  = 0700
+   guest ok        = no
+
+
+;=================== Dossier Utilisateurs =====================================================
+[homes]
+   comment         = Dossier Utilisateurse
+   browseable      = no
+   writable        = yes
+   read only       = no
+   create mask     = 0700
+   directory mask  = 0700
+   guest ok        = no
+
+;=================== Dossier Docker Volumes ===================================================
+[Volumes]
+   comment         = Dossier Volumes de Docker
+   path            = /var/lib/docker/volumes
+   browseable      = yes
+   writable        = yes
+   read only       = no
+   valid users     = @users,@root
+   force user      = root
+   create mask     = 0700
+   directory mask  = 0700
+   guest ok        = no 
+;===================================================================================================================" > /etc/samba/smb.conf; systemctl restart smbd; systemctl status smbd
+
 # --------------------------------------------------------------------------------
 #
  else
   echo "Script KO"
 fi
-
-
-
-
-# /etc/samba/smb.conf
-#==============================================================================================
-# Explication sur les paramètres de partages                                                  #
-#==============================================================================================
-#[NomdemonPartage]
-   #comment         = Mon commentaire
-   #path            = /chemin
-   #browseable      = yes | no (Partage Cacher ou Visible)
-   #writable        = yes | no (Ecriture)
-   #read only       = yes | no (Lire uniquement)
-   #valid users     = USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
-   #force user      = USER     (Valid Users prend les droits de Force user)
-   #create mask     = 0700     (Conseiller) | 0755 (déconseiller)
-   #directory mask  = 0700     (Conseiller) | 0755 (déconseiller)
-   #guest ok        = no | yes (Mode invité)
-#==============================================================================================
-#[homes] fait Référence aux dossier /home/$USER | Le partage doit etre en browseable = no     #
-#==============================================================================================
-
-#======================= No Delete Line Next ==================================================
-# Ligne à décommenter !!!!
-# ;   write list = root, @lpadmin
-#==============================================================================================
