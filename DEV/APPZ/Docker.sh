@@ -134,7 +134,7 @@ fi
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Défaut   : /var/lib/docker/volumes
-# Service  : nano  /lib/systemd/system/docker.service;
+# Service  : nano /lib/systemd/system/docker.service;
 # Editer   : ExecStart=/usr/bin/dockerd --data-root '/home/docker' -H fd:// --containerd=/run/containerd/containerd.sock
 # systemctl daemon-reload;
 # systemctl restart docker*;
