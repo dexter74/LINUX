@@ -68,6 +68,28 @@ if (whiptail --title "CLUF" --yesno  "Accepter vous la licence ?" --yes-button "
 	echo "Merci de relancer le programme"
 fi
 
+--------------------------------
+TEST='whiptail --title "CLUF" --yesno  "Accepter vous la licence ?" --yes-button "Accepter" --no-button "Refuser" 7 35'
+eval $TEST
+--------------------------------
+TEST='whiptail --title "CLUF" --yesno "Accepter vous la licence ?" --yes-button "Accepter" --no-button "Refuser" 7 35'
+if eval $TEST
+ then
+  echo "ok"
+ else
+  echo "ko"
+fi
+--------------------------------
+#!/bin/bash
+TEST=$(whiptail --title "CLUF" --yesno "Accepter vous la licence ?" --yes-button "Accepter" --no-button "Refuser" 7 35 3>&1 1>&2 2$
+
+exitstatus=$?
+if [ $exitstatus = 0 ];
+ then
+  echo "OK"
+  else
+   echo "KO"
+fi
 ```
 
 
