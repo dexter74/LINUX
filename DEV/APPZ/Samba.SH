@@ -87,7 +87,9 @@ if [ -z $1 ]
  elif [ $1 = "AUTOCFG" ]
   then
    clear;
-   echo "#====================== Global Settings ===============================
+   
+   echo "#====================== Global Settings =============================================================================
+
 [global]
    workgroup = WORKGROUP
    log file = /var/log/samba/log.%m
@@ -98,12 +100,15 @@ if [ -z $1 ]
    obey pam restrictions = yes
    unix password sync = yes
    passwd program = /usr/bin/passwd %u
-   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
    pam password change = yes
+   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
    map to guest = bad user
    usershare allow guests = yes
    netbios aliases = $HOSTNAME $HOSTNAME.$DOMAINE
-#====================== Partage home ==================================
+#====================================================================================================================
+
+
+#====================== Partage home ===========================
 [homes]
    comment = Dossier Utilisateurs
    browseable = no
@@ -112,34 +117,66 @@ if [ -z $1 ]
    create mask = 0700
    directory mask = 0700
    guest ok = no
-#====================== Partage Volumes ===============================
-#[Volumes]
-#   comment = Utilisateur docker qui prend les droits root
-#   path = /
-#   browseable = yes
-#   writable = yes
-#   read only = no
-#   valid users = docker
-#   force user = root
-#====================== Partage System ================================
-#[SYSTEM]
-#   comment = Utilisateur root qui prend les droits roots
-#   path = /
-#   browseable = yes
-#   writable = yes
-#   read only = no
-#   valid users = root
-#   force user = root
-#======================= No Delete Line Next ==========================
-;   write list = root, @lpadmin
-#======================================================================" > /etc/samba/smb.conf
 
-   
-   
-   # --------------------------------------------------------------------------------
+
+#====================== Partage root ===========================
+#[Racine]
+#comment         = Racine du Serveur
+#path            = /
+#browseable      = yes
+#writable        = yes
+#read only       = no
+#valid users     = root %S  (Utilisateurs groupe autorisés ou le service %S )
+#force user      = root     (Valid Users prend les droits de Force user)
+#create mask     = 0700     (Conseiller) | 0755 (déconseiller)
+#directory mask  = 0700     (Conseiller) | 0755 (déconseiller)			
+#guest ok        = no | yes (Mode invité)
+
+#====================== Partage www ============================
+#[www]
+#comment = Dossier Apache
+#path = /var/www/html
+#browseable = yes
+#writable = yes
+#read only = no
+#force user = www-data
+#force group = www-data
+#create mask = 0700
+#directory mask = 0700
+#===============================================================
+
+
+
+#==============================================================================================
+# Explication sur les paramètres de partages                                                  #
+#==============================================================================================
+#[NomdemonPartage]
+#comment         = Mon commentaire
+#path            = /chemin
+#browseable      = yes | no (Partage Cacher ou Visible)
+#writable        = yes | no (Ecriture)
+#read only       = yes | no (Lire uniquement)
+#valid users     = USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
+#force user      = USER     (Valid Users prend les droits de Force user)
+#create mask     = 0700     (Conseiller) | 0755 (déconseiller)
+#directory mask  = 0700     (Conseiller) | 0755 (déconseiller)			
+#guest ok        = no | yes (Mode invité)
+#==============================================================================================
+#Partages
+#homes           = Référence aux dossier /home/$USER
+#                = browseable = no (Evite un doublon du dossier Home et USER)
+#==============================================================================================
+
+#======================= No Delete Line Next ==================================================
+;   write list = root, @lpadmin
+#==============================================================================================" > /etc/samba/smb.conf
+# --------------------------------------------------------------------------------
 #
  else
   echo "Script KO"
 fi
+
+
+
 
 
