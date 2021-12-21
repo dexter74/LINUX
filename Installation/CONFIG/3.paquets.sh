@@ -79,9 +79,9 @@ if [ -z $1 ]
  elif [ $1 = "KERNEL" ]
   then
    clear;
-   apt install -t -y buster-backports;
-   apt install -t -y linux-image-amd64;
-   apt install -t -y firmware-linux;
+   apt install -qq -y buster-backports;
+   apt install -qq -y linux-image-amd64;
+   apt install -qq -y firmware-linux;
 
 
 # -----------------------------------------------------------------------------------------------
