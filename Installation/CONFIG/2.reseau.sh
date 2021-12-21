@@ -9,11 +9,11 @@ if [ -z $1 ]
  then
   clear;
   echo "Argument valide: 
-   - DHCP
-   - STATIC
-   - IPV6_OFF
-   - IPV6_ON
-   - CHECK"
+   - 2.reseau.sh DHCP
+   - 2.reseau.sh STATIC
+   - 2.reseau.sh IPV6_OFF
+   - 2.reseau.sh IPV6_ON
+   - 2.reseau.sh CHECK"
 # ------------------------------------------------------------------------------------
  elif [ $1 = "DHCP" ]
   then
