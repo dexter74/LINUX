@@ -133,9 +133,9 @@ if [ -z $1 ]
 fi
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-#  /lib/systemd/system/docker.service;
-# --data-root ''
-# systemctl daemon-reload ;
-# systemctl restart docker* ;
+# Défaut   : /var/lib/docker/volumes
+# Service  : nano  /lib/systemd/system/docker.service;
+# Editer   : ExecStart=/usr/bin/dockerd --data-root '/home/docker' -H fd:// --containerd=/run/containerd/containerd.sock
+# systemctl daemon-reload;
+# systemctl restart docker*;
 # docker info | grep "Docker Root"
