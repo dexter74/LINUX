@@ -13,8 +13,6 @@ sh LINUX/Installation/CONFIG/1.host.sh
 sh LINUX/Installation/CONFIG/2.reseau.sh STATIC
 sh LINUX/Installation/CONFIG/2.reseau.sh IPV6_OFF
 
-
-
 sh LINUX/Installation/CONFIG/3.Paquets.sh CDROM;
 sh LINUX/Installation/CONFIG/3.Paquets.sh BACKPORT;
 sh LINUX/Installation/CONFIG/3.Paquets.sh MAJ;
@@ -46,6 +44,11 @@ sh LINUX/Installation/CONFIG/5.SSH.sh STEP_3;# Permissions
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_4;# Securisation SH
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_5;# Relance du Service
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_7;# Recovery
+
+
+sh LINUX/APPZ/ADGuardHome.sh
+sh LINUX/APPZ/Docker.sh
+sh LINUX/APPZ/Samba.sh
 ```
 
 
