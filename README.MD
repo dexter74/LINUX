@@ -39,8 +39,10 @@ sh LINUX/Installation/CONFIG/2.reseau.sh IPV6_OFF;
 sh LINUX/Installation/CONFIG/2.reseau.sh CHECK;
 ```
 
-**Paquets** (A Testé)
+**Paquets** (A Réviser)
 ```console
+# sh LINUX/Installation/CONFIG/3.paquets.sh SAMBA;# <= A supprimer (Script Samba.sh)
+
 sh LINUX/Installation/CONFIG/3.paquets.sh CDROM;
 sh LINUX/Installation/CONFIG/3.paquets.sh BACKPORT;
 sh LINUX/Installation/CONFIG/3.paquets.sh MAJ;
@@ -48,9 +50,6 @@ sh LINUX/Installation/CONFIG/3.paquets.sh FIX;
 sh LINUX/Installation/CONFIG/3.paquets.sh BASE;
 sh LINUX/Installation/CONFIG/3.paquets.sh OUTIL;
 sh LINUX/Installation/CONFIG/3.paquets.sh QEMU;
-
-sh LINUX/Installation/CONFIG/3.paquets.sh SAMBA;# <= A supprimer (Script Samba.sh)
-
 sh LINUX/Installation/CONFIG/3.paquets.sh KERNEL;
 sh LINUX/Installation/CONFIG/3.paquets.sh SERVICE_ON;
 sh LINUX/Installation/CONFIG/3.paquets.sh SERVICE_OFF;
@@ -95,20 +94,23 @@ sh LINUX/APPZ/ADGuardHome.sh STOP
 sh LINUX/APPZ/ADGuardHome.sh STATUS
 ```
 
-**Docker** (A Réviser)
+**Docker** (A Réviser et à compléter)
 ```console
 # Ordre de la liste des Arguments à modifier
-sh LINUX/APPZ/Docker.sh CLEAN => ? (Supprimer Conteneurs, Images)
-sh LINUX/APPZ/Docker.sh PURGE => ? (Désinstallation Docker)
-sh LINUX/APPZ/Docker.sh FIX
-sh LINUX/APPZ/Docker.sh HUB <USER> <PASS>
-sh LINUX/APPZ/Docker.sh PREP
-sh LINUX/APPZ/Docker.sh INSTALL
-sh LINUX/APPZ/Docker.sh PORTAINER
-sh LINUX/APPZ/Docker.sh STATS
-sh LINUX/APPZ/Docker.sh TEST
-sh LINUX/APPZ/Docker.sh VERSION
+# sh LINUX/APPZ/Docker.sh CLEAN;#Problème sur la commande 
+
+
+sh LINUX/APPZ/Docker.sh PURGE;             #Désinstalle Docker
+sh LINUX/APPZ/Docker.sh INSTALL;           #Installe Docker   (Reboot)
+sh LINUX/APPZ/Docker.sh FIX;               #Kernel error      (Reboot)
+sh LINUX/APPZ/Docker.sh TEST;              #Hello-World       (Conteneur)
+sh LINUX/APPZ/Docker.sh VERSION;           #Check Version
+sh LINUX/APPZ/Docker.sh HUB <USER> <PASS>  #Connexion à Docker Hub
+sh LINUX/APPZ/Docker.sh PORTAINER;         #Coneneur Portainer
+sh LINUX/APPZ/Docker.sh STATS;             #Docker Stats
 ```
+
+
 **Samba** (A testé)
 ```console
 sh LINUX/APPZ/Samba.sh
@@ -116,8 +118,8 @@ sh LINUX/APPZ/Samba.sh INSTALL
 sh LINUX/APPZ/Samba.sh PURGE
 sh LINUX/APPZ/Samba.sh BACKUP
 sh LINUX/APPZ/Samba.sh AUTOCFG
-sh LINUX/APPZ/Samba.sh ADD  $USER $PASS
-sh LINUX/APPZ/Samba.sh DEL  $USER
+sh LINUX/APPZ/Samba.sh ADD $USER $PASS
+sh LINUX/APPZ/Samba.sh DEL $USER
 sh LINUX/APPZ/Samba.sh ENABLE
 sh LINUX/APPZ/Samba.sh DISABLE
 sh LINUX/APPZ/Samba.sh LIST
