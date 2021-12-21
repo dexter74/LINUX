@@ -26,7 +26,7 @@ if [ -z $1 ]
  elif [ $1 ="INSTALL" ]
   then
    clear;
-   echo "deb http://ftp.de.debian.org/debian $RELEASE  main" > /etc/apt/sources.list.d/$RELEASE.list;
+   echo "deb http://ftp.de.debian.org/debian $RELEASE main" > /etc/apt/sources.list.d/$RELEASE.list;
    apt update;
    apt install -qq -y samba;
 
@@ -75,7 +75,7 @@ if [ -z $1 ]
    nano /etc/samba/smb.conf;
 
 # --------------------------------------------------------------------------------
-# Relance le service Samba 
+# Relance le service Samba
  elif [ $1 ="SERVICE" ]
   then
    clear;
