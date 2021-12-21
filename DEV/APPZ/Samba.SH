@@ -17,13 +17,13 @@ if [ -z $1 ]
   "
 # --------------------------------------------------------------------------------
 # Déblocage de la limit
- elif [ $1 ="ULIMIT" ]
+ elif [ $1 = "ULIMIT" ]
   then
-   ulimit -n 16384
+   ulimit -n 16384;
 
 # --------------------------------------------------------------------------------
 #
- elif [ $1 ="INSTALL" ]
+ elif [ $1 = "INSTALL" ]
   then
    clear;
    echo "deb http://ftp.de.debian.org/debian $RELEASE main" > /etc/apt/sources.list.d/$RELEASE.list;
@@ -32,51 +32,51 @@ if [ -z $1 ]
 
 # --------------------------------------------------------------------------------
 # Ajout du compte Samba (Login: $2 | PASS: $3)
- elif [ $1 ="ADD" ]
+ elif [ $1 = "ADD" ]
   then
    clear;
    (echo $3; echo $3) | smbpasswd -a $2;
    smbpasswd -e $2;
-   systemctl restart smbd ;
+   systemctl restart smbd;
 
 # --------------------------------------------------------------------------------
 # Suppresstion du compte Samba
- elif [ $1 ="DEL" ]
+ elif [ $1 = "DEL" ]
   then
    clear;
-   smbpasswd -x $2;# Delete
+   smbpasswd -x $2;
 
 # --------------------------------------------------------------------------------
 # Désactivation du compte Samba
- elif [ $1 ="DISABLE" ]
+ elif [ $1 = "DISABLE" ]
   then
    clear;
    smbpasswd -d $2;
 
 # --------------------------------------------------------------------------------
 # Activation du compte Samba
- elif [ $1 ="ENABLE" ]
+ elif [ $1 = "ENABLE" ]
   then
    clear;
    smbpasswd -E $2;
 
 # --------------------------------------------------------------------------------
 # Liste les User de Samba
- elif [ $1 ="LIST" ]
+ elif [ $1 = "LIST" ]
   then
    clear;
-   pdbedit -L ;
+   pdbedit -L;
 
 # --------------------------------------------------------------------------------
 # Liste les User de Samba
- elif [ $1 ="EDIT" ]
+ elif [ $1 = "EDIT" ]
   then
    clear;
    nano /etc/samba/smb.conf;
 
 # --------------------------------------------------------------------------------
 # Relance le service Samba
- elif [ $1 ="SERVICE" ]
+ elif [ $1 = "SERVICE" ]
   then
    clear;
    systemctl $3 smbd;
