@@ -87,7 +87,6 @@ if [ -z $1 ]
  elif [ $1 = "AUTOCFG" ]
   then
    clear;
-   
    echo "#====================== Global Settings =============================================================================
 
 [global]
@@ -107,7 +106,6 @@ if [ -z $1 ]
    netbios aliases = $HOSTNAME $HOSTNAME.$DOMAINE
 #====================================================================================================================
 
-
 #====================== Partage home ===========================
 [homes]
    comment = Dossier Utilisateurs
@@ -118,53 +116,49 @@ if [ -z $1 ]
    directory mask = 0700
    guest ok = no
 
-
 #====================== Partage root ===========================
 #[Racine]
-#comment         = Racine du Serveur
-#path            = /
-#browseable      = yes
-#writable        = yes
-#read only       = no
-#valid users     = root %S  (Utilisateurs groupe autorisés ou le service %S )
-#force user      = root     (Valid Users prend les droits de Force user)
-#create mask     = 0700     (Conseiller) | 0755 (déconseiller)
-#directory mask  = 0700     (Conseiller) | 0755 (déconseiller)			
-#guest ok        = no | yes (Mode invité)
+   #comment         = Racine du Serveur
+   #path            = /
+   #browseable      = yes
+   #writable        = yes
+   #read only       = no
+   #valid users     = root %S  (Utilisateurs groupe autorisés ou le service %S )
+   #force user      = root     (Valid Users prend les droits de Force user)
+   #create mask     = 0700     (Conseiller) | 0755 (déconseiller)
+   #directory mask  = 0700     (Conseiller) | 0755 (déconseiller)
+   #guest ok        = no | yes (Mode invité)
 
 #====================== Partage www ============================
 #[www]
-#comment = Dossier Apache
-#path = /var/www/html
-#browseable = yes
-#writable = yes
-#read only = no
-#force user = www-data
-#force group = www-data
-#create mask = 0700
-#directory mask = 0700
+   #comment = Dossier Apache
+   #path = /var/www/html
+   #browseable = yes
+   #writable = yes
+   #read only = no
+   #force user = www-data
+   #force group = www-data
+   #create mask = 0700
+   #directory mask = 0700
+
 #===============================================================
-
-
 
 #==============================================================================================
 # Explication sur les paramètres de partages                                                  #
 #==============================================================================================
 #[NomdemonPartage]
-#comment         = Mon commentaire
-#path            = /chemin
-#browseable      = yes | no (Partage Cacher ou Visible)
-#writable        = yes | no (Ecriture)
-#read only       = yes | no (Lire uniquement)
-#valid users     = USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
-#force user      = USER     (Valid Users prend les droits de Force user)
-#create mask     = 0700     (Conseiller) | 0755 (déconseiller)
-#directory mask  = 0700     (Conseiller) | 0755 (déconseiller)			
-#guest ok        = no | yes (Mode invité)
+   #comment         = Mon commentaire
+   #path            = /chemin
+   #browseable      = yes | no (Partage Cacher ou Visible)
+   #writable        = yes | no (Ecriture)
+   #read only       = yes | no (Lire uniquement)
+   #valid users     = USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
+   #force user      = USER     (Valid Users prend les droits de Force user)
+   #create mask     = 0700     (Conseiller) | 0755 (déconseiller)
+   #directory mask  = 0700     (Conseiller) | 0755 (déconseiller)
+   #guest ok        = no | yes (Mode invité)
 #==============================================================================================
-#Partages
-#homes           = Référence aux dossier /home/$USER
-#                = browseable = no (Evite un doublon du dossier Home et USER)
+#[homes] fait Référence aux dossier /home/$USER | Le partage doit etre en browseable = no     # 
 #==============================================================================================
 
 #======================= No Delete Line Next ==================================================
