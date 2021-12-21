@@ -7,17 +7,17 @@ if [ -z $1 ]
  then
   clear;
   echo "Merci d'indiquer un argument:
-  - CDROM
-  - BACKPORT
-  - MAJ
-  - FIX
-  - BASE
-  - OUTIL
-  - QEMU
-  - SAMBA
-  - KERNEL
-  - SERVICE_OFF
-  - SERVICE_ON
+  - 3.paquets.sh CDROM
+  - 3.paquets.sh BACKPORT
+  - 3.paquets.sh MAJ
+  - 3.paquets.sh FIX
+  - 3.paquets.sh BASE
+  - 3.paquets.sh OUTIL
+  - 3.paquets.sh QEMU
+  - 3.paquets.sh SAMBA
+  - 3.paquets.sh KERNEL
+  - 3.paquets.sh SERVICE_OFF
+  - 3.paquets.sh SERVICE_ON
   "
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "CDROM" ]
