@@ -111,7 +111,7 @@ sh LINUX/APPZ/Docker.sh STATS;             #Docker Stats
 ```
 
 
-**Samba** (A testé)
+**Samba** (A testé, A vérifier sur la désinstallation / réinstallation)
 ```console
 sh LINUX/APPZ/Samba.sh
 sh LINUX/APPZ/Samba.sh PURGE
