@@ -29,8 +29,9 @@ if [ -z $1 ]
    clear;
    echo "deb http://ftp.de.debian.org/debian $RELEASE main" > /etc/apt/sources.list.d/$RELEASE.list;
    apt update;
-   apt install -qq -y samba;
-
+   apt install -qq -y samba;  
+   systemctl is-enabled smbd;
+   
 # --------------------------------------------------------------------------------
 # Ajout du compte Samba (Login: $2 | PASS: $3)
  elif [ $1 = "ADD" ]
