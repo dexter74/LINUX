@@ -1,4 +1,6 @@
-[Guide](https://morgan-durand.com/creer-des-boites-de-dialogues-en-bash/)
+Guide
+> https://morgan-durand.com/creer-des-boites-de-dialogues-en-bash/
+> https://en.wikibooks.org/wiki/Bash_Shell_Scripting/Whiptail
 
 
 **1.Message Box**
