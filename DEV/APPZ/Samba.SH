@@ -41,10 +41,11 @@ if [ -z $1 ]
  elif [ $1 = "PURGE" ]
   then
    clear;
-   apt autoremove samba samba-common;
-   apt purge samba samba-common;
-   apt remove --purge  -y samba samba-common cifs-utils smbclient;
+   apt autoremove     -y samba samba-common;
+   apt purge          -y samba samba-common;
+   apt remove --purge -y samba samba-common cifs-utils smbclient;
    rm -rf /var/cache/samba /etc/samba /run/samba /var/lib/samba /var/log/samba;
+   
 
 # --------------------------------------------------------------------------------
 # Ajout du compte Samba (Login: $2 | PASS: $3)
