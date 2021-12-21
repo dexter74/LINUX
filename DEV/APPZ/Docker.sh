@@ -10,13 +10,15 @@ if [ -z $1 ]
  then
   clear;
   echo 'Merci de preciser un parametre
-  - PURGE
-  - PREP
-  - INSTALL
+  - CLEAN
+  - FIX
   - HUB <Login> <PASS>
-  - TEST (Lance le conteneur Hello-World)
-  - CLEAN (Kill + Clean conteneurs / images)
+  - INSTALL
+  - PORTAINER
+  - PREP
+  - PURGE
   - STATS
+  - TEST  
   - VERSION (Docker, Docker-Compose)
   '
 
@@ -97,13 +99,6 @@ if [ -z $1 ]
   docker stats --format "table  {{.Name}}\t {{.CPUPerc}}\t  {{.MemPerc}}\t  {{.MemUsage}}\t {{.NetIO}}\t {{.BlockIO}}\t"
 
 # -------------------------------------------------------------------------------------------------------------------------------------
-# Liste les volumes
- elif [ "$1" = "VOLUMES" ]
-  then
-  clear;
-  docker volume ls;
-
-# -------------------------------------------------------------------------------------------------------------------------------------
 # Déploiement de Portainer (journalctl -f | grep "cgroup\|swap\|docker")
  elif [ "$1" = "PORTAINER" ]
   then
@@ -122,8 +117,6 @@ if [ -z $1 ]
    -v Portainer:/data portainer/portainer-ce \
    --hide-label \
    Portainer="hide";
-
-
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------
