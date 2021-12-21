@@ -42,7 +42,7 @@ if [ -z $1 ]
   then
    clear;
    echo "deb http://ftp.de.debian.org/debian $RELEASE main" > /etc/apt/sources.list.d/$RELEASE.list;
-   chattr +i /etc/samba/smb.conf.old
+   chattr -i /etc/samba/smb.conf.old;
    apt autoremove --purge -y samba;
    apt remove --purge -y samba;
    rm -r /etc/samba;
@@ -100,21 +100,21 @@ if [ -z $1 ]
 # Sauvegarde la configuration
  elif [ $1 = "BACKUP" ]
   then
-   cp /etc/samba/smb.conf /etc/samba/smb.conf.old
-   chattr -i /etc/samba/smb.conf.old
+   cp /etc/samba/smb.conf /etc/samba/smb.conf.old;
+   chattr +i /etc/samba/smb.conf.old;
 
 # --------------------------------------------------------------------------------
 # Restaure la configuration
  elif [ $1 = "RECOVERY" ]
   then
-   cp /etc/samba/smb.conf.old /etc/samba/
+   cp /etc/samba/smb.conf.old /etc/samba/smb.conf;
 
 # --------------------------------------------------------------------------------
 # Relance le service Samba
  elif [ $1 = "AUTOCFG" ]
   then
    clear;
-# echo "" > /etc/samba/smb.conf
+   echo ""
 # --------------------------------------------------------------------------------
 #
  else
@@ -124,7 +124,7 @@ fi
 
 
 
-
+# /etc/samba/smb.conf
 #==============================================================================================
 # Explication sur les paramètres de partages                                                  #
 #==============================================================================================
