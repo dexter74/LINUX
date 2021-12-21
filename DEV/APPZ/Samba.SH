@@ -193,6 +193,7 @@ echo "; ========================================================================
  elif [ $1 = "WSDD_PURGE" ]
   then
    clear;
+   rm -r /tmp/* ;
    systemctl disable --now wsdd;
    rm /etc/systemd/system/wsdd.service ;
    rm /usr/bin/wsdd;
@@ -202,6 +203,7 @@ echo "; ========================================================================
 # Installation de WSDD
  elif [ $1 = "WSDD_INSTALL" ]
   then
+   rm -r /tmp/* ;
    wget https://github.com/christgau/wsdd/archive/master.zip -O /tmp/master.zip;
    unzip /tmp/master.zip -d /tmp;
    mv /tmp/wsdd-master/src/wsdd.py /tmp/wsdd-master/src/wsdd;
