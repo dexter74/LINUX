@@ -138,4 +138,4 @@ fi
 # --data-root ''
 # systemctl daemon-reload ;
 # systemctl restart docker* ;
-
+# docker info | grep "Docker Root"
