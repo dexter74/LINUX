@@ -24,10 +24,14 @@ if [ -z $1 ]
   then
    clear;
    /opt/AdGuardHome/AdGuardHome -s install
+   /opt/AdGuardHome/AdGuardHome -s start
+
 # --------------------------------------------
  elif [ "$1" = "DISABLE" ]
   then
    /opt/AdGuardHome/AdGuardHome -s uninstall
+   /opt/AdGuardHome/AdGuardHome -s start
+
 # ----------------------------
  elif [ "$1" = "START" ]
   then
