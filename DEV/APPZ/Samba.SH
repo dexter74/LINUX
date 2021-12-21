@@ -38,7 +38,7 @@ if [ -z $1 ]
 
 # --------------------------------------------------------------------------------
 #
- elif [ $1 = "INSTALL" ]
+ elif [ $1 = "PURGE" ]
   then
    clear;
    echo "deb http://ftp.de.debian.org/debian $RELEASE main" > /etc/apt/sources.list.d/$RELEASE.list;
