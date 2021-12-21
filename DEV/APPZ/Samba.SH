@@ -8,6 +8,7 @@ if [ -z $1 ]
  then
   echo "Manque Argument:
   - INSTALL
+  - AUTOCFG
   - ADD
   - DEL
   - ENABLE
