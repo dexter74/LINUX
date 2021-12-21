@@ -8,6 +8,7 @@ if [ -z $1 ]
  then
   echo "Manque Argument:
   - INSTALL
+  - PURGE
   - BACKUP
   - AUTOCFG
   - ADD
@@ -34,6 +35,14 @@ if [ -z $1 ]
    apt update;
    apt install -qq -y samba;
    systemctl is-enabled smbd;
+
+# --------------------------------------------------------------------------------
+#
+ elif [ $1 = "INSTALL" ]
+  then
+   clear;
+   echo "deb http://ftp.de.debian.org/debian $RELEASE main" > /etc/apt/sources.list.d/$RELEASE.list;
+   apt autoremove -y --purge samba;
 
 # --------------------------------------------------------------------------------
 # Ajout du compte Samba (Login: $2 | PASS: $3)
