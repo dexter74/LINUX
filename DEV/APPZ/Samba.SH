@@ -158,7 +158,7 @@ if [ -z $1 ]
    #directory mask  = 0700     (Conseiller) | 0755 (déconseiller)
    #guest ok        = no | yes (Mode invité)
 #==============================================================================================
-#[homes] fait Référence aux dossier /home/$USER | Le partage doit etre en browseable = no     # 
+#[homes] fait Référence aux dossier /home/$USER | Le partage doit etre en browseable = no     #
 #==============================================================================================
 
 #======================= No Delete Line Next ==================================================
@@ -169,8 +169,4 @@ if [ -z $1 ]
  else
   echo "Script KO"
 fi
-
-
-
-
 
