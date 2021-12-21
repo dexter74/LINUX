@@ -42,8 +42,10 @@ if [ -z $1 ]
   then
    clear;
    echo "deb http://ftp.de.debian.org/debian $RELEASE main" > /etc/apt/sources.list.d/$RELEASE.list;
-   apt autoremove -y --purge samba;
-
+   chattr +i /etc/samba/smb.conf.old
+   apt autoremove --purge -y samba;
+   apt remove --purge -y samba;
+   rm -r /etc/samba;
 # --------------------------------------------------------------------------------
 # Ajout du compte Samba (Login: $2 | PASS: $3)
  elif [ $1 = "ADD" ]
