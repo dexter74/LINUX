@@ -28,11 +28,11 @@ if [ -z $1 ]
   then
    clear;
    apt autoremove --purge -y docker-ce docker-ce-cli containerd.io;
-   rm -rf /var/lib/docker;
    rm -rf /var/lib/containerd;
    rm -rf /etc/docker;
    rm -rf /usr/local/bin/docker-compose;
-
+   #rm -rf /var/lib/docker;
+   
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Mise à jour Dépôt, Installation des pré-requis et ajout du dépôts docker.
  elif [ "$1" = "PREP" ]
