@@ -15,7 +15,6 @@ if [ -z $1 ]
   - INSTALL (Installation de Docker et Docker-compose)
   - FIX     (Corrige les bugs Post-Install de Linux)
   - HUB <Login> <PASS>
-
   - KILL (Tue tous les conteneurs)
   - PORTAINER
   - STATS
