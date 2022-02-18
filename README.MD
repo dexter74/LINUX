@@ -39,10 +39,8 @@ sh LINUX/Installation/CONFIG/2.reseau.sh IPV6_OFF;
 sh LINUX/Installation/CONFIG/2.reseau.sh CHECK;
 ```
 
-**Paquets** (A Réviser)
+**Paquets**
 ```console
-# sh LINUX/Installation/CONFIG/3.paquets.sh SAMBA;# <= A supprimer (Script Samba.sh)
-
 sh LINUX/Installation/CONFIG/3.paquets.sh CDROM;
 sh LINUX/Installation/CONFIG/3.paquets.sh BACKPORT;
 sh LINUX/Installation/CONFIG/3.paquets.sh MAJ;
