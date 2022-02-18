@@ -86,17 +86,17 @@ if [ -z $1 ]
  elif [ $1 = "SERVICE_OFF" ]
   then
    clear;
-   systemctl disable --now smbd;
    systemctl disable --now iscsid.service;
    systemctl disable --now open-iscsi.service;
+   #systemctl disable --now smbd;
 
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "SERVICE_ON" ]
   then
    clear;
-   systemctl enable --now smbd;
    systemctl enable --now iscsid.service;
    systemctl enable --now open-iscsi.service;
+   #systemctl enable --now smbd;
 
 # -----------------------------------------------------------------------------------------------
  else
