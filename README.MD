@@ -135,8 +135,8 @@ sh LINUX/APPZ/Samba.sh ENABLE  $USER   #
 sh LINUX/APPZ/Samba.sh DISABLE $USER   #
 sh LINUX/APPZ/Samba.sh LIST;           #
 
-sh LINUX/APPZ/Samba.sh WSDD_INSTALL;   #
 sh LINUX/APPZ/Samba.sh WSDD_PURGE;     #
+sh LINUX/APPZ/Samba.sh WSDD_INSTALL;   #
 
 sh LINUX/APPZ/Samba.sh SERVICE reload  # Recharge la configuration
 sh LINUX/APPZ/Samba.sh SERVICE status  # Samba et WSDD
