@@ -95,11 +95,11 @@ sh LINUX/APPZ/ADGuardHome.sh STATUS
 **Docker** (A Réviser et à compléter)
 ```console
 # Ordre de la liste des Arguments à modifier
-# sh LINUX/APPZ/Docker.sh CLEAN;#Problème sur la commande 
+# sh LINUX/APPZ/Docker.sh CLEAN;#Problème sur la commande
 
 
 sh LINUX/APPZ/Docker.sh PURGE;             #Désinstalle Docker
-sh LINUX/APPZ/Docker.sh INSTALL;           #Installe Docker   (Reboot)
+sh LINUX/APPZ/Docker.sh INSTALL;           #Installe Docker
 sh LINUX/APPZ/Docker.sh FIX;               #Kernel error      (Reboot)
 sh LINUX/APPZ/Docker.sh TEST;              #Hello-World       (Conteneur)
 sh LINUX/APPZ/Docker.sh VERSION;           #Check Version
