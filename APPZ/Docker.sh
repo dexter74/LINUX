@@ -17,6 +17,9 @@ if [ -z $1 ]
   - HUB <Login> <PASS>
   - KILL (Tue tous les conteneurs)
   - PORTAINER 8000 19901 32m
+  - PORTAINER_UPDATE 8000 19901 32m
+  - LOCK
+  - UNLOCK
   - STATS
   - TEST
   - VERSION (Docker, Docker-Compose)
@@ -122,12 +125,34 @@ if [ -z $1 ]
 # ---------------------------------------------------------------------------------------------------------------------------------------------
  elif [ "$1" = "LOCK" ]
   then
-  chattr -i Portainer;
+  clear;
+  chattr +i /var/lib/docker/volumes/Portainer;
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
  elif [ "$1" = "UNLOCK" ]
   then
-  chattr -+ Portainer;
+  clear;
+  chattr -i /var/lib/docker/volumes/Portainer;
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+ elif [ "$1" = "PORTAINER_UPDATE" ]
+  then
+  clear;
+  docker kill CN_Portainer;
+  docker container rm CN_Portainer;
+  docker image  rm portainer/portainer-ce;  
+  docker run -d -p $2:8000 -p $3:9000 \
+   --name=CN_Portainer \
+   --restart=always \
+   --label Portainer="hide" \
+   -m $4 \
+   -v /var/run/docker.sock:/var/run/docker.sock \
+   -v Portainer:/data \
+   portainer/portainer-ce \
+   --hide-label \
+   Portainer="hide";
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Install Docker avec Docker Compose
