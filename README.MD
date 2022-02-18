@@ -125,12 +125,12 @@ sh LINUX/APPZ/Samba.sh PURGE;          # Nettoyage
 sh LINUX/APPZ/Samba.sh INSTALL;        # Installation de Samba
 sh LINUX/APPZ/Samba.sh BACKUP;         # Sauvegarde le fichier config
 sh LINUX/APPZ/Samba.sh AUTOCFG;        # Auto-Configuration
-sh LINUX/APPZ/Samba.sh ADD $USER $PASS # Ajout d'un utilisateur Samba
 sh LINUX/APPZ/Samba.sh DEL $USER       # Suppression d'un utilisateur Samba
+sh LINUX/APPZ/Samba.sh ADD $USER $PASS # Ajout d'un utilisateur Samba
 sh LINUX/APPZ/Samba.sh ENABLE  $USER   # 
 sh LINUX/APPZ/Samba.sh DISABLE $USER   #
 sh LINUX/APPZ/Samba.sh LIST;           #
-sh LINUX/APPZ/Samba.sh EDIT;           #
+sh LINUX/APPZ/Samba.sh EDIT;           # Edition de la configuration Samba
 sh LINUX/APPZ/Samba.sh SERVICE start   #
 sh LINUX/APPZ/Samba.sh SERVICE stop    #
 sh LINUX/APPZ/Samba.sh SERVICE restart #
