@@ -218,14 +218,19 @@ echo "; ========================================================================
 # Installation de WSDD
  elif [ $1 = "WSDD_INSTALL" ]
   then
-   rm -r /tmp/*;
-   wget https://github.com/christgau/wsdd/archive/master.zip -O /tmp/master.zip;
-   unzip /tmp/master.zip -d /tmp;
-   mv /tmp/wsdd-master/src/wsdd.py /tmp/wsdd-master/src/wsdd;
-   cp /tmp/wsdd-master/src/wsdd /usr/bin;
-   cp /tmp/wsdd-master/etc/systemd/wsdd.service /etc/systemd/system;
-   systemctl daemon-reload;
-   systemctl enable --now wsdd;
+   #rm -r /tmp/*;
+   #wget https://github.com/christgau/wsdd/archive/master.zip -O /tmp/master.zip;
+   #unzip /tmp/master.zip -d /tmp;
+   #mv /tmp/wsdd-master/src/wsdd.py /tmp/wsdd-master/src/wsdd;
+   #cp /tmp/wsdd-master/src/wsdd /usr/bin;
+   #cp /tmp/wsdd-master/etc/systemd/wsdd.service /etc/systemd/system;
+   #systemctl daemon-reload;
+   #systemctl enable --now wsdd;
+   echo "deb https://pkg.ltec.ch/public/ $RELEASE main" > /etc/apt/sources.list.d/wsdd.list;
+   apt-key adv --fetch-keys https://pkg.ltec.ch/public/conf/ltec-ag.gpg.key
+   apt update 1>/dev/null 2>/dev/null
+   apt install -y wsdd;
+   
 # --------------------------------------------------------------------------------
 #
  else
