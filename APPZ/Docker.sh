@@ -109,7 +109,6 @@ if [ -z $1 ]
   docker container rm CN_Portainer;
   docker image  rm portainer/portainer-ce;
   docker volume rm Portainer;
-  #8001 / 19901
   docker run -d -p $2:8000 -p $3:9000 \
    --name=CN_Portainer \
    --restart=always \
@@ -120,8 +119,9 @@ if [ -z $1 ]
    portainer/portainer-ce \
    --hide-label \
    Portainer="hide";
-
-
+#8001 et 19901
+  
+  
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Install Docker avec Docker Compose
  elif [ "$1" = "VERSION" ]
