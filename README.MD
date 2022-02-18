@@ -121,18 +121,24 @@ sh LINUX/APPZ/Docker.sh VERSION;                         #Check Version
 **Samba** (A testé, A vérifier sur la désinstallation / réinstallation)
 ```console
 sh LINUX/APPZ/Samba.sh;
-sh LINUX/APPZ/Samba.sh PURGE;
-sh LINUX/APPZ/Samba.sh INSTALL;
-sh LINUX/APPZ/Samba.sh BACKUP;
-sh LINUX/APPZ/Samba.sh AUTOCFG;
-sh LINUX/APPZ/Samba.sh ADD $USER $PASS
-sh LINUX/APPZ/Samba.sh DEL $USER
-sh LINUX/APPZ/Samba.sh ENABLE;
-sh LINUX/APPZ/Samba.sh DISABLE;
-sh LINUX/APPZ/Samba.sh LIST;
-sh LINUX/APPZ/Samba.sh EDIT;
-sh LINUX/APPZ/Samba.sh SERVICE <start|stop|restart|status|reload|disable|enable>
-sh LINUX/APPZ/Samba.sh RECOVERY;
+sh LINUX/APPZ/Samba.sh PURGE;          # Nettoyage
+sh LINUX/APPZ/Samba.sh INSTALL;        # Installation de Samba
+sh LINUX/APPZ/Samba.sh BACKUP;         # Sauvegarde le fichier config
+sh LINUX/APPZ/Samba.sh AUTOCFG;        # Auto-Configuration
+sh LINUX/APPZ/Samba.sh ADD $USER $PASS # Ajout d'un utilisateur Samba
+sh LINUX/APPZ/Samba.sh DEL $USER       # Suppression d'un utilisateur Samba
+sh LINUX/APPZ/Samba.sh ENABLE  $USER   # 
+sh LINUX/APPZ/Samba.sh DISABLE $USER   #
+sh LINUX/APPZ/Samba.sh LIST;           #
+sh LINUX/APPZ/Samba.sh EDIT;           #
+sh LINUX/APPZ/Samba.sh SERVICE start   #
+sh LINUX/APPZ/Samba.sh SERVICE stop    #
+sh LINUX/APPZ/Samba.sh SERVICE restart #
+sh LINUX/APPZ/Samba.sh SERVICE status  #
+sh LINUX/APPZ/Samba.sh SERVICE reload  #
+sh LINUX/APPZ/Samba.sh SERVICE disable #
+sh LINUX/APPZ/Samba.sh SERVICE enable  #
+sh LINUX/APPZ/Samba.sh RECOVERY;       #
 
 sh LINUX/APPZ/Samba.sh WSDD_INSTALL;
 sh LINUX/APPZ/Samba.sh WSDD_PURGE;
