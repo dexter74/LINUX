@@ -1,4 +1,3 @@
-
 #################################################
 # Script de de déploiement de Docker sur Debian #
 #################################################
@@ -11,13 +10,14 @@ if [ -z $1 ]
  then
   clear;
   echo 'Merci de preciser un parametre
-  - KILL
-  - FIX
+  - PURGE   (Désinstalle Proprement Docker)
+  - PREP    (Paquet indispensable pour installer docker)
+  - INSTALL (Installation de Docker et Docker-compose)
+  - FIX     (Corrige les bugs Post-Install de Linux)
   - HUB <Login> <PASS>
-  - INSTALL
+
+  - KILL (Tue tous les conteneurs)
   - PORTAINER
-  - PREP
-  - PURGE
   - STATS
   - TEST
   - VERSION (Docker, Docker-Compose)
@@ -69,7 +69,7 @@ if [ -z $1 ]
   systemctl reboot;
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
-#  COnnexion au Docker-Hub ($2: login | $3: Password)
+#  Connexion au Docker-Hub ($2: login | $3: Password)
  elif [ "$1" = "HUB" ]
   then
   clear;
