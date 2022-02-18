@@ -24,49 +24,46 @@ if [ -z $1 ]
  elif [ $1 = "DEL_USER" ]
   then
    clear;
-	deluser $2;
-
+   deluser $2;
 
 # ------------------------------------------------------------
  elif [ $1 = "DEL_USER_HOME" ]
   then
    clear;
-	rm -r /home/$2;
-
+   rm -r /home/$2;
 
 # ------------------------------------------------------------
  elif [ $1 = "DEL_GROUP" ]
   then
    clear;
-    delgroup $2;
-
+   delgroup $2;
 
 # ------------------------------------------------------------
  elif [ $1 = "ADD_GROUP" ]
   then
    clear;
-    addgroup $2 --gid $3 ;
+   addgroup $2 --gid $3 ;
 
 
 # ------------------------------------------------------------
  elif [ $1 = "ADD_USER" ]
   then
    clear;
-    useradd \
-      --home-dir /home/$2 \
-      --base-dir /home/$2 \
-      --uid $3 \
-      --gid $4 \
-      --groups $5 \
-      --no-user-group \
-      --shell /bin/bash \
-      --create-home $2;
+   useradd \
+     --home-dir /home/$2 \
+     --base-dir /home/$2 \
+     --uid $3 \
+     --gid $4 \
+     --groups $5 \
+     --no-user-group \
+     --shell /bin/bash \
+     --create-home $2;
 
 # ------------------------------------------------------------
  elif [ $1 = "DEL_USER_GROUP" ]
   then
    clear;
-    deluser $2 $3;
+   deluser $2 $3;
 
 # ------------------------------------------------------------
  elif [ $1 = "ADD_USER_GROUP" ]
@@ -78,31 +75,31 @@ if [ -z $1 ]
  elif [ $1 = "PASSWORD" ]
   then
    clear;
-    echo "$2:$3" | chpasswd ;
+   echo "$2:$3" | chpasswd ;
 
 # ------------------------------------------------------------
  elif [ $1 = "DEL_SUDOER" ]
   then
    clear;
-	rm /etc/sudoers.d/$2;
+   rm /etc/sudoers.d/$2;
 
 # ------------------------------------------------------------
  elif [ $1 = "ADD_SUDOER" ]
   then
    clear;
-    echo "$2 ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$2;
+   echo "$2 ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$2;
 
 # ------------------------------------------------------------
  elif [ $1 = "CHECK" ]
   then
    clear;
-    id $2; groups $2;
-	cat /etc/sudoers.d/$2;
-
+   id $2; groups $2;
+   cat /etc/sudoers.d/$2;
 
 # ------------------------------------------------------------
  else
-  echo "Argument non reconnu";
+   echo "Argument non reconnu";
+   
 # ------------------------------------------------------------
 fi
 
