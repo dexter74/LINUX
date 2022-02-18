@@ -29,7 +29,7 @@ if [ -z $1 ]
  elif [ $1 = "BACKPORT" ]
   then
    clear;
-   echo "deb http://ftp.de.debian.org/debian buster main" > /etc/apt/sources.list.d/backport.list;
+   echo "deb http://ftp.de.debian.org/debian $RELEASE main" > /etc/apt/sources.list.d/backport.list;
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "MAJ" ]
   then
@@ -76,7 +76,7 @@ if [ -z $1 ]
  elif [ $1 = "KERNEL" ]
   then
    clear;
-   apt install -qq -y buster-backports;
+   apt install -qq -y $RELEASE-backports;
    apt install -qq -y linux-image-amd64;
    apt install -qq -y firmware-linux;
 
