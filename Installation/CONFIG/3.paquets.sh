@@ -30,6 +30,8 @@ if [ -z $1 ]
   then
    clear;
    echo "deb http://ftp.de.debian.org/debian $RELEASE main" > /etc/apt/sources.list.d/backport.list;
+   cat /etc/apt/sources.list.d/backport.list;
+   
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "MAJ" ]
   then
