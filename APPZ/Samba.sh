@@ -94,7 +94,7 @@ if [ -z $1 ]
    systemctl restart smbd;
 
 # --------------------------------------------------------------------------------
-# Relance le service Samba
+# Relance les services
  elif [ $1 = "SERVICE" ]
   then
    clear;
