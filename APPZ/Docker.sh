@@ -10,19 +10,19 @@ if [ -z $1 ]
  then
   clear;
   echo 'Merci de preciser un parametre
-  - PURGE   (Désinstalle Proprement Docker)
-  - PREP    (Paquet indispensable pour installer docker)
-  - INSTALL (Installation de Docker et Docker-compose)
-  - FIX     (Corrige les bugs Post-Install de Linux)
-  - HUB <Login> <PASS>
-  - KILL (Tue tous les conteneurs)
-  - PORTAINER 8000 19901 32m
-  - PORTAINER_UPDATE 8000 19901 32m
-  - LOCK
-  - UNLOCK
-  - STATS
-  - TEST
-  - VERSION (Docker, Docker-Compose)
+  - PURGE                             # Désinstalle Proprement Docker
+  - PREP                              # Paquet indispensable pour installer docker
+  - INSTALL                           # Installation de Docker et Docker-compose
+  - FIX                               # Corrige les bugs Post-Install de Linux
+  - HUB <Login> <PASS>                # Connexion au HUB
+  - TEST                              # Conteneur Hello-World pour le test de fonctionnalité
+  - KILL                              # Tue tous les conteneurs
+  - PORTAINER 8000 19901 32m          # Kill, Purge le conteneur Portainer avec son volume et le réinstalle.
+  - PORTAINER_UPDATE 8000 19901 32m   # Kill, Purge le conteneur Portainer avec son IMAGE puis le recrée.
+  - LOCK                              # Vérrouillage du volume Portainer
+  - UNLOCK                            # Dévérrouillage du volume Portainer
+  - STATS                             # 
+  - VERSION                           #
   '
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
