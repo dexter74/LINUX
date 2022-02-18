@@ -23,6 +23,7 @@ if [ -z $1 ]
   then
    clear;
    sed -i 's/^deb cdrom/#deb cdrom/g' /etc/apt/sources.list;
+   grep 'cdrom' /etc/apt/sources.list;
 
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "BACKPORT" ]
