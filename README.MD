@@ -104,7 +104,7 @@ sh LINUX/APPZ/Docker.sh FIX;               #Kernel error      (Reboot)
 sh LINUX/APPZ/Docker.sh TEST;              #Hello-World       (Conteneur)
 sh LINUX/APPZ/Docker.sh VERSION;           #Check Version
 sh LINUX/APPZ/Docker.sh HUB <USER> <PASS>  #Connexion à Docker Hub
-sh LINUX/APPZ/Docker.sh PORTAINER;         #Coneneur Portainer
+sh LINUX/APPZ/Docker.sh PORTAINER 8000 19901 32
 sh LINUX/APPZ/Docker.sh STATS;             #Docker Stats
 ```
 
