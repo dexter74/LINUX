@@ -32,7 +32,7 @@ if [ -z $1 ]
    rm -rf /etc/docker;
    rm -rf /usr/local/bin/docker-compose;
    #rm -rf /var/lib/docker;
-   
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Mise à jour Dépôt, Installation des pré-requis et ajout du dépôts docker.
  elif [ "$1" = "PREP" ]
@@ -109,6 +109,7 @@ if [ -z $1 ]
   docker container rm CN_Portainer;
   docker image  rm portainer/portainer-ce;
   docker volume rm Portainer;
+  #8001 / 19901
   docker run -d -p $2:8000 -p $3:9000 \
    --name=CN_Portainer \
    --restart=always \
