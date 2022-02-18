@@ -34,6 +34,7 @@ sh LINUX/Installation/CONFIG/1.host.sh;
 
 **Réseau**
 ```console
+sh LINUX/Installation/CONFIG/2.reseau.sh;
 sh LINUX/Installation/CONFIG/2.reseau.sh STATIC;
 sh LINUX/Installation/CONFIG/2.reseau.sh IPV6_OFF;
 sh LINUX/Installation/CONFIG/2.reseau.sh CHECK;
@@ -41,6 +42,7 @@ sh LINUX/Installation/CONFIG/2.reseau.sh CHECK;
 
 **Paquets**
 ```console
+sh LINUX/Installation/CONFIG/3.paquets.sh;
 sh LINUX/Installation/CONFIG/3.paquets.sh CDROM;
 sh LINUX/Installation/CONFIG/3.paquets.sh BACKPORT;
 sh LINUX/Installation/CONFIG/3.paquets.sh MAJ;
@@ -55,6 +57,7 @@ sh LINUX/Installation/CONFIG/3.paquets.sh SERVICE_OFF;
 
 **User & Groups** (A Testé)
 ```console
+sh LINUX/Installation/CONFIG/4.users_groups.sh;
 sh LINUX/Installation/CONFIG/4.users_groups.sh DEL_USER       $USER
 sh LINUX/Installation/CONFIG/4.users_groups.sh DEL_USER_HOME  $USER
 sh LINUX/Installation/CONFIG/4.users_groups.sh DEL_GROUP      $GROUP
@@ -70,6 +73,7 @@ sh LINUX/Installation/CONFIG/4.users_groups.sh DEL_SUDOER     $USER
 
 **SSH** (A Testé)
 ```console
+sh LINUX/Installation/CONFIG/5.SSH.sh STEP_6;
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_6;# Backup
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_1;# Dossier SSH
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_2;# Clé SSH
@@ -82,6 +86,7 @@ sh LINUX/Installation/CONFIG/5.SSH.sh STEP_7;# Recovery
 
 **ADGuardHome** (A Testé)
 ```console
+sh LINUX/APPZ/ADGuardHome.sh;
 sh LINUX/APPZ/ADGuardHome.sh PURGE
 sh LINUX/APPZ/ADGuardHome.sh DL
 sh LINUX/APPZ/ADGuardHome.sh INSTALL
@@ -94,7 +99,7 @@ sh LINUX/APPZ/ADGuardHome.sh STATUS
 
 **Docker** (A Réviser et à compléter)
 ```console
-# Ordre de la liste des Arguments à modifier
+sh LINUX/APPZ/Docker.sh;
 sh LINUX/APPZ/Docker.sh PURGE;                           #Désinstalle Docker
 sh LINUX/APPZ/Docker.sh PREP;                            #Préparation des indispensables
 sh LINUX/APPZ/Docker.sh INSTALL;                         #Installe Docker
@@ -115,19 +120,20 @@ sh LINUX/APPZ/Docker.sh VERSION;                         #Check Version
 
 **Samba** (A testé, A vérifier sur la désinstallation / réinstallation)
 ```console
-sh LINUX/APPZ/Samba.sh
-sh LINUX/APPZ/Samba.sh PURGE
-sh LINUX/APPZ/Samba.sh INSTALL
-sh LINUX/APPZ/Samba.sh BACKUP
-sh LINUX/APPZ/Samba.sh AUTOCFG
+sh LINUX/APPZ/Samba.sh;
+sh LINUX/APPZ/Samba.sh PURGE;
+sh LINUX/APPZ/Samba.sh INSTALL;
+sh LINUX/APPZ/Samba.sh BACKUP;
+sh LINUX/APPZ/Samba.sh AUTOCFG;
 sh LINUX/APPZ/Samba.sh ADD $USER $PASS
 sh LINUX/APPZ/Samba.sh DEL $USER
-sh LINUX/APPZ/Samba.sh ENABLE
-sh LINUX/APPZ/Samba.sh DISABLE
-sh LINUX/APPZ/Samba.sh LIST
-sh LINUX/APPZ/Samba.sh EDIT
-sh LINUX/APPZ/Samba.sh SERVICE <start|stop|restart|status|reload|disable|enable)
-sh LINUX/APPZ/Samba.sh RECOVERY
-sh LINUX/APPZ/Samba.sh WSDD_INSTALL
-sh LINUX/APPZ/Samba.sh WSDD_PURGE
+sh LINUX/APPZ/Samba.sh ENABLE;
+sh LINUX/APPZ/Samba.sh DISABLE;
+sh LINUX/APPZ/Samba.sh LIST;
+sh LINUX/APPZ/Samba.sh EDIT;
+sh LINUX/APPZ/Samba.sh SERVICE <start|stop|restart|status|reload|disable|enable>
+sh LINUX/APPZ/Samba.sh RECOVERY;
+
+sh LINUX/APPZ/Samba.sh WSDD_INSTALL;
+sh LINUX/APPZ/Samba.sh WSDD_PURGE;
 ```
