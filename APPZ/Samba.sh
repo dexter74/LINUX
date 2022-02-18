@@ -99,7 +99,6 @@ if [ -z $1 ]
   then
    clear;
    systemctl $2 smbd;
-   systemctl $2 wsdd;
 # --------------------------------------------------------------------------------
 # Sauvegarde la configuration
  elif [ $1 = "BACKUP" ]
