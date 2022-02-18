@@ -11,7 +11,7 @@ if [ -z $1 ]
  then
   clear;
   echo 'Merci de preciser un parametre
-  - CLEAN
+  - KILL
   - FIX
   - HUB <Login> <PASS>
   - INSTALL
@@ -84,7 +84,7 @@ if [ -z $1 ]
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Tue les conteneurs, purge les conteneurs leurs images. (Volumes intact)
- elif [ "$1" = "CLEAN" ]
+ elif [ "$1" = "KILL" ]
   then
   clear;
   docker kill $(docker ps -q);
