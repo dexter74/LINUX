@@ -16,7 +16,7 @@ if [ -z $1 ]
   - FIX     (Corrige les bugs Post-Install de Linux)
   - HUB <Login> <PASS>
   - KILL (Tue tous les conteneurs)
-  - PORTAINER
+  - PORTAINER 8000 19901 32m
   - STATS
   - TEST
   - VERSION (Docker, Docker-Compose)
