@@ -34,12 +34,14 @@ if [ -z $1 ]
 # --------------------------------------------------------------------------------------------------------------------------------
  elif [ "$1" = "ENABLE" ]
   then
-   systemctl enable AdGuardHome.service
-   
+   systemctl enable AdGuardHome.service;
+   systemctl is-active AdGuardHome.service;
+
 # --------------------------------------------------------------------------------------------------------------------------------
  elif [ "$1" = "DISABLE" ]
   then
    systemctl disable AdGuardHome.service
+   systemctl is-active AdGuardHome.service;
 
 # --------------------------------------------------------------------------------------------------------------------------------
  elif [ "$1" = "START" ]
