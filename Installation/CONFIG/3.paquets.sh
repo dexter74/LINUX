@@ -14,7 +14,6 @@ if [ -z $1 ]
   - 3.paquets.sh BASE
   - 3.paquets.sh OUTIL
   - 3.paquets.sh QEMU
-  - 3.paquets.sh SAMBA
   - 3.paquets.sh KERNEL
   - 3.paquets.sh SERVICE_OFF
   - 3.paquets.sh SERVICE_ON
@@ -38,12 +37,12 @@ if [ -z $1 ]
    apt upgrade -qq -y;
    #1>/dev/NULL 2>/dev/NULL;
 
-
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "FIX" ]
   then
    apt update --fix-missing -y;
    dpkg --configure -a;
+
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "BASE" ]
   then
@@ -51,13 +50,11 @@ if [ -z $1 ]
    apt install -y -qq bash-completion curl debconf-utils \
    dnsutils git gnupg net-tools sudo unzip wget;
 
-
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "OUTIL" ]
   then
    clear;
    apt install -y -qq cifs-utils ntfs-3g open-iscsi;
-
 
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "QEMU" ]
@@ -66,14 +63,13 @@ if [ -z $1 ]
    apt install -y -qq qemu-guest-agent;
 
 # -----------------------------------------------------------------------------------------------
- elif [ $1 = "SAMBA" ]
-  then
-   clear;
-   echo "samba-common samba-common/workgroup string WORKGROUP" | debconf-set-selections;
-   echo "samba-common samba-common/dhcp boolean false" | debconf-set-selections;
-   echo "samba-common samba-common/do_debconf boolean true" | debconf-set-selections;
-   apt install -y -qq samba smbclient;
-
+# elif [ $1 = "SAMBA" ]
+#  then
+#   clear;
+#   echo "samba-common samba-common/workgroup string WORKGROUP" | debconf-set-selections;
+#   echo "samba-common samba-common/dhcp boolean false" | debconf-set-selections;
+#   echo "samba-common samba-common/do_debconf boolean true" | debconf-set-selections;
+#   apt install -y -qq samba smbclient;
 
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "KERNEL" ]
@@ -83,7 +79,6 @@ if [ -z $1 ]
    apt install -qq -y linux-image-amd64;
    apt install -qq -y firmware-linux;
 
-
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "SERVICE_OFF" ]
   then
@@ -92,7 +87,6 @@ if [ -z $1 ]
    systemctl disable --now iscsid.service;
    systemctl disable --now open-iscsi.service;
 
-
 # -----------------------------------------------------------------------------------------------
  elif [ $1 = "SERVICE_ON" ]
   then
@@ -100,7 +94,6 @@ if [ -z $1 ]
    systemctl enable --now smbd;
    systemctl enable --now iscsid.service;
    systemctl enable --now open-iscsi.service;
-
 
 # -----------------------------------------------------------------------------------------------
  else
