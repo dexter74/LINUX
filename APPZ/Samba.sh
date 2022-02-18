@@ -143,7 +143,7 @@ echo "; ========================================================================
    ;browseable      = yes | no (Partage Cacher ou Visible)
    ;writable        = yes | no (Ecriture)
    ;read only       = yes | no (Lire uniquement)
-   ;valid users     = USER1, USER2, @groupe12000 %S  (Utilisateurs, Groupe ou Services autorisés)
+   ;valid users     = USER1, USER2, @groupe, %S  (Utilisateurs, Groupe ou Services autorisés)
    ;force user      = USER     (Valid Users prend les droits de Force user)
    ;create mask     = 0700     (Conseiller) | 0755 (déconseiller)
    ;directory mask  = 0700     (Conseiller) | 0755 (déconseiller)
