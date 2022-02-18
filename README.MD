@@ -98,14 +98,14 @@ sh LINUX/APPZ/ADGuardHome.sh STATUS
 # sh LINUX/APPZ/Docker.sh CLEAN;#Problème sur la commande
 
 
-sh LINUX/APPZ/Docker.sh PURGE;             #Désinstalle Docker
-sh LINUX/APPZ/Docker.sh INSTALL;           #Installe Docker
-sh LINUX/APPZ/Docker.sh FIX;               #Kernel error      (Reboot)
-sh LINUX/APPZ/Docker.sh TEST;              #Hello-World       (Conteneur)
-sh LINUX/APPZ/Docker.sh VERSION;           #Check Version
-sh LINUX/APPZ/Docker.sh HUB <USER> <PASS>  #Connexion à Docker Hub
-sh LINUX/APPZ/Docker.sh PORTAINER 8000 19901 32
-sh LINUX/APPZ/Docker.sh STATS;             #Docker Stats
+sh LINUX/APPZ/Docker.sh PURGE;                    #Désinstalle Docker
+sh LINUX/APPZ/Docker.sh INSTALL;                  #Installe Docker
+sh LINUX/APPZ/Docker.sh FIX;                      #Kernel error      (Reboot)
+sh LINUX/APPZ/Docker.sh TEST;                     #Hello-World       (Conteneur)
+sh LINUX/APPZ/Docker.sh VERSION;                  #Check Version
+sh LINUX/APPZ/Docker.sh HUB <USER> <PASS>         #Connexion à Docker Hub
+sh LINUX/APPZ/Docker.sh PORTAINER 8000 19901 32m  #
+sh LINUX/APPZ/Docker.sh STATS;                    #Docker Stats
 ```
 
 
