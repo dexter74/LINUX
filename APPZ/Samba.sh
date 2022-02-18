@@ -210,14 +210,19 @@ echo "; ========================================================================
    clear;
    rm -r /tmp/*;
    systemctl disable --now wsdd;
-   rm /etc/systemd/system/wsdd.service;
-   rm /usr/bin/wsdd;
+   apt autoremove --purge -y wsdd 
    systemctl daemon-reload;
-
+   systemctl is-active wsdd;
 # --------------------------------------------------------------------------------
 # Installation de WSDD
  elif [ $1 = "WSDD_INSTALL" ]
   then
+   echo "deb https://pkg.ltec.ch/public/ $RELEASE main" > /etc/apt/sources.list.d/wsdd.list;
+   apt-key adv --fetch-keys https://pkg.ltec.ch/public/conf/ltec-ag.gpg.key;
+   apt update 1>/dev/null 2>/dev/null;
+   apt install -y wsdd;
+   systemctl enable --now wsdd;
+   systemctl is-active wsdd;
    #rm -r /tmp/*;
    #wget https://github.com/christgau/wsdd/archive/master.zip -O /tmp/master.zip;
    #unzip /tmp/master.zip -d /tmp;
@@ -226,11 +231,7 @@ echo "; ========================================================================
    #cp /tmp/wsdd-master/etc/systemd/wsdd.service /etc/systemd/system;
    #systemctl daemon-reload;
    #systemctl enable --now wsdd;
-   echo "deb https://pkg.ltec.ch/public/ $RELEASE main" > /etc/apt/sources.list.d/wsdd.list;
-   apt-key adv --fetch-keys https://pkg.ltec.ch/public/conf/ltec-ag.gpg.key
-   apt update 1>/dev/null 2>/dev/null
-   apt install -y wsdd;
-   
+
 # --------------------------------------------------------------------------------
 #
  else
