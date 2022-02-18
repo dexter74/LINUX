@@ -140,7 +140,8 @@ if [ -z $1 ]
   clear;
   docker kill CN_Portainer;
   docker container rm CN_Portainer;
-  docker image  rm portainer/portainer-ce;  
+  docker image  rm portainer/portainer-ce;
+  
   docker run -d -p $2:8000 -p $3:9000 \
    --name=CN_Portainer \
    --restart=always \
@@ -151,8 +152,6 @@ if [ -z $1 ]
    portainer/portainer-ce \
    --hide-label \
    Portainer="hide";
-
-
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Install Docker avec Docker Compose
