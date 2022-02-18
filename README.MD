@@ -123,28 +123,28 @@ sh LINUX/APPZ/Docker.sh VERSION;                         #Check Version
 sh LINUX/APPZ/Samba.sh;
 sh LINUX/APPZ/Samba.sh PURGE;          # Nettoyage
 sh LINUX/APPZ/Samba.sh INSTALL;        # Installation de Samba
-
 sh LINUX/APPZ/Samba.sh BACKUP;         # Sauvegarde le fichier de configuration
 sh LINUX/APPZ/Samba.sh RECOVERY;       # Restaure la configuration
+
 sh LINUX/APPZ/Samba.sh AUTOCFG;        # Auto-Configuration
 sh LINUX/APPZ/Samba.sh EDIT;           # Edition de la configuration Samba
 
-sh LINUX/APPZ/Samba.sh DEL $USER       # Suppression d'un utilisateur Samba
-sh LINUX/APPZ/Samba.sh ADD $USER $PASS # Ajout d'un utilisateur Samba
-sh LINUX/APPZ/Samba.sh ENABLE  $USER   # 
-sh LINUX/APPZ/Samba.sh DISABLE $USER   #
+sh LINUX/APPZ/Samba.sh SERVICE reload  # Recharge la configuration
+sh LINUX/APPZ/Samba.sh SERVICE status  #
+sh LINUX/APPZ/Samba.sh SERVICE restart #
+sh LINUX/APPZ/Samba.sh SERVICE stop    #
+sh LINUX/APPZ/Samba.sh SERVICE start   #
+sh LINUX/APPZ/Samba.sh SERVICE enable  #
+sh LINUX/APPZ/Samba.sh SERVICE disable #
+
 sh LINUX/APPZ/Samba.sh LIST;           #
+sh LINUX/APPZ/Samba.sh DEL $USER       #
+sh LINUX/APPZ/Samba.sh ADD $USER $PASS #
+sh LINUX/APPZ/Samba.sh ENABLE  $USER   #
+sh LINUX/APPZ/Samba.sh DISABLE $USER   #
+
+
 
 sh LINUX/APPZ/Samba.sh WSDD_PURGE;     #
 sh LINUX/APPZ/Samba.sh WSDD_INSTALL;   #
-
-sh LINUX/APPZ/Samba.sh SERVICE reload  # Recharge la configuration
-sh LINUX/APPZ/Samba.sh SERVICE status  # Samba et WSDD
-sh LINUX/APPZ/Samba.sh SERVICE restart # Samba et WSDD
-sh LINUX/APPZ/Samba.sh SERVICE stop    # Samba et WSDD
-sh LINUX/APPZ/Samba.sh SERVICE start   # Samba et WSDD
-sh LINUX/APPZ/Samba.sh SERVICE enable  # Samba et WSDD
-sh LINUX/APPZ/Samba.sh SERVICE disable # Samba et WSDD
-
-
 ```
