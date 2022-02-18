@@ -78,6 +78,15 @@ if [ -z $1 ]
   docker login -u $2 -p $3;
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
+# Install Docker avec Docker Compose
+ elif [ "$1" = "TEST" ]
+  then
+  clear;
+  docker run --name=TEST hello-world;
+  docker container rm TEST;
+  docker image rm hello-world;
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
 # Tue les conteneurs, purge les conteneurs leurs images. (Volumes intact)
  elif [ "$1" = "KILL" ]
   then
@@ -92,15 +101,6 @@ if [ -z $1 ]
   then
   clear;
   docker stats --format "table  {{.Name}}\t {{.CPUPerc}}\t  {{.MemPerc}}\t  {{.MemUsage}}\t {{.NetIO}}\t {{.BlockIO}}\t";
-
-# ---------------------------------------------------------------------------------------------------------------------------------------------
-# Install Docker avec Docker Compose
- elif [ "$1" = "TEST" ]
-  then
-  clear;
-  docker run --name=TEST hello-world;
-  docker container rm TEST;
-  docker image rm hello-world;
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Déploiement de Portainer (journalctl -f | grep "cgroup\|swap\|docker")
@@ -123,18 +123,6 @@ if [ -z $1 ]
    Portainer="hide";
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
- elif [ "$1" = "LOCK" ]
-  then
-  clear;
-  chattr +i /var/lib/docker/volumes/Portainer;
-
-# ---------------------------------------------------------------------------------------------------------------------------------------------
- elif [ "$1" = "UNLOCK" ]
-  then
-  clear;
-  chattr -i /var/lib/docker/volumes/Portainer;
-
-# ---------------------------------------------------------------------------------------------------------------------------------------------
  elif [ "$1" = "PORTAINER_UPDATE" ]
   then
   clear;
@@ -152,6 +140,18 @@ if [ -z $1 ]
    portainer/portainer-ce \
    --hide-label \
    Portainer="hide";
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+ elif [ "$1" = "LOCK" ]
+  then
+  clear;
+  chattr +i /var/lib/docker/volumes/Portainer;
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+ elif [ "$1" = "UNLOCK" ]
+  then
+  clear;
+  chattr -i /var/lib/docker/volumes/Portainer;
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Install Docker avec Docker Compose
