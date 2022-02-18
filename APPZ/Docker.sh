@@ -104,7 +104,6 @@ if [ -z $1 ]
  elif [ "$1" = "PORTAINER" ]
   then
   clear;
-  #chattr -i Portainer;
   docker kill CN_Portainer;
   docker container rm CN_Portainer;
   docker image  rm portainer/portainer-ce;
@@ -119,8 +118,16 @@ if [ -z $1 ]
    portainer/portainer-ce \
    --hide-label \
    Portainer="hide";
-#8001 et 19901
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+ elif [ "$1" = "LOCK" ]
+  then
+  chattr -i Portainer;
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+ elif [ "$1" = "UNLOCK" ]
+  then
+  chattr -+ Portainer;
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Install Docker avec Docker Compose
