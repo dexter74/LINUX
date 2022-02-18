@@ -113,7 +113,7 @@ if [ -z $1 ]
    --name=CN_Portainer \
    --restart=always \
    --label Portainer="hide" \
-   -m $4
+   -m $4 \
    -v /var/run/docker.sock:/var/run/docker.sock \
    -v Portainer:/data \
    portainer/portainer-ce \
