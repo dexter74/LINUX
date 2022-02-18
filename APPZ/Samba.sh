@@ -6,7 +6,8 @@
 # ----------------------------------------------------------------------------------------------------
 if [ -z $1 ]
  then
-  echo "Manque Argument:
+ clear;
+ echo "Manque Argument:
   - Samba.sh INSTALL
   - Samba.sh PURGE
   - Samba.sh BACKUP
