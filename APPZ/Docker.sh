@@ -74,8 +74,6 @@ if [ -z $1 ]
   clear;
   docker login -u $2 -p $3;
 
-
-  
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Tue les conteneurs, purge les conteneurs leurs images. (Volumes intact)
  elif [ "$1" = "KILL" ]
@@ -90,7 +88,7 @@ if [ -z $1 ]
  elif [ "$1" = "STATS" ]
   then
   clear;
-  docker stats --format "table  {{.Name}}\t {{.CPUPerc}}\t  {{.MemPerc}}\t  {{.MemUsage}}\t {{.NetIO}}\t {{.BlockIO}}\t"
+  docker stats --format "table  {{.Name}}\t {{.CPUPerc}}\t  {{.MemPerc}}\t  {{.MemUsage}}\t {{.NetIO}}\t {{.BlockIO}}\t";
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Install Docker avec Docker Compose
@@ -100,6 +98,7 @@ if [ -z $1 ]
   docker run --name=TEST hello-world;
   docker container rm TEST;
   docker image rm hello-world;
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Déploiement de Portainer (journalctl -f | grep "cgroup\|swap\|docker")
  elif [ "$1" = "PORTAINER" ]
@@ -121,6 +120,7 @@ if [ -z $1 ]
    portainer/portainer-ce \
    --hide-label \
    Portainer="hide";
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 # Install Docker avec Docker Compose
