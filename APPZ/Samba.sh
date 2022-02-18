@@ -175,6 +175,18 @@ echo "; ========================================================================
    directory mask  = 0700
    guest ok        = no
 
+
+;=================== Dossier Utilisateurs =====================================================
+[home]
+   comment         = Dossier Utilisateurse
+   browseable      = no
+   writable        = yes
+   read only       = no
+   create mask     = 0700
+   directory mask  = 0700
+   guest ok        = no
+
+
 ;=================== Dossier Docker Volumes ===================================================
 [Volumes]
    comment         = Dossier Volumes de Docker
