@@ -109,12 +109,11 @@ if [ -z $1 ]
   docker container rm CN_Portainer;
   docker image  rm portainer/portainer-ce;
   docker volume rm Portainer;
-
-  docker run -d -p 8001:8000 -p 19901:9000 \
+  docker run -d -p $2:8000 -p $3:9000 \
    --name=CN_Portainer \
    --restart=always \
    --label Portainer="hide" \
-   -m 32m \
+   -m ${4}m \
    -v /var/run/docker.sock:/var/run/docker.sock \
    -v Portainer:/data \
    portainer/portainer-ce \
