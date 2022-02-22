@@ -55,7 +55,7 @@ if [ -z $1 ]
    clear;
    echo "" > /etc/wireguard/wg0.conf;
    nano /etc/wireguard/wg0.conf;
-   
+   cat /etc/wireguard/wg0.conf;
 # -----------------------------------------------------------------------------------
  elif [ "$1" = "PERMISSIONS" ]
   then
