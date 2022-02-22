@@ -35,8 +35,8 @@ if [ -z $1 ]
  elif [ "$1" = "INSTALL" ]
   then
    clear;
-   echo "deb http://deb.debian.org/debian $RELEASE-backports main" >  /etc/apt/sources.list.d/$RELEASE-backports.list;
-   apt update > /dev/null;   
+   echo "deb http://deb.debian.org/debian $RELEASE-backports main" > /etc/apt/sources.list.d/$RELEASE-backports.list;
+   apt update > /dev/null;
    apt install -y wireguard > /dev/null;
    sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf;
    /sbin/sysctl -w net.ipv4.ip_forward=1;
@@ -49,6 +49,7 @@ if [ -z $1 ]
    echo "$3" > /etc/wireguard/publickey;
    cat /etc/wireguard/privatekey;
    cat /etc/wireguard/publickey;
+
 # -----------------------------------------------------------------------------------
  elif [ "$1" = "CONFIG" ]
   then
@@ -56,6 +57,7 @@ if [ -z $1 ]
    echo "" > /etc/wireguard/wg0.conf;
    nano /etc/wireguard/wg0.conf;
    cat /etc/wireguard/wg0.conf;
+
 # -----------------------------------------------------------------------------------
  elif [ "$1" = "PERMISSIONS" ]
   then
