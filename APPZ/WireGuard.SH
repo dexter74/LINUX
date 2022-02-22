@@ -15,7 +15,7 @@ if [ -z $1 ]
   - sh WireGuard.SH EDIT
   - sh WireGuard.SH PERMISSIONS
   - sh WireGuard.SH SERVICE <start|stop|status|enable --now |disable --now>
-  - CHECK'
+  - sh WireGuard.SH CHECK'
 
 # ------------------------------------------------------------------------------------------
  elif [ "$1" = "PURGE" ]
