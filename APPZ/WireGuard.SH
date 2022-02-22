@@ -17,6 +17,7 @@ if [ -z $1 ]
   - SERVICE <start|stop|status|enable --now |disable --now>
   - CHECK
   '
+
 # -----------------------------------------------------------------------------------
  elif [ "$1" = "PURGE" ]
   then
@@ -39,7 +40,6 @@ if [ -z $1 ]
    apt install -y wireguard > /dev/null;
    sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf;
    /sbin/sysctl -w net.ipv4.ip_forward=1;
-
 
 # -----------------------------------------------------------------------------------
  elif [ "$1" = "KEYS" ]
