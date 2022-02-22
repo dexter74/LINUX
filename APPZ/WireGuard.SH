@@ -66,7 +66,7 @@ if [ -z $1 ]
  elif [ "$1" = "SERVICE" ]
   then
    clear;
-   systemctl $2 wg-quick@wg0;
+   systemctl $2 wg-quick@wg0.service;
    
 # -----------------------------------------------------------------------------------
  elif [ "$1" = "CHECK" ]
