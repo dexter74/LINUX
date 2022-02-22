@@ -47,7 +47,8 @@ if [ -z $1 ]
    clear;
    echo "$2" > /etc/wireguard/privatekey;
    echo "$3" > /etc/wireguard/publickey;
-
+   cat /etc/wireguard/privatekey;
+   cat /etc/wireguard/publickey;
 # -----------------------------------------------------------------------------------
  elif [ "$1" = "CONFIG" ]
   then
