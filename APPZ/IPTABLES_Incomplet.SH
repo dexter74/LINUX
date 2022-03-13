@@ -14,7 +14,7 @@ if [ -z $1 ]
  then
   echo 'Merci de preciser un parametre :
    - PERMANENT (Install iptables Persistent)
-   - DEFAUT (REmise à Zéro de IPTABLE)
+   - DEFAUT (Remise à Zéro d'IPTABLE)
    '
 
 # --------------------------------------------------------------------------------------------------------------------------------
