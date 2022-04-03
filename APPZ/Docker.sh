@@ -12,7 +12,7 @@ if [ -z $1 ]
   echo 'Merci de preciser un parametre
   - PURGE                             # Désinstalle Proprement Docker
   - PREP                              # Paquet indispensable pour installer docker
-  - INSTALL                           # Installation de Docker et Docker-compose
+  - INSTALL                           # Installation de Docker et Docker-compose (\$RELEASE)
   - FIX                               # Corrige les bugs Post-Install de Linux
   - HUB <Login> <PASS>                # Connexion au HUB
   - TEST                              # Conteneur Hello-World pour le test de fonctionnalité
