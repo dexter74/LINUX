@@ -10,9 +10,10 @@ if [ -z $1 ]
  then
   clear;
   echo 'Merci de preciser un parametre
+  - VARIABLE                          # Si le système à pas la variable
   - PURGE                             # Désinstalle Proprement Docker
   - PREP                              # Paquet indispensable pour installer docker
-  - INSTALL                           # Installation de Docker et Docker-compose (\$RELEASE)
+  - INSTALL                           # Installation de Docker et Docker-compose
   - FIX                               # Corrige les bugs Post-Install de Linux
   - HUB <Login> <PASS>                # Connexion au HUB
   - TEST                              # Conteneur Hello-World pour le test de fonctionnalité
@@ -24,6 +25,13 @@ if [ -z $1 ]
   - STATS                             # 
   - VERSION                           #
   '
+  
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+#  1>/dev/null 2>/dev/null;
+ elif [ "$1" = "VARIABLE" ]
+  then
+   clear;
+   export RELEASE=buster
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 #  1>/dev/null 2>/dev/null;
