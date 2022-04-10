@@ -2,7 +2,12 @@ if [ -z $1 ]
  then
  clear;
  echo "
- TEST
+ sh Samba4.sh ./HOSTNAME 'samba' 'mydomain.lan' '192.168.1.44'
+ sh Samba4.sh ./HOST
+ sh Samba4.sh ./NETWORK
+ sh Samba4.sh ./APT
+ sh Samba4.sh ./AVAHI
+ sh Samba4.sh ./INSTALL
  "
 # ----------------------------------------------------------------------------------------------------
 elif [ $1 = "HOSTNAME" ];then
@@ -11,7 +16,7 @@ elif [ $1 = "HOSTNAME" ];then
 # ----------------------------------------------------------------------------------------------------
 elif [ $1 = "HOST" ];then
   echo "127.0.0.1    localhost.localdomain localhost
-  192.168.1.44 samba.mydomain.lan    samba" > /etc/hosts;
+  $3 $2.$3    $&" > /etc/hosts;
 
 # ----------------------------------------------------------------------------------------------------
 elif [ $1 = "NETWORK" ];then
