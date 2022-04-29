@@ -2,6 +2,9 @@
 # Script de de déploiement de Proxmox sur Debian #
 ##################################################
 
+
+# sh LINUX/DEV/APPZ/Proxmox.sh DEPOT
+
 # Nettoyage de la console
 clear;
 
