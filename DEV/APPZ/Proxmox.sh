@@ -17,7 +17,7 @@ if [ -z $1 ]
   - UPGRADE    : Met à jour Debian
   - INSTALL    : Installation de Proxmox
   
-  - DATACENTER "<Descriptif>" <Mail> <Keyboard Langue> <language>
+  - DATACENTER : "Proxmox #1" teste74@hotmail.fr <Keyboard Langue> <language> (fr fr)
   
   - CUSTOM     : Script de customisation
   - CHECK      : Vérifier URL
