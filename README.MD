@@ -66,9 +66,10 @@ sh LINUX/Installation/CONFIG/4.users_groups.sh ADD_USER       $USER  $USER_ID $G
 sh LINUX/Installation/CONFIG/4.users_groups.sh PASSWORD       $USER  $PASS
 sh LINUX/Installation/CONFIG/4.users_groups.sh ADD_USER_GROUP $USER  sudo
 sh LINUX/Installation/CONFIG/4.users_groups.sh DEL_USER_GROUP $USER  sudo
-sh LINUX/Installation/CONFIG/4.users_groups.sh CHECK          $USER
 sh LINUX/Installation/CONFIG/4.users_groups.sh ADD_SUDOER     $USER
 sh LINUX/Installation/CONFIG/4.users_groups.sh DEL_SUDOER     $USER
+
+sh LINUX/Installation/CONFIG/4.users_groups.sh CHECK          $USER
 ```
 
 **SSH** (A Testé)
