@@ -17,7 +17,6 @@ clear;
 	- 4.users_groups.sh DEL_SUDOER	   \$USER
 	"
 
-
 # ------------------------------------------------------------
  elif [ $1 = "DEL_USER" ]; then
    clear;
@@ -37,7 +36,6 @@ clear;
  elif [ $1 = "ADD_GROUP" ]; then
    clear;
    addgroup $2 --gid $3 ;
-
 
 # ------------------------------------------------------------
  elif [ $1 = "ADD_USER" ]; then
