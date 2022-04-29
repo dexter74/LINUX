@@ -154,6 +154,7 @@ sh LINUX/DEV/APPZ/Proxmox.sh;
 sh LINUX/DEV/APPZ/Proxmox.sh DEPOT;
 sh LINUX/DEV/APPZ/Proxmox.sh UPGRADE;
 sh LINUX/DEV/APPZ/Proxmox.sh INSTALL;
+sh LINUX/DEV/APPZ/Proxmox.sh DATACENTER "Proxmox #1" teste74@hotmail.fr fr fr;
 sh LINUX/DEV/APPZ/Proxmox.sh CUSTOM;
 sh LINUX/DEV/APPZ/Proxmox.sh CHECK;
 ```
