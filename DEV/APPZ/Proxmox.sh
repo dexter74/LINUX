@@ -13,7 +13,8 @@ if [ -z $1 ]
  then
   clear;
   echo 'Merci de preciser un parametre:
-  - DEPOT      : Ajout les dépôts Proxmox
+  - DEPOT      : Ajout les dépôts Proxmox (bullseye)
+  - UPGRADE    : Met à jour Debian
   - INSTALL    : Installation de Proxmox
   - DATACENTER "<Descriptif>" <Mail> <Keyboard Langue> <language>
   - CUSTOM     : Script de customisation
@@ -24,10 +25,12 @@ if [ -z $1 ]
  elif [ "$1" = "DEPOT" ]; then
   clear;
   echo "deb [arch=amd64] http://download.proxmox.com/debian/pve $RELEASE pve-no-subscription" > /etc/apt/sources.list.d/Proxmox.list;
-  wget https://enterprise.proxmox.com/debian/proxmox-release-$RELEASE.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-$RELEASE.gpg;
-  apt update 1>/dev/null 2>/dev/null;
-  apt full-upgrade -y 1>/dev/null 2>/dev/null;
+  wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg;
 
+# ---------------------------------------------------------------------------------------------------------------------------------------- #
+ elif [ "$1" = "UPGRADE" ]; then
+  apt update 1>/dev/null 2>/dev/null;
+  apt full-upgrade -y 1>/dev/null
 # ---------------------------------------------------------------------------------------------------------------------------------------- #
  elif [ "$1" = "INSTALL" ]; then
   clear;clear;
