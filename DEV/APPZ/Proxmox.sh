@@ -16,9 +16,7 @@ if [ -z $1 ]
   - DEPOT      : Ajout les dépôts Proxmox (bullseye)
   - UPGRADE    : Met à jour Debian
   - INSTALL    : Installation de Proxmox
-  
-  - DATACENTER : "Proxmox #1" teste74@hotmail.fr <Keyboard Langue> <language> (fr fr)
-  
+  - DATACENTER : "Mon Proxmox" mail@email.com fr fr
   - CUSTOM     : Script de customisation
   - CHECK      : Vérifier URL
   '
