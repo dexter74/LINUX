@@ -3,18 +3,17 @@
 
 **GIT Clone**
 ``` 
-rm -r LINUX 
-git clone https://github.com/dexter74/LINUX.git 
-clear 
+rm -r LINUX;
+git clone https://github.com/dexter74/LINUX.git;
+clear;
 ```
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 **Environnement** (Exemple)
 
 ```console
 sh LINUX/Installation/CONFIG/0.environnement.sh <DISTRIB> <CODENAME> <HOSTNAME> <DOMAIN> <REGION> <VILLE> <LANGUE> <IP> <PASSERELLE> <DNS 1> <DNS 2> <USER> <GROUP> <PASS USER> <UID> <GID> <SAMBA USER> <SAMBA PASS>
 ```
-
 
 ```console
 sh LINUX/Installation/CONFIG/0.environnement.sh Debian buster \
@@ -25,39 +24,40 @@ marc administrateur admin 1001 1001 \
 root admin  
 ```
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
 **Host & Hostname**
 ```console
-sh LINUX/Installation/CONFIG/1.host.sh 
+sh LINUX/Installation/CONFIG/1.host.sh
 ```
 
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 **Réseau**
 ```console
-sh LINUX/Installation/CONFIG/2.reseau.sh 
-sh LINUX/Installation/CONFIG/2.reseau.sh STATIC 
-sh LINUX/Installation/CONFIG/2.reseau.sh IPV6_OFF 
-sh LINUX/Installation/CONFIG/2.reseau.sh CHECK 
+sh LINUX/Installation/CONFIG/2.reseau.sh
+sh LINUX/Installation/CONFIG/2.reseau.sh STATIC
+sh LINUX/Installation/CONFIG/2.reseau.sh IPV6_OFF
+sh LINUX/Installation/CONFIG/2.reseau.sh CHECK
 ```
 
 **Paquets**
 ```console
-sh LINUX/Installation/CONFIG/3.paquets.sh 
-sh LINUX/Installation/CONFIG/3.paquets.sh CDROM 
-sh LINUX/Installation/CONFIG/3.paquets.sh BACKPORT 
-sh LINUX/Installation/CONFIG/3.paquets.sh MAJ 
-sh LINUX/Installation/CONFIG/3.paquets.sh FIX 
-sh LINUX/Installation/CONFIG/3.paquets.sh BASE 
-sh LINUX/Installation/CONFIG/3.paquets.sh OUTIL 
-sh LINUX/Installation/CONFIG/3.paquets.sh QEMU 
-sh LINUX/Installation/CONFIG/3.paquets.sh KERNEL 
-sh LINUX/Installation/CONFIG/3.paquets.sh SERVICE_ON 
-sh LINUX/Installation/CONFIG/3.paquets.sh SERVICE_OFF 
+sh LINUX/Installation/CONFIG/3.paquets.sh
+sh LINUX/Installation/CONFIG/3.paquets.sh CDROM
+sh LINUX/Installation/CONFIG/3.paquets.sh BACKPORT
+sh LINUX/Installation/CONFIG/3.paquets.sh MAJ
+sh LINUX/Installation/CONFIG/3.paquets.sh FIX
+sh LINUX/Installation/CONFIG/3.paquets.sh BASE
+sh LINUX/Installation/CONFIG/3.paquets.sh OUTIL
+sh LINUX/Installation/CONFIG/3.paquets.sh QEMU
+sh LINUX/Installation/CONFIG/3.paquets.sh KERNEL
+sh LINUX/Installation/CONFIG/3.paquets.sh SERVICE_ON
+sh LINUX/Installation/CONFIG/3.paquets.sh SERVICE_OFF
 ```
 
 **User & Groups** (A Testé)
 ```console
-sh LINUX/Installation/CONFIG/4.users_groups.sh 
+sh LINUX/Installation/CONFIG/4.users_groups.sh
 sh LINUX/Installation/CONFIG/4.users_groups.sh DEL_USER       $USER
 sh LINUX/Installation/CONFIG/4.users_groups.sh DEL_USER_HOME  $USER
 sh LINUX/Installation/CONFIG/4.users_groups.sh DEL_GROUP      $GROUP
@@ -72,9 +72,10 @@ sh LINUX/Installation/CONFIG/4.users_groups.sh DEL_SUDOER     $USER
 sh LINUX/Installation/CONFIG/4.users_groups.sh CHECK          $USER
 ```
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
 **SSH** (A Testé)
 ```console
-sh LINUX/Installation/CONFIG/5.SSH.sh STEP_6 
+sh LINUX/Installation/CONFIG/5.SSH.sh STEP_6
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_6 # Backup
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_1 # Dossier SSH
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_2 # Clé SSH
@@ -84,10 +85,10 @@ sh LINUX/Installation/CONFIG/5.SSH.sh STEP_5 # Relance du Service
 sh LINUX/Installation/CONFIG/5.SSH.sh STEP_7 # Recovery
 ```
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 **ADGuardHome** (A Testé)
 ```console
-sh LINUX/APPZ/ADGuardHome.sh 
+sh LINUX/APPZ/ADGuardHome.sh
 sh LINUX/APPZ/ADGuardHome.sh PURGE
 sh LINUX/APPZ/ADGuardHome.sh DL
 sh LINUX/APPZ/ADGuardHome.sh INSTALL
@@ -98,6 +99,7 @@ sh LINUX/APPZ/ADGuardHome.sh STOP
 sh LINUX/APPZ/ADGuardHome.sh STATUS
 ```
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
 **Docker** (A Réviser et à compléter)
 ```console
 sh LINUX/APPZ/Docker.sh 
@@ -118,7 +120,7 @@ sh LINUX/APPZ/Docker.sh STATS                            #Docker Stats
 sh LINUX/APPZ/Docker.sh VERSION                          #Check Version
 ```
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 **Samba** (A testé, A vérifier sur la désinstallation / réinstallation)
 ```console
 sh LINUX/APPZ/Samba.sh
@@ -147,7 +149,7 @@ sh LINUX/APPZ/Samba.sh DISABLE $SAMBA_USER
 sh LINUX/APPZ/Samba.sh WSDD_PURGE
 sh LINUX/APPZ/Samba.sh WSDD_INSTALL
 ```
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 **Proxmox** (Expérimental)
 ```console
 sh LINUX/DEV/APPZ/Proxmox.sh;
