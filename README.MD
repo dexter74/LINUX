@@ -147,3 +147,13 @@ sh LINUX/APPZ/Samba.sh DISABLE $SAMBA_USER
 sh LINUX/APPZ/Samba.sh WSDD_PURGE
 sh LINUX/APPZ/Samba.sh WSDD_INSTALL
 ```
+
+**Proxmox** (Expérimental)
+```console
+sh LINUX/DEV/APPZ/Proxmox.sh;
+sh LINUX/DEV/APPZ/Proxmox.sh DEPOT;
+sh LINUX/DEV/APPZ/Proxmox.sh UPGRADE;
+sh LINUX/DEV/APPZ/Proxmox.sh INSTALL;
+sh LINUX/DEV/APPZ/Proxmox.sh CUSTOM;
+sh LINUX/DEV/APPZ/Proxmox.sh CHECK;
+```
