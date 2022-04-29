@@ -12,6 +12,7 @@ echo "#IPV4
 127.0.0.1       localhost
 127.0.1.1       $HOSTNAME        $HOSTNAME
 #127.0.1.1      $HOSTNAME.$DOMAINE    $HOSTNAME
+$NET_ADDRESS    $HOSTNAME.$DOMAINE    $HOSTNAME
 
 #IPV6 (OFF)
 ::1     localhost ip6-localhost ip6-loopback
