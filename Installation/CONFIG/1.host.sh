@@ -1,7 +1,6 @@
 ###################################
 # Script de Configuration du Host #
 ###################################
-
 hostnamectl set-hostname $HOSTNAME ;
 
 
@@ -18,5 +17,3 @@ $NET_ADDRESS    $HOSTNAME.$DOMAINE    $HOSTNAME
 ::1     localhost ip6-localhost ip6-loopback
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters" > /etc/hosts;
-
-clear; cat /etc/hosts; cat /etc/hostname;
