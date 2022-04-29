@@ -24,7 +24,6 @@ if [ -z $1 ]
   wget https://enterprise.proxmox.com/debian/proxmox-release-$RELEASE.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-$RELEASE.gpg;
   apt update 1>/dev/null 2>/dev/null;
   apt full-upgrade -y 1>/dev/null 2>/dev/null;
-  reboot;
 
 # ---------------------------------------------------------------------------------------------------------------------------------------- #
  elif [ "$1" = "INSTALL" ]; then
