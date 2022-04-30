@@ -43,4 +43,6 @@ nano /etc/dhcp/dhclient.conf
 interface "wlp2s0" {
      send dhcp-requested-address 192.168.1.0;
 }
+
+systemctl restart dhclient
 ```
