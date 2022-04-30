@@ -12,14 +12,22 @@ dhclient wlp2s0
 
 **Connexion Automatique**
 ```
-systemctl edit --full wpa_supplicant.service
+echo "[Unit]
+Description=WPA supplicant
+Before=network.target
+After=dbus.service
+Wants=network.target
+IgnoreOnIsolate=true
 
-# Commenter : ExecStart=/sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
-# Correctif : ExecStart=/sbin/wpa_supplicant -u -s -c /etc/wpa_supplicant.conf -i wlp2s0
-# Ajouter   : Restart=always
-# Commenter : Alias=dbus-fi.w1.wpa_supplicant1.service
+[Service]
+Type=dbus
+BusName=fi.w1.wpa_supplicant1
+ExecStart=/sbin/wpa_supplicant -u -s -c /etc/wpa_supplicant.conf -i wlp2s0
+Restart=always
 
-systemctl enable wpa_supplicant.service
+[Install]
+WantedBy=multi-user.target
+#Alias=dbus-fi.w1.wpa_supplicant1.service" /etc/systemd/system/wpa_supplicant.service; systemctl enable wpa_supplicant.service
 ```
 
 ```
