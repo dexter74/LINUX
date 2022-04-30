@@ -9,6 +9,7 @@ sudo wpa_supplicant -B  -c /etc/wpa_supplicant.conf -i wlp2s0
 dhclient wlp2s0
 ```
 
+-------------------------------------------------------------------------------------------------------------------------------------
 
 **Connexion Automatique**
 ```
@@ -45,6 +46,10 @@ Restart=always
 WantedBy=multi-user.target" > /etc/systemd/system/dhclient.service; systemctl enable dhclient.service
 ```
 
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+**Définir une IP préférer**
 ```bash
 nano /etc/dhcp/dhclient.conf
 
