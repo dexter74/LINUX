@@ -34,8 +34,13 @@ ExecStop=/sbin/dhclient wlp2s0 -r
 Restart=always
 
 [Install] 
-WantedBy=multi-user.target" > /etc/systemd/system/dhclient.service
+WantedBy=multi-user.target" > /etc/systemd/system/dhclient.service; systemctl enable dhclient.service
+```
 
+```bash
+nano /etc/dhcp/dhclient.conf
 
-systemctl enable dhclient.service
+interface "wlp2s0" {
+     send dhcp-requested-address 192.168.1.0;
+}
 ```
