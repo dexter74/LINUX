@@ -40,7 +40,7 @@ IgnoreOnIsolate=true
 Type=dbus
 BusName=fi.w1.wpa_supplicant1
 ExecStart=/sbin/wpa_supplicant -u -s -c /etc/wpa_supplicant.conf -i wlp2s0
-Restart=always
+RESTART=always
 
 [Install]
 WantedBy=multi-user.target
@@ -60,14 +60,14 @@ ExecStart=/sbin/dhclient
 ExecStop=/sbin/dhclient -r
 Restart=always
 
-[Install] 
+[Install]
 WantedBy=multi-user.target" > /etc/systemd/system/dhclient.service; systemctl enable dhclient.service
 ```
 
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
-**Définir une IP préférer**
+**Définir une IP préférer** (Optionnel)
 ```bash
 echo "interface "wlp2s0" {
      send dhcp-requested-address 192.168.1.9;
