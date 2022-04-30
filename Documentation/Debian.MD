@@ -79,6 +79,5 @@ systemctl disable networking;
 -------------------------------------------------------------------------------------------------------------------------------------
 **Cacher Message Erreur**
 ```bash
-nano /etc/modeprobe.d/iwlwifi.conf
-options iwlwifi enable_ini=N
+echo "options iwlwifi enable_ini=N" > /etc/modprobe.d/iwlwifi.conf
 ```
