@@ -26,6 +26,13 @@ iwlist wlp2s0 scan | less;
 #Ponctuellement: wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp2s0; dhclient wlp2s0
 ```
 
+**Initialiser l'interface**
+```
+echo "allow-hotplug wlp2s0
+iface wlp2s0 inet dhcp" > /etc/network/interfaces
+```
+
+
 -------------------------------------------------------------------------------------------------------------------------------------
 **Connexion Automatique**
 ```
