@@ -1,14 +1,18 @@
 ### E403SA (WIFI)
 
 
-**Connexion à un Réseau WIFI :** ([Guide](https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant))
 
 
+-------------------------------------------------------------------------------------------------------------------------------------
+**Dépôts**
 ```
 echo "deb http://security.debian.org/debian-security bullseye-security main
 deb http://ftp.fr.debian.org/debian bullseye main non-free
 deb-src http://security.debian.org/debian-security bullseye-security main " > /etc/apt/sources.list
+```
 
+-------------------------------------------------------------------------------------------------------------------------------------
+**Connexion à un Réseau WIFI :** ([Guide](https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant))
 ```
 ip link;
 
@@ -26,7 +30,6 @@ wpa_passphrase ASUS_A8_5G Azerty74@123 | tee /etc/wpa_supplicant.conf
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
-
 **Connexion Automatique**
 ```
 echo "[Unit]
@@ -47,6 +50,8 @@ WantedBy=multi-user.target
 #Alias=dbus-fi.w1.wpa_supplicant1.service" /etc/systemd/system/wpa_supplicant.service; systemctl enable wpa_supplicant.service
 ```
 
+-------------------------------------------------------------------------------------------------------------------------------------
+**Auto-DHCP**
 ```
 echo "[Unit]
 Description= DHCP Client
