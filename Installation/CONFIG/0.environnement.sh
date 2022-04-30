@@ -39,17 +39,17 @@ echo '#' >> $SYSOUT
 echo '############################' >> $SYSOUT
 echo '# Information sur les USER #' >> $SYSOUT
 echo '############################' >> $SYSOUT
-echo export USER=\'$12\' >> $SYSOUT
-echo export PASS=\'$13\' >> $SYSOUT
-echo export GROUP=\'$14\' >> $SYSOUT
-echo export USER_ID=\'$15\' >> $SYSOUT
-echo export GROUP_UID=\'$16\' >> $SYSOUT
+echo export USER=\'${12}\' >> $SYSOUT
+echo export PASS=\'${13}\' >> $SYSOUT
+echo export GROUP=\'${14}\' >> $SYSOUT
+echo export USER_ID=\'${15}\' >> $SYSOUT
+echo export GROUP_UID=\'${16}\' >> $SYSOUT
 echo '#' >> $SYSOUT
 echo '##########################' >> $SYSOUT
 echo '# Configuration des APPZ #' >> $SYSOUT
 echo '##########################' >> $SYSOUT
-echo export SAMBA_USER=\'$17\' >> $SYSOUT
-echo export SAMBA_PASS=\'$18\' >> $SYSOUT
+echo export SAMBA_USER=\'${17}\' >> $SYSOUT
+echo export SAMBA_PASS=\'${18}\' >> $SYSOUT
 
 ########################
 # Afficher le Résultat #
