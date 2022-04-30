@@ -2,6 +2,13 @@
 
 
 **Connexion à un Réseau WIFI :** ([Guide](https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant))
+
+
+```
+echo "deb http://security.debian.org/debian-security bullseye-security main
+deb http://ftp.fr.debian.org/debian bullseye main non-free
+deb-src http://security.debian.org/debian-security bullseye-security main " > /etc/apt/sources.list
+
 ```
 ip link;
 
