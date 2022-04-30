@@ -11,18 +11,24 @@ clear;
 -----------------------------------------------------------------------------------------------------------------------------------------------
 **Environnement** (Exemple)
 
-```console
+```bash
 sh LINUX/Installation/CONFIG/0.environnement.sh <DISTRIB> <CODENAME> <HOSTNAME> <DOMAIN> <REGION> <VILLE> <LANGUE> <IP> <PASSERELLE> <DNS 1> <DNS 2> <USER> <GROUP> <PASS USER> <UID> <GID> <SAMBA USER> <SAMBA PASS>
 ```
 
-```console
+```bash
 sh LINUX/Installation/CONFIG/0.environnement.sh Debian buster \
 SLDEBIAN04 LAN \
 Europe Paris fr_FR.UTF-8 \
 192.168.1.43 192.168.1.1 192.168.1.1 192.168.1.34 \
 marc administrateur admin 1001 1001 \
-root admin  
+root admin
 ```
+
+**Check**
+```bash
+sh LINUX/Installation/Check/environnement.sh
+```
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 **Host & Hostname**
