@@ -35,4 +35,7 @@ Restart=always
 
 [Install] 
 WantedBy=multi-user.target" > /etc/systemd/system/dhclient.service
+
+
+systemctl enable dhclient.service
 ```
