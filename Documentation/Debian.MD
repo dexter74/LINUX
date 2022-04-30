@@ -72,12 +72,9 @@ WantedBy=multi-user.target" > /etc/systemd/system/dhclient.service; systemctl en
 
 **Définir une IP préférer**
 ```bash
-nano /etc/dhcp/dhclient.conf
-
-interface "wlp2s0" {
+echo "interface "wlp2s0" {
      send dhcp-requested-address 192.168.1.9;
-}
-
+}" >> /etc/dhcp/dhclient.conf;
 systemctl restart dhclient
 ```
 
