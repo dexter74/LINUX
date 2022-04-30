@@ -17,4 +17,22 @@ systemctl edit --full wpa_supplicant.service
 # Commenter : ExecStart=/sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
 # Correctif : ExecStart=/sbin/wpa_supplicant -u -s -c /etc/wpa_supplicant.conf -i wlp2s0
 # Ajouter   : Restart=always
+# Commenter : Alias=dbus-fi.w1.wpa_supplicant1.service
+
+systemctl enable wpa_supplicant.service
+```
+
+```
+echo "[Unit]
+Description= DHCP Client
+Before=network.target
+
+[Service]
+Type=forking
+ExecStart=/sbin/dhclient wlp2s0 -v
+ExecStop=/sbin/dhclient wlp2s0 -r
+Restart=always
+
+[Install] 
+WantedBy=multi-user.target" > /etc/systemd/system/dhclient.service
 ```
