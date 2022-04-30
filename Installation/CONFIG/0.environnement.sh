@@ -33,8 +33,8 @@ echo export NET_INTERFACE1=\'$(ip link | grep '^2:' | cut -c 4-20 |cut -d ':' -f
 echo export NET_INTERFACE2=\'$(ip link | grep '^3:' | cut -c 4-20 |cut -d ':' -f 1)\' >> $SYSOUT
 echo export NET_ADDRESS=\'$8\' >> $SYSOUT
 echo export NET_GATEWAY=\'$9\' >> $SYSOUT
-echo export NET_DNS0=\'$10\' >> $SYSOUT
-echo export NET_DNS1=\'$11\' >> $SYSOUT
+echo export NET_DNS0=\'${10}\' >> $SYSOUT
+echo export NET_DNS1=\'${11}\' >> $SYSOUT
 echo '#' >> $SYSOUT
 echo '############################' >> $SYSOUT
 echo '# Information sur les USER #' >> $SYSOUT
