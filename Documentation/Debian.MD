@@ -49,7 +49,7 @@ WantedBy=multi-user.target" > /etc/systemd/system/dhclient.service; systemctl en
 nano /etc/dhcp/dhclient.conf
 
 interface "wlp2s0" {
-     send dhcp-requested-address 192.168.1.0;
+     send dhcp-requested-address 192.168.1.9;
 }
 
 systemctl restart dhclient
