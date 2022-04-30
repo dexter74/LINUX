@@ -57,7 +57,7 @@ Before=network.target
 [Service]
 Type=forking
 ExecStart=/sbin/dhclient
-ExecStop=/sbin/dhclient wlp2s0 -r
+ExecStop=/sbin/dhclient -r
 Restart=always
 
 [Install] 
