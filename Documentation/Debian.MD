@@ -59,3 +59,10 @@ interface "wlp2s0" {
 
 systemctl restart dhclient
 ```
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+**Service Networking**
+```bash
+systemctl disable networking;
+```
