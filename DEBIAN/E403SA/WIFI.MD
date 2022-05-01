@@ -4,7 +4,6 @@
 **Service Networking**
 ```bash
 systemctl disable networking; # Erreur: Raising network
-systemctl disable bluetooth ; #
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -12,7 +11,7 @@ systemctl disable bluetooth ; #
 ```
 iwconfig wlp2s0 essid "ASUS_A8_5G";
 wpa_passphrase ASUS_A8_5G Azerty74@123 | tee /etc/wpa_supplicant.conf
-Ponctuellement: wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp2s0; dhclient wlp2s0
+Ponctuellement: wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp2s0;
 ```
 
 
