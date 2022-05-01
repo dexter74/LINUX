@@ -97,9 +97,9 @@ echo "options iwlwifi enable_ini=N" > /etc/modprobe.d/iwlwifi.conf
 ```
 
 
-
 ```
 echo "[device]
     wifi.backend=iwd" > /etc/NetworkManager/conf.d/wifi_backend.conf;
-systemctl restart NetworkManager
+systemctl enable --now NetworkManager
+nmcli device wifi connect ASUS_A8_5G --ask
 ```
