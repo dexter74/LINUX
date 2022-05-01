@@ -83,8 +83,9 @@ systemctl restart dhclient
 -------------------------------------------------------------------------------------------------------------------------------------
 **Dépôts**
 ```
-echo "deb http://security.debian.org/debian-security bullseye-security main
+echo "
 deb http://ftp.fr.debian.org/debian bullseye main non-free
+deb http://security.debian.org/debian-security bullseye-security main
 deb-src http://security.debian.org/debian-security bullseye-security main " > /etc/apt/sources.list
 ```
 
