@@ -95,3 +95,11 @@ deb-src http://security.debian.org/debian-security bullseye-security main " > /e
 ```bash
 echo "options iwlwifi enable_ini=N" > /etc/modprobe.d/iwlwifi.conf
 ```
+
+
+
+```
+echo "[device]
+    wifi.backend=iwd" > /etc/NetworkManager/conf.d/wifi_backend.conf;
+systemctl restart NetworkManager
+```
