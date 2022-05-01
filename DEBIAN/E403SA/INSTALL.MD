@@ -10,22 +10,9 @@ systemctl disable bluetooth ; #
 -------------------------------------------------------------------------------------------------------------------------------------
 **Connexion à un Réseau WIFI :** ([Guide](https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant))
 ```
-ip link;
-
-#Mise en Ligne:
-ip link set wlp2s0 up;
-
-#Scan réseau
-iwlist wlp2s0 scan | less;
-
-#Connexion SSID: iwconfig wlp2s0 essid "ASUS_A8_5G"; wpa_passphrase ASUS_A8_5G Azerty74@123 | tee /etc/wpa_supplicant.conf
-#Ponctuellement: wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp2s0; dhclient wlp2s0
-```
-
-**Initialiser l'interface**
-```
-echo "allow-hotplug wlp2s0
-iface wlp2s0 inet dhcp" > /etc/network/interfaces
+iwconfig wlp2s0 essid "ASUS_A8_5G";
+wpa_passphrase ASUS_A8_5G Azerty74@123 | tee /etc/wpa_supplicant.conf
+Ponctuellement: wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp2s0; dhclient wlp2s0
 ```
 
 
@@ -51,34 +38,10 @@ WantedBy=multi-user.target
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
-**Auto-DHCP**
-```
-echo "[Unit]
-Description= DHCP Client
-Before=network.target
-
-[Service]
-Type=forking
-ExecStart=/sbin/dhclient
-ExecStop=/sbin/dhclient -r
-Restart=always
-
-[Install]
-WantedBy=multi-user.target" > /etc/systemd/system/dhclient.service; systemctl enable dhclient.service
-```
-
-
--------------------------------------------------------------------------------------------------------------------------------------
-
-**Définir une IP préférer** (Optionnel)
+**Cacher Message Erreur**
 ```bash
-echo "interface "wlp2s0" {
-     send dhcp-requested-address 192.168.1.9;
-}" >> /etc/dhcp/dhclient.conf;
-systemctl restart dhclient
+echo "options iwlwifi enable_ini=N" > /etc/modprobe.d/iwlwifi.conf
 ```
-
-
 
 -------------------------------------------------------------------------------------------------------------------------------------
 **Dépôts**
@@ -88,16 +51,13 @@ deb http://ftp.fr.debian.org/debian bullseye main non-free
 deb http://security.debian.org/debian-security bullseye-security main
 deb-src http://security.debian.org/debian-security bullseye-security main " > /etc/apt/sources.list
 ```
-
-
 -------------------------------------------------------------------------------------------------------------------------------------
-**Cacher Message Erreur**
-```bash
-echo "options iwlwifi enable_ini=N" > /etc/modprobe.d/iwlwifi.conf
-```
 
 
+**NetworkManager**
+
 ```
+apt install -y network-manager iwd;
 echo "[device]
     wifi.backend=iwd" > /etc/NetworkManager/conf.d/wifi_backend.conf;
 systemctl enable --now NetworkManager
