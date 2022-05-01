@@ -1,15 +1,9 @@
 ### E403SA (WIFI)
 
-
-# Le pilote change le nom de l'interface !
-
-
 -------------------------------------------------------------------------------------------------------------------------------------
-**Dépôts**
-```
-echo "deb http://security.debian.org/debian-security bullseye-security main
-deb http://ftp.fr.debian.org/debian bullseye main non-free
-deb-src http://security.debian.org/debian-security bullseye-security main " > /etc/apt/sources.list
+**Service Networking**
+```bash
+systemctl disable networking;
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -84,11 +78,15 @@ systemctl restart dhclient
 ```
 
 
+
 -------------------------------------------------------------------------------------------------------------------------------------
-**Service Networking**
-```bash
-systemctl disable networking;
+**Dépôts**
 ```
+echo "deb http://security.debian.org/debian-security bullseye-security main
+deb http://ftp.fr.debian.org/debian bullseye main non-free
+deb-src http://security.debian.org/debian-security bullseye-security main " > /etc/apt/sources.list
+```
+
 
 -------------------------------------------------------------------------------------------------------------------------------------
 **Cacher Message Erreur**
