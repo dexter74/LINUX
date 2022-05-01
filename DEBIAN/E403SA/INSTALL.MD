@@ -42,7 +42,7 @@ IgnoreOnIsolate=true
 [Service]
 Type=dbus
 BusName=fi.w1.wpa_supplicant1
-ExecStart=/sbin/wpa_supplicant -u -s -c /etc/wpa_supplicant.conf -i wlp2s0
+ExecStart=/sbin/wpa_supplicant -u -s -c /etc/wpa_supplicant.conf
 RESTART=always
 
 [Install]
