@@ -1,5 +1,7 @@
 ### E403SA (WIFI)
 
+inxi -i
+
 -------------------------------------------------------------------------------------------------------------------------------------
 **Service Networking**
 ```bash
@@ -43,7 +45,6 @@ WantedBy=multi-user.target
 # enable_ini: Enable debug INI TLV FW debug infrastructure (default: true (bool))
 #echo "options iwlwifi enable_ini=N" > /etc/modprobe.d/iwlwifi.conf
 echo "options iwlwifi enable_ini=false" > /etc/modprobe.d/iwlwifi.conf
-
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -55,7 +56,6 @@ deb http://security.debian.org/debian-security bullseye-security main
 deb-src http://security.debian.org/debian-security bullseye-security main " > /etc/apt/sources.list
 ```
 -------------------------------------------------------------------------------------------------------------------------------------
-
 
 **NetworkManager**
 
