@@ -44,7 +44,6 @@ WantedBy=multi-user.target
 /sbin/modinfo iwlwifi | grep debug
 # enable_ini: Enable debug INI TLV FW debug infrastructure (default: true (bool))
 #echo "options iwlwifi enable_ini=N" > /etc/modprobe.d/iwlwifi.conf
-echo "options iwlwifi enable_ini=false" > /etc/modprobe.d/iwlwifi.conf
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
